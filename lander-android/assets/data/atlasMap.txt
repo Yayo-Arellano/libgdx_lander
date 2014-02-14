@@ -1,0 +1,187 @@
+
+atlasMap.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bomba
+  rotate: false
+  xy: 2, 156
+  size: 300, 292
+  orig: 300, 292
+  offset: 0, 0
+  index: -1
+estrella
+  rotate: false
+  xy: 2, 73
+  size: 83, 81
+  orig: 83, 81
+  offset: 0, 0
+  index: -1
+f1
+  rotate: false
+  xy: 779, 242
+  size: 29, 64
+  orig: 29, 64
+  offset: 0, 0
+  index: -1
+f2
+  rotate: false
+  xy: 851, 313
+  size: 29, 64
+  orig: 29, 64
+  offset: 0, 0
+  index: -1
+f3
+  rotate: false
+  xy: 923, 384
+  size: 29, 64
+  orig: 29, 64
+  offset: 0, 0
+  index: -1
+f4
+  rotate: false
+  xy: 810, 242
+  size: 29, 64
+  orig: 29, 64
+  offset: 0, 0
+  index: -1
+gas
+  rotate: false
+  xy: 304, 176
+  size: 185, 272
+  orig: 185, 272
+  offset: 0, 0
+  index: -1
+newExplosion1
+  rotate: false
+  xy: 491, 379
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+newExplosion10
+  rotate: false
+  xy: 2, 2
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+newExplosion11
+  rotate: false
+  xy: 87, 85
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+newExplosion12
+  rotate: false
+  xy: 491, 308
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+newExplosion13
+  rotate: false
+  xy: 563, 379
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+newExplosion14
+  rotate: false
+  xy: 159, 85
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+newExplosion15
+  rotate: false
+  xy: 491, 237
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+newExplosion16
+  rotate: false
+  xy: 563, 308
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+newExplosion17
+  rotate: false
+  xy: 635, 379
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+newExplosion18
+  rotate: false
+  xy: 231, 85
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+newExplosion19
+  rotate: false
+  xy: 563, 237
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+newExplosion2
+  rotate: false
+  xy: 635, 308
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+newExplosion3
+  rotate: false
+  xy: 707, 379
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+newExplosion4
+  rotate: false
+  xy: 635, 237
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+newExplosion5
+  rotate: false
+  xy: 707, 308
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+newExplosion6
+  rotate: false
+  xy: 779, 379
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+newExplosion7
+  rotate: false
+  xy: 707, 237
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+newExplosion8
+  rotate: false
+  xy: 779, 308
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+newExplosion9
+  rotate: false
+  xy: 851, 379
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="40" height="30" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="tamanoMapaX" value="40"/>
+  <property name="tamanoMapaY" value="30"/>
+ </properties>
+ <tileset firstgid="1" name="32x32nuevo" tilewidth="32" tileheight="32">
+  <image source="32x32nuevo.png" trans="35b4b4" width="1024" height="1024"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="40" height="30">
+  <data encoding="base64" compression="zlib">
+   eJztlTEKACAMxKRv8yP+zYc6iav1qoImkPUIdjCl81SHN6CPvlf6PFs7NqO5dZNZ6NOgT4M+jd/6ov+Hlb2Tb/7bfaOhT4M+Dfo0dvQVG6r0vmxDdQ/ftQGBwKX8
+  </data>
+ </layer>
+ <objectgroup name="fisicos" width="40" height="30">
+  <object type="fin" x="704" y="832" width="96" height="32"/>
+  <object type="inicio" x="32" y="832" width="96" height="32"/>
+  <object type="pared" x="0" y="0">
+   <polyline points="0,0 0,960 1280,960 1280,0 0,0"/>
+  </object>
+  <object type="pared" x="-2" y="866">
+   <polyline points="0,0 640,0 640,-640 256,-640 256,-672 672,-672 672,-352 1088,-352 1088,-320 672,-320 672,0 1280,0"/>
+  </object>
+  <object type="pared" x="1280" y="224">
+   <polyline points="0,0 -352,0 -352,-224"/>
+  </object>
+  <object type="pared" x="0" y="512">
+   <polyline points="0,0 416,0 416,32 0,32"/>
+  </object>
+ </objectgroup>
+ <objectgroup name="interaccion" width="40" height="30">
+  <object type="estrella" x="490" y="720"/>
+  <object type="gas" x="756" y="136"/>
+  <object type="estrella" x="946" y="354"/>
+  <object type="estrella" x="480" y="64"/>
+  <object type="laser" x="416" y="512">
+   <properties>
+    <property name="direccion" value="arriba"/>
+   </properties>
+  </object>
+  <object type="laser" x="1088" y="512">
+   <properties>
+    <property name="direccion" value="arriba"/>
+   </properties>
+  </object>
+  <object type="bomba" x="1024" y="608">
+   <properties>
+    <property name="direccion" value="abajo"/>
+   </properties>
+  </object>
+  <object type="bomba" x="288" y="576">
+   <properties>
+    <property name="direccion" value="abajo"/>
+   </properties>
+  </object>
+  <object type="bomba" x="384" y="704">
+   <properties>
+    <property name="direccion" value="arriba"/>
+   </properties>
+  </object>
+  <object type="bomba" x="288" y="320">
+   <properties>
+    <property name="direccion" value="abajo"/>
+   </properties>
+  </object>
+  <object type="bomba" x="384" y="448">
+   <properties>
+    <property name="direccion" value="arriba"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="40" height="30" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="tamanoMapaX" value="40"/>
+  <property name="tamanoMapaY" value="30"/>
+ </properties>
+ <tileset firstgid="1" name="32x32nuevo" tilewidth="32" tileheight="32">
+  <image source="32x32nuevo.png" trans="35b4b4" width="1024" height="1024"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="40" height="30">
+  <data encoding="base64" compression="zlib">
+   eJzt1jEOgCAMRmHwAB7K+9/ESxgGBgaTyk9bYt5LOlq/AYml+HRVp8WLwqeFT8vT13ZbJ8NnTTFE+PFp4Zv7NiN9Svi0vtzjM+dnhS/j2Yh34MvzRZzxHf5veucxTivbt8P9gg/fn3x3Hce6h3mfB0HFO20=
+  </data>
+ </layer>
+ <objectgroup name="fisicos" width="40" height="30">
+  <object type="pared" x="1280" y="0">
+   <polyline points="0,0 0,960 -1280,960 -1280,0 0,0"/>
+  </object>
+  <object type="pared" x="1280" y="896">
+   <polyline points="0,0 -288,0 -288,-672 -320,-672 -320,-416 -768,-416 -768,-704 -1120,-704 -1120,-672 -800,-672 -800,-256 -1120,-256 -1120,-224 -768,-224 -768,-384 -320,-384 -320,-192 -576,-192 -576,0 -1280,0"/>
+  </object>
+  <object type="pared" x="0" y="384" width="224" height="32"/>
+  <object type="pared" x="704" y="0" width="32" height="224"/>
+  <object type="inicio" x="1120" y="864" width="128" height="32"/>
+  <object type="fin" x="798" y="670" width="128" height="32"/>
+ </objectgroup>
+ <objectgroup name="interaccion" width="40" height="30">
+  <object type="estrella" x="498" y="768"/>
+  <object type="estrella" x="721" y="355"/>
+  <object type="estrella" x="1155" y="436"/>
+  <object type="gas" x="94" y="185"/>
+  <object type="laser" x="992" y="224">
+   <properties>
+    <property name="direccion" value="arriba"/>
+   </properties>
+  </object>
+  <object type="laser" x="960" y="224">
+   <properties>
+    <property name="direccion" value="izquierda"/>
+   </properties>
+  </object>
+  <object type="laser" x="512" y="192">
+   <properties>
+    <property name="direccion" value="derecha"/>
+   </properties>
+  </object>
+  <object type="laser" x="160" y="192">
+   <properties>
+    <property name="direccion" value="arriba"/>
+   </properties>
+  </object>
+  <object type="laser" x="224" y="416">
+   <properties>
+    <property name="direccion" value="abajo"/>
+   </properties>
+  </object>
+  <object type="bomba" x="1120" y="640">
+   <properties>
+    <property name="direccion" value="derecha"/>
+   </properties>
+  </object>
+  <object type="bomba" x="1248" y="448">
+   <properties>
+    <property name="direccion" value="izquierda"/>
+   </properties>
+  </object>
+  <object type="bomba" x="1088" y="256">
+   <properties>
+    <property name="direccion" value="derecha"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

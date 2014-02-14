@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="40" height="30" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="tamanoMapaX" value="40"/>
+  <property name="tamanoMapaY" value="30"/>
+ </properties>
+ <tileset firstgid="1" name="32x32nuevo" tilewidth="32" tileheight="32">
+  <image source="32x32nuevo.png" trans="35b4b4" width="1024" height="1024"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="40" height="30">
+  <data encoding="base64" compression="zlib">
+   eJzt1UEKwDAIBMD0a3lrHlp6EIIUNOqqhwh7ErZzqZnPGLN51sDk6/YM0ue1IX0RNpQvyobwWW28B+Gz2LL+X6tN6+9oi/AhbV4f2ubxZdisviybxZdpO/Vl2058FTatr8qm8VXaJF+1jfr+fB1s1Ml92fdN2u++ivsm7clXdd+kPSW6O6LDaoua6/PN9fmGvs3fh33fPS8za9m4
+  </data>
+ </layer>
+ <objectgroup name="fisicos" width="40" height="30">
+  <object type="inicio" x="1056" y="160" width="128" height="32"/>
+  <object type="fin" x="1056" y="896" width="128" height="32"/>
+  <object type="pared" x="1248" y="32">
+   <polyline points="0,0 0,160 -256,160 -800,704 -800,736 -768,736 -224,192 0,192 0,896 -224,896 -224,608 -256,608 -256,896 -1216,896 -1216,736 -1184,736 -480,32 -480,0 0,0"/>
+  </object>
+ </objectgroup>
+ <objectgroup name="interaccion" width="40" height="30">
+  <object type="estrella" x="767" y="236"/>
+  <object type="estrella" x="434" y="578"/>
+  <object type="estrella" x="1186" y="264"/>
+  <object type="laser" x="1024" y="640">
+   <properties>
+    <property name="direccion" value="derecha"/>
+   </properties>
+  </object>
+  <object type="laser" x="992" y="640">
+   <properties>
+    <property name="direccion" value="izquierda"/>
+   </properties>
+  </object>
+  <object type="laser" x="1008" y="640">
+   <properties>
+    <property name="direccion" value="arriba"/>
+   </properties>
+  </object>
+  <object type="bomba" x="576" y="864">
+   <properties>
+    <property name="direccion" value="arriba"/>
+   </properties>
+  </object>
+  <object type="bomba" x="384" y="864">
+   <properties>
+    <property name="direccion" value="izquierda"/>
+   </properties>
+  </object>
+  <object type="bomba" x="992" y="576">
+   <properties>
+    <property name="direccion" value="derecha"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
