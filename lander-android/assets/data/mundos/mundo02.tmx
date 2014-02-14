@@ -1,46 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="40" height="30" tilewidth="32" tileheight="32">
+<map version="1.0" orientation="orthogonal" width="30" height="20" tilewidth="32" tileheight="32">
  <properties>
-  <property name="tamanoMapaX" value="40"/>
-  <property name="tamanoMapaY" value="30"/>
+  <property name="tamanoMapaX" value="30"/>
+  <property name="tamanoMapaY" value="20"/>
  </properties>
- <tileset firstgid="1" name="32x32nuevo" tilewidth="32" tileheight="32">
-  <image source="32x32nuevo.png" trans="35b4b4" width="1024" height="1024"/>
+ <tileset firstgid="1" name="Tiled" tilewidth="32" tileheight="32">
+  <image source="Tiled.png" trans="35b4b4" width="1024" height="1024"/>
  </tileset>
- <layer name="Tile Layer 1" width="40" height="30">
+ <layer name="Tile Layer 1" width="30" height="20">
   <data encoding="base64" compression="zlib">
-   eJztl0sKwCAQQ8UD9KpeqgftqpSBFjTRUIcEsjPk+UG0lHGdQiNCc6oe88Weo0b35lYLPZfme3rMh0vBx9y9Kj5Uu/AhuRVj37Lmw2W+PHwz36h/Wj92Tln29ytrPlzMH26kg8maj8uar0+tRt9ZBV9mX8hoks0=
+   eJzFVQsOgyAMhZuMZBdBL2LVg8j0IOOmq/GRNCarQMZ8yQulFp4tv2CMCcY8PDMyHdOCDgyCHr4o+jsJYwJsErFWjKdj7ML+v4M1l3CD7p5vvEGXc138DbqE9X2euDJn5sjcYPfMCd8mfHuh34nYFW2n6O51tg3yMcc/vTVdaqQ7KbrUcD9rur5hnUdF11bUeVPmk+gudEvvK22/SMwX61t6b6yZulpdau5Jbd0k+ot8S/eVVj8JLV9bkW+urgZXka9WvxLd0nP0C115fs9vwzfknl8N6V3gvAcPcn/gNR8cWi9sB0YRn/wefoc5Uiyd7BT/AeYyT24=
   </data>
  </layer>
- <objectgroup name="fisicos" width="40" height="30">
-  <object type="pared" x="1280" y="0">
-   <polyline points="0,0 0,960 -1280,960 -1280,0 -32,0"/>
+ <objectgroup name="fisicos" width="30" height="20">
+  <object type="pared" x="32" y="32">
+   <polyline points="0,0 0,128 704,128 704,448 672,448 672,160 0,160 0,576 352,576 352,288 384,288 384,576 896,576 896,0 0,0"/>
   </object>
-  <object type="pared" x="0" y="160">
-   <polyline points="0,0 192,0 192,224 32,224 32,768 768,768 768,128 992,128 992,160 800,160 800,736 1248,736 1248,416 1088,416 1088,384 1248,384 1248,-128 448,-128 448,576 416,576 416,480 256,480 256,448 416,448 416,-160"/>
-  </object>
-  <object type="inicio" x="32" y="128" width="128" height="32"/>
-  <object type="fin" x="1088" y="864" width="128" height="32"/>
- </objectgroup>
- <objectgroup name="interaccion" width="40" height="30">
-  <object type="estrella" x="192" y="756"/>
-  <object type="gas" x="640" y="708"/>
-  <object type="estrella" x="646" y="128"/>
-  <object type="estrella" x="1026" y="416"/>
-  <object type="laser" x="448" y="736">
-   <properties>
-    <property name="direccion" value="abajo"/>
-   </properties>
-  </object>
-  <object type="laser" x="992" y="288">
-   <properties>
-    <property name="direccion" value="arriba"/>
-   </properties>
-  </object>
-  <object type="bomba" x="96" y="448">
-   <properties>
-    <property name="direccion" value="derecha"/>
-   </properties>
-  </object>
+  <object type="inicio" x="32" y="160" width="128" height="32"/>
+  <object type="fin" x="64" y="576" width="128" height="32"/>
  </objectgroup>
 </map>
