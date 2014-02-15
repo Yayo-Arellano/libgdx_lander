@@ -10,8 +10,8 @@ public class Main {
 		LwjglApplicationConfiguration cfg = new LwjglApplicationConfiguration();
 		cfg.title = "lander";
 		cfg.useGL20 = false;
-		cfg.width = 480;
-		cfg.height = 800;
+		cfg.width = 240;
+		cfg.height = 400;
 		//
 		Settings set = new Settings();
 		set.maxHeight = 2048;
