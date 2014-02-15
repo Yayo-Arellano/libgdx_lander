@@ -1,22 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="30" height="30" tilewidth="32" tileheight="32">
+<map version="1.0" orientation="orthogonal" width="30" height="20" tilewidth="32" tileheight="32">
  <properties>
   <property name="tamanoMapaX" value="30"/>
-  <property name="tamanoMapaY" value="30"/>
+  <property name="tamanoMapaY" value="20"/>
  </properties>
  <tileset firstgid="1" name="Tiled" tilewidth="32" tileheight="32">
   <image source="Tiled.png" trans="35b4b4" width="1024" height="1024"/>
  </tileset>
- <layer name="Tile Layer 1" width="30" height="30">
+ <layer name="Tile Layer 2" width="30" height="20">
   <data encoding="base64" compression="zlib">
-   eJy1lw1uwyAMhfFNFikXYetBwtaDxF0P0ty0RnIkhPJSTEwki58YPuE8bIVDCBTC1yaWxKL2WWzSPuk70vlU+ZTr9zX7e9K5qRiL3yrjpmdu9Gt5hLlGg78XW5jrZlzjwc7c1LHuKjuBOP+G8BrJ3oCuWrhX2KLrlQ/mfxq5veysZ7rI7WGj+5u51r0s/khXf3reUWwU53sR5xHsT+cdxWbAPdKVJ5uArm5Az15slDfuJ/fIg42+7xnXg81AzyPyc+kfQZxrPXuzUd1v5fayCdTfx+D8HEE9+jZyrewEuM8OroXNIM6tdb+XzUDPvedtZU8gzihPerEJ5I1/B+4ZG9WjHj1buFG5c2Wf8rOVW+/P+r8gsV6kXUTbi3zzJep472fLPqw+W9FS0Sa1qL6xsn3/7PsGvCJe+g==
+   eJxjYMAOWHGIQ+UO4JGmCIzaO7ztxQeItZfa7hu1d+jbS430jM+MUXtH7SUXjNqLCVSBWA2I1WlgL7rZIODEwJAAwqxImNr2IpsNsw8AczcVrA==
   </data>
  </layer>
- <objectgroup name="fisicos" width="30" height="30">
-  <object type="pared" x="768" y="832">
-   <polyline points="0,0 -576,-576 -576,-672 -608,-672 -608,96 -736,96 -736,-800 -480,-800 160,-160 160,96 0,96 0,0"/>
+ <layer name="Tile Layer 1" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJzFVYkNwCAIRDaBTXAyRuloHaVnck1IB+iZXNATPRGfMLMyuxxI4NSD9mADi5ic0+bgavhNf+ecMeYHfi9YU5dI1wW6yEmnQDdFuiWMd4l0FfGqzvMSxrtFuop9Vp0rF73PKcpviuLF39uK/1eV3+A9wn7fB2jfNXC4RbtZd7bzw79+TuzRF4PjmH4AH09BMg==
+  </data>
+ </layer>
+ <objectgroup name="fisicos" width="30" height="20" visible="0">
+  <object type="pared" x="928" y="608">
+   <polyline points="0,0 0,-576 -480,-576 -480,-128 -512,-128 -512,-576 -896,-576 -896,0 -736,0 -736,-288 -704,-288 -704,0 -192,0 -192,-448 -160,-448 -160,0 0,0"/>
   </object>
-  <object type="inicio" x="32" y="896" width="128" height="32"/>
-  <object type="fin" x="800" y="896" width="128" height="32"/>
+  <object type="inicio" x="800" y="576" width="96" height="32"/>
+  <object type="fin" x="64" y="576" width="96" height="32"/>
+  <object type="pared" x="192" y="32">
+   <polyline points="0,0 0,128 32,128 32,0"/>
+  </object>
+ </objectgroup>
+ <objectgroup name="interaccion" width="30" height="20">
+  <object type="bomba" x="576" y="224">
+   <properties>
+    <property name="direccion" value="derecha"/>
+   </properties>
+  </object>
+  <object type="bomba" x="512" y="352">
+   <properties>
+    <property name="direccion" value="derecha"/>
+   </properties>
+  </object>
+  <object type="estrella" x="429" y="547"/>
+  <object type="estrella" x="320" y="96"/>
+  <object type="gas" x="679" y="547"/>
+  <object type="bomba" x="256" y="256">
+   <properties>
+    <property name="direccion" value="abajo"/>
+   </properties>
+  </object>
+  <object type="bomba" x="384" y="256">
+   <properties>
+    <property name="direccion" value="abajo"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>
