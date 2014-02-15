@@ -11,8 +11,8 @@ public class Main {
 		LwjglApplicationConfiguration cfg = new LwjglApplicationConfiguration();
 		cfg.title = "lander";
 		cfg.useGL20 = false;
-		cfg.width = 240;
-		cfg.height = 400;
+		cfg.width = 400;
+		cfg.height = 580;
 		//
 		Settings set = new Settings();
 		set.maxHeight = 2048;
@@ -22,7 +22,7 @@ public class Main {
 		set.flattenPaths = true;
 		set.combineSubdirectories = true;
 
-//		TexturePacker2.process(set, "/Users/Yayo/Pictures/Games/Lander/Images", "/Users/Yayo/Documents/eclipseAndroid/Lander-P/lander-android/assets/data/", "atlasMap.txt");
+		// TexturePacker2.process(set, "/Users/Yayo/Pictures/Games/Lander/Images", "/Users/Yayo/Documents/eclipseAndroid/Lander-P/lander-android/assets/data/", "atlasMap.txt");
 
 		new LwjglApplication(new MainLander(), cfg);
 	}

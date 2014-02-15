@@ -8,5 +8,6 @@
 	<classpathentry exported="true" kind="lib" path="/lander/libs/gdx.jar" sourcepath="/lander/libs/gdx-sources.jar"/>
 	<classpathentry exported="true" kind="lib" path="libs/gdx-backend-android.jar" sourcepath="libs/gdx-backend-android-sources.jar"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/spine-libgdx"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

@@ -16,9 +16,11 @@ import com.esotericsoftware.spine.SkeletonJson;
 
 public class Assets {
 
-	public static boolean isDebug = false;
+	public static boolean isDebug = true;
 	public static Animation nave;
 	public static Animation explosion;
+
+	public static AtlasRegion fondo;
 
 	public static AtlasRegion gas;
 	public static AtlasRegion estrella;
@@ -45,6 +47,8 @@ public class Assets {
 		AtlasRegion an3 = atlas.findRegion("globo");
 		AtlasRegion an4 = atlas.findRegion("globo");
 		nave = new Animation(.15f, an1, an2, an3, an4);
+
+		fondo = atlas.findRegion("fondo3");
 
 		AtlasRegion newExpl1 = atlas.findRegion("newExplosion1");
 		AtlasRegion newExpl2 = atlas.findRegion("newExplosion2");

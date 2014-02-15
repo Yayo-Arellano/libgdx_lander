@@ -203,14 +203,11 @@ public class TiledMapManagerBox2d {
 		Body oBody = oWorldBox.createBody(bd);
 
 		PolygonShape shape = new PolygonShape();
-		// shape.setAsBox(Nave.WIDTH / 2f, Nave.HEIGHT / 2f);// Lo puse mejor con vertices pa que no tuviera esquinas picudas y tratar de minimizar
-
-		float[] vert = { -.2f, -.2f, -.18f, -.23f, .18f, -.23f, .2f, -.2f, .2f, .23f, -.2f, .23f };
-		shape.set(vert);
+		shape.setAsBox(Nave.WIDTH / 2f, Nave.HEIGHT / 2f);// Lo puse mejor con vertices pa que no tuviera esquinas picudas y tratar de minimizar
 
 		FixtureDef fixture = new FixtureDef();
 		fixture.shape = shape;
-		fixture.density = 1.5f;
+		fixture.density = Nave.DENSIDAD_INICIAL;
 		fixture.restitution = 0;
 		fixture.friction = .5f;
 		oBody.createFixture(fixture);

@@ -6,8 +6,11 @@ import com.badlogic.gdx.physics.box2d.Body;
 
 public class Nave {
 
-	final public static float WIDTH = .4f;
-	final public static float HEIGHT = .6f;
+	final public static float DRAW_WIDTH = .68f;
+	final public static float DRAW_HEIGHT = 1.2f;
+	final public static float WIDTH = .5f;
+	final public static float HEIGHT = 1.0f;
+	final public static float DENSIDAD_INICIAL = .7f;
 	final private int MAX_ANGLE_DEGREES = 35;
 
 	final public static float MAX_SPEED_Y = 2;

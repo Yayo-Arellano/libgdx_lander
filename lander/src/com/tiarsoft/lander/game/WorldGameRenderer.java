@@ -65,21 +65,24 @@ public class WorldGameRenderer {
 		if (oCam.position.x < CAM_MIN_X)
 			oCam.position.x = CAM_MIN_X;
 
-		// if (oCam.position.y > CAM_MAX_Y)
-		// oCam.position.y = CAM_MAX_Y;
-		//
-		// if (oCam.position.x > CAM_MAX_X)
-		// oCam.position.x = CAM_MAX_X;
+		if (oCam.position.y > CAM_MAX_Y)
+			oCam.position.y = CAM_MAX_Y;
+
+		if (oCam.position.x > CAM_MAX_X)
+			oCam.position.x = CAM_MAX_X;
 
 		oCam.update();
 		batcher.setProjectionMatrix(oCam.combined);
 
+		batcher.disableBlending();
 		batcher.begin();
-		renderFondo(delta);
+		batcher.draw(Assets.fondo, oCam.position.x - WIDTH / 2f, oCam.position.y - HEIGHT / 2f, WIDTH, HEIGHT);
+		// renderFondo(delta);
 		batcher.end();
 
 		renderTiled();
 
+		batcher.enableBlending();
 		batcher.begin();
 		renderNave();
 		renderGas();
@@ -115,7 +118,7 @@ public class WorldGameRenderer {
 
 		if (obj.state == Nave.STATE_NORMAL) {
 			keyframe = Assets.nave.getKeyFrame(obj.stateTime, true);
-			batcher.draw(keyframe, obj.position.x - .25f, obj.position.y - .5f - .2f, .25f, .5f + .2f, .5f, 1.f, 1, 1, (float) Math.toDegrees(obj.angleRad));
+			batcher.draw(keyframe, obj.position.x - .34f, obj.position.y - .6f, .34f, .6f, .68f, 1.2f, 1, 1, (float) Math.toDegrees(obj.angleRad));
 
 		}
 		else {

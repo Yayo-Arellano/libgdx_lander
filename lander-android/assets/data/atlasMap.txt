@@ -5,245 +5,252 @@ filter: Linear,Linear
 repeat: none
 arboles1
   rotate: false
-  xy: 2, 5
+  xy: 774, 770
   size: 480, 243
   orig: 480, 243
   offset: 0, 0
   index: -1
 arboles2
   rotate: false
-  xy: 484, 488
+  xy: 774, 525
   size: 480, 243
   orig: 480, 243
   offset: 0, 0
   index: -1
 arboles3
   rotate: false
-  xy: 484, 733
+  xy: 2, 38
   size: 480, 245
   orig: 480, 245
   offset: 0, 0
   index: -1
 bomba
   rotate: false
-  xy: 966, 686
+  xy: 1256, 721
   size: 300, 292
   orig: 300, 292
   offset: 0, 0
   index: -1
 estrella
   rotate: false
-  xy: 1268, 897
+  xy: 484, 144
   size: 83, 81
   orig: 83, 81
   offset: 0, 0
   index: -1
 estrellas
   rotate: false
-  xy: 2, 250
+  xy: 2, 285
   size: 480, 320
   orig: 480, 320
   offset: 0, 0
   index: -1
 f1
   rotate: false
-  xy: 484, 6
+  xy: 1983, 949
   size: 29, 64
   orig: 29, 64
   offset: 0, 0
   index: -1
 f2
   rotate: false
-  xy: 628, 148
+  xy: 743, 293
   size: 29, 64
   orig: 29, 64
   offset: 0, 0
   index: -1
 f3
   rotate: false
-  xy: 1268, 689
+  xy: 2014, 949
   size: 29, 64
   orig: 29, 64
   offset: 0, 0
   index: -1
 f4
   rotate: false
-  xy: 815, 280
+  xy: 743, 227
   size: 29, 64
   orig: 29, 64
   offset: 0, 0
   index: -1
+fondo3
+  rotate: false
+  xy: 484, 501
+  size: 288, 512
+  orig: 288, 512
+  offset: 0, 0
+  index: -1
 fondoAzul
   rotate: false
-  xy: 2, 2
+  xy: 2045, 1012
   size: 1, 1
   orig: 1, 1
   offset: 0, 0
   index: -1
 fondoAzulMarino
   rotate: false
-  xy: 966, 514
+  xy: 2045, 1009
   size: 1, 1
   orig: 1, 1
   offset: 0, 0
   index: -1
 gas
   rotate: false
-  xy: 484, 214
+  xy: 484, 227
   size: 185, 272
   orig: 185, 272
   offset: 0, 0
   index: -1
 globo
   rotate: false
-  xy: 1200, 614
-  size: 43, 70
-  orig: 43, 70
+  xy: 1558, 900
+  size: 63, 113
+  orig: 63, 113
   offset: 0, 0
   index: -1
 montanas
   rotate: false
-  xy: 2, 572
+  xy: 2, 607
   size: 480, 406
   orig: 480, 406
   offset: 0, 0
   index: -1
 newExplosion1
   rotate: false
-  xy: 484, 143
+  xy: 671, 430
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion10
   rotate: false
-  xy: 671, 417
+  xy: 1623, 944
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion11
   rotate: false
-  xy: 1268, 826
+  xy: 484, 73
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion12
   rotate: false
-  xy: 1353, 909
+  xy: 569, 156
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion13
   rotate: false
-  xy: 484, 72
+  xy: 671, 359
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion14
   rotate: false
-  xy: 556, 143
+  xy: 1695, 944
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion15
   rotate: false
-  xy: 671, 346
+  xy: 671, 288
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion16
   rotate: false
-  xy: 743, 417
+  xy: 1767, 944
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion17
   rotate: false
-  xy: 1268, 755
+  xy: 1839, 944
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion18
   rotate: false
-  xy: 1425, 909
+  xy: 1911, 944
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion19
   rotate: false
-  xy: 556, 72
+  xy: 1490, 650
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion2
   rotate: false
-  xy: 671, 275
+  xy: 1490, 579
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion3
   rotate: false
-  xy: 743, 346
+  xy: 1558, 829
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion4
   rotate: false
-  xy: 815, 417
+  xy: 1558, 758
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion5
   rotate: false
-  xy: 1497, 909
+  xy: 671, 217
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion6
   rotate: false
-  xy: 743, 275
+  xy: 484, 2
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion7
   rotate: false
-  xy: 815, 346
+  xy: 641, 146
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion8
   rotate: false
-  xy: 887, 417
+  xy: 743, 430
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion9
   rotate: false
-  xy: 1569, 909
+  xy: 743, 359
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 nube
   rotate: false
-  xy: 966, 517
+  xy: 1256, 552
   size: 232, 167
   orig: 232, 167
   offset: 0, 0
