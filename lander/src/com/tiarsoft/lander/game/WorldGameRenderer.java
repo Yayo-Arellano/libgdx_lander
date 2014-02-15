@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
+import com.esotericsoftware.spine.SkeletonRenderer;
 import com.tiarsoft.lander.Assets;
 import com.tiarsoft.lander.game.objetos.Bomba;
 import com.tiarsoft.lander.game.objetos.Estrella;
@@ -30,6 +31,7 @@ public class WorldGameRenderer {
 	OrthographicCamera oCam;
 	OrthogonalTiledMapRenderer tiledRenderer;
 
+	SkeletonRenderer skelrender;
 	Box2DDebugRenderer renderBox;
 
 	public WorldGameRenderer(SpriteBatch batcher, WorldGame oWorld) {
@@ -50,6 +52,7 @@ public class WorldGameRenderer {
 		this.oWorld = oWorld;
 		this.renderBox = new Box2DDebugRenderer();
 		this.tiledRenderer = new OrthogonalTiledMapRenderer(Assets.map, oWorld.unitScale);
+		this.skelrender = new SkeletonRenderer();
 	}
 
 	public void render(float delta) {
@@ -62,14 +65,18 @@ public class WorldGameRenderer {
 		if (oCam.position.x < CAM_MIN_X)
 			oCam.position.x = CAM_MIN_X;
 
-		if (oCam.position.y > CAM_MAX_Y)
-			oCam.position.y = CAM_MAX_Y;
-
-		if (oCam.position.x > CAM_MAX_X)
-			oCam.position.x = CAM_MAX_X;
+		// if (oCam.position.y > CAM_MAX_Y)
+		// oCam.position.y = CAM_MAX_Y;
+		//
+		// if (oCam.position.x > CAM_MAX_X)
+		// oCam.position.x = CAM_MAX_X;
 
 		oCam.update();
 		batcher.setProjectionMatrix(oCam.combined);
+
+		batcher.begin();
+		renderFondo(delta);
+		batcher.end();
 
 		renderTiled();
 
@@ -84,6 +91,16 @@ public class WorldGameRenderer {
 		if (Assets.isDebug) {
 			renderBox.render(oWorld.oWorldBox, oCam.combined);
 		}
+	}
+
+	private void renderFondo(float delta) {
+		Assets.fondoAnim.apply(Assets.fondoSkeleton, 0, 0, true, null);
+		Assets.fondoSkeleton.setX(oCam.position.x);
+		Assets.fondoSkeleton.setY(0);
+		Assets.fondoSkeleton.updateWorldTransform();
+		Assets.fondoSkeleton.update(delta);
+		skelrender.draw(batcher, Assets.fondoSkeleton);
+
 	}
 
 	public void renderTiled() {

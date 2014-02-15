@@ -10,6 +10,9 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 import com.badlogic.gdx.maps.tiled.AtlasTmxMapLoader;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
+import com.esotericsoftware.spine.Skeleton;
+import com.esotericsoftware.spine.SkeletonData;
+import com.esotericsoftware.spine.SkeletonJson;
 
 public class Assets {
 
@@ -26,13 +29,21 @@ public class Assets {
 
 	public static TiledMap map;
 
+	public static Skeleton fondoSkeleton;
+	public static com.esotericsoftware.spine.Animation fondoAnim;
+
 	public static void cargar() {
 		TextureAtlas atlas = new TextureAtlas(Gdx.files.internal("data/atlasMap.txt"));
 
-		AtlasRegion an1 = atlas.findRegion("f1");
-		AtlasRegion an2 = atlas.findRegion("f2");
-		AtlasRegion an3 = atlas.findRegion("f3");
-		AtlasRegion an4 = atlas.findRegion("f4");
+		// AtlasRegion an1 = atlas.findRegion("f1");
+		// AtlasRegion an2 = atlas.findRegion("f2");
+		// AtlasRegion an3 = atlas.findRegion("f3");
+		// AtlasRegion an4 = atlas.findRegion("f4");
+
+		AtlasRegion an1 = atlas.findRegion("globo");
+		AtlasRegion an2 = atlas.findRegion("globo");
+		AtlasRegion an3 = atlas.findRegion("globo");
+		AtlasRegion an4 = atlas.findRegion("globo");
 		nave = new Animation(.15f, an1, an2, an3, an4);
 
 		AtlasRegion newExpl1 = atlas.findRegion("newExplosion1");
@@ -74,6 +85,13 @@ public class Assets {
 				mundos[i] = files[i + 1].path();
 			}
 		}
+
+		SkeletonJson json = new SkeletonJson(atlas);
+		json.setScale(.01f);
+		SkeletonData fondoSkeletonData = json.readSkeletonData(Gdx.files.internal("data/animaciones/background.json"));
+		fondoAnim = fondoSkeletonData.findAnimation("animation");
+		fondoSkeleton = new Skeleton(fondoSkeletonData);
+
 	}
 
 	public static void cargarMapa(int numeroMundo) {

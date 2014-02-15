@@ -3,185 +3,248 @@ atlasMap.png
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
+arboles1
+  rotate: false
+  xy: 2, 5
+  size: 480, 243
+  orig: 480, 243
+  offset: 0, 0
+  index: -1
+arboles2
+  rotate: false
+  xy: 484, 488
+  size: 480, 243
+  orig: 480, 243
+  offset: 0, 0
+  index: -1
+arboles3
+  rotate: false
+  xy: 484, 733
+  size: 480, 245
+  orig: 480, 245
+  offset: 0, 0
+  index: -1
 bomba
   rotate: false
-  xy: 2, 156
+  xy: 966, 686
   size: 300, 292
   orig: 300, 292
   offset: 0, 0
   index: -1
 estrella
   rotate: false
-  xy: 2, 73
+  xy: 1268, 897
   size: 83, 81
   orig: 83, 81
   offset: 0, 0
   index: -1
+estrellas
+  rotate: false
+  xy: 2, 250
+  size: 480, 320
+  orig: 480, 320
+  offset: 0, 0
+  index: -1
 f1
   rotate: false
-  xy: 779, 242
+  xy: 484, 6
   size: 29, 64
   orig: 29, 64
   offset: 0, 0
   index: -1
 f2
   rotate: false
-  xy: 851, 313
+  xy: 628, 148
   size: 29, 64
   orig: 29, 64
   offset: 0, 0
   index: -1
 f3
   rotate: false
-  xy: 923, 384
+  xy: 1268, 689
   size: 29, 64
   orig: 29, 64
   offset: 0, 0
   index: -1
 f4
   rotate: false
-  xy: 810, 242
+  xy: 815, 280
   size: 29, 64
   orig: 29, 64
   offset: 0, 0
   index: -1
+fondoAzul
+  rotate: false
+  xy: 2, 2
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+fondoAzulMarino
+  rotate: false
+  xy: 966, 514
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
 gas
   rotate: false
-  xy: 304, 176
+  xy: 484, 214
   size: 185, 272
   orig: 185, 272
   offset: 0, 0
   index: -1
+globo
+  rotate: false
+  xy: 1200, 614
+  size: 43, 70
+  orig: 43, 70
+  offset: 0, 0
+  index: -1
+montanas
+  rotate: false
+  xy: 2, 572
+  size: 480, 406
+  orig: 480, 406
+  offset: 0, 0
+  index: -1
 newExplosion1
   rotate: false
-  xy: 491, 379
+  xy: 484, 143
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion10
   rotate: false
-  xy: 2, 2
+  xy: 671, 417
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion11
   rotate: false
-  xy: 87, 85
+  xy: 1268, 826
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion12
   rotate: false
-  xy: 491, 308
+  xy: 1353, 909
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion13
   rotate: false
-  xy: 563, 379
+  xy: 484, 72
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion14
   rotate: false
-  xy: 159, 85
+  xy: 556, 143
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion15
   rotate: false
-  xy: 491, 237
+  xy: 671, 346
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion16
   rotate: false
-  xy: 563, 308
+  xy: 743, 417
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion17
   rotate: false
-  xy: 635, 379
+  xy: 1268, 755
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion18
   rotate: false
-  xy: 231, 85
+  xy: 1425, 909
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion19
   rotate: false
-  xy: 563, 237
+  xy: 556, 72
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion2
   rotate: false
-  xy: 635, 308
+  xy: 671, 275
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion3
   rotate: false
-  xy: 707, 379
+  xy: 743, 346
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion4
   rotate: false
-  xy: 635, 237
+  xy: 815, 417
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion5
   rotate: false
-  xy: 707, 308
+  xy: 1497, 909
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion6
   rotate: false
-  xy: 779, 379
+  xy: 743, 275
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion7
   rotate: false
-  xy: 707, 237
+  xy: 815, 346
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion8
   rotate: false
-  xy: 779, 308
+  xy: 887, 417
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion9
   rotate: false
-  xy: 851, 379
+  xy: 1569, 909
   size: 70, 69
   orig: 70, 69
+  offset: 0, 0
+  index: -1
+nube
+  rotate: false
+  xy: 966, 517
+  size: 232, 167
+  orig: 232, 167
   offset: 0, 0
   index: -1

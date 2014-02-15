@@ -3,6 +3,7 @@ package com.tiarsoft.lander;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 import com.badlogic.gdx.graphics.Texture.TextureFilter;
+import com.badlogic.gdx.tools.imagepacker.TexturePacker2;
 import com.badlogic.gdx.tools.imagepacker.TexturePacker2.Settings;
 
 public class Main {
@@ -21,7 +22,7 @@ public class Main {
 		set.flattenPaths = true;
 		set.combineSubdirectories = true;
 
-		// TexturePacker2.process(set, "/Users/Yayo/Pictures/Games/Lander/Images", "/Users/Yayo/Documents/eclipseAndroid/Lander/lander-android/assets/data/", "atlasMap.txt");
+//		TexturePacker2.process(set, "/Users/Yayo/Pictures/Games/Lander/Images", "/Users/Yayo/Documents/eclipseAndroid/Lander-P/lander-android/assets/data/", "atlasMap.txt");
 
 		new LwjglApplication(new MainLander(), cfg);
 	}
