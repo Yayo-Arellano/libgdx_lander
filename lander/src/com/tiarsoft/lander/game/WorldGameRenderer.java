@@ -76,7 +76,7 @@ public class WorldGameRenderer {
 
 		batcher.disableBlending();
 		batcher.begin();
-		batcher.draw(Assets.fondo, oCam.position.x - WIDTH / 2f, oCam.position.y - HEIGHT / 2f, WIDTH, HEIGHT);
+		batcher.draw(Assets.fondo, 0, oCam.position.y - HEIGHT / 2f, 10.24f, HEIGHT);
 		// renderFondo(delta);
 		batcher.end();
 
@@ -92,7 +92,7 @@ public class WorldGameRenderer {
 		batcher.end();
 
 		if (Assets.isDebug) {
-			renderBox.render(oWorld.oWorldBox, oCam.combined);
+			// renderBox.render(oWorld.oWorldBox, oCam.combined);
 		}
 	}
 

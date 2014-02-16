@@ -56,7 +56,7 @@ public class GameScreen extends Screens {
 
 			if (oWorld.state == WorldGame.STATE_NEXT_LEVEL)
 				mundo++;
-			if (mundo > Assets.mundos.length)
+			if (mundo > Assets.mundos.size)
 				mundo = 1;
 			game.setScreen(new GameScreen(game, mundo));
 

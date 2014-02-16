@@ -10,6 +10,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 import com.badlogic.gdx.maps.tiled.AtlasTmxMapLoader;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
+import com.badlogic.gdx.utils.Array;
 import com.esotericsoftware.spine.Skeleton;
 import com.esotericsoftware.spine.SkeletonData;
 import com.esotericsoftware.spine.SkeletonJson;
@@ -27,7 +28,7 @@ public class Assets {
 	public static AtlasRegion bomba;
 
 	public static BitmapFont font;
-	public static String[] mundos;
+	public static Array<String> mundos;
 
 	public static TiledMap map;
 
@@ -48,7 +49,7 @@ public class Assets {
 		AtlasRegion an4 = atlas.findRegion("globo");
 		nave = new Animation(.15f, an1, an2, an3, an4);
 
-		fondo = atlas.findRegion("fondo3");
+		fondo = atlas.findRegion("fondo");
 
 		AtlasRegion newExpl1 = atlas.findRegion("newExplosion1");
 		AtlasRegion newExpl2 = atlas.findRegion("newExplosion2");
@@ -77,16 +78,23 @@ public class Assets {
 
 		font = new BitmapFont();
 
-		if (Gdx.app.getType() == ApplicationType.Desktop) {
-			mundos = new String[] { "data/mundos/mundo01.tmx", "data/mundos/mundo02.tmx", "data/mundos/mundo03.tmx", "data/mundos/mundo04.tmx", "data/mundos/mundo05.tmx", "data/mundos/mundo06.tmx" };
+		if (Gdx.app.getType() == ApplicationType.Desktop && isDebug == false) {
+			mundos = new Array<String>();
+			mundos.add("data/mundos/mundo01.tmx");
+			mundos.add("data/mundos/mundo02.tmx");
+			mundos.add("data/mundos/mundo03.tmx");
+			mundos.add("data/mundos/mundo04.tmx");
 		}
 		else {
+			String ruta = "data/mundos";
+			if (Gdx.app.getType() == ApplicationType.Desktop)
+				ruta = "./bin/data/mundos";
+			FileHandle[] files = Gdx.files.internal(ruta).list();
+			mundos = new Array<String>();
 
-			FileHandle[] files = Gdx.files.internal("data/mundos").list();
-			mundos = new String[files.length - 1];
-
-			for (int i = 0; i < files.length - 1; i++) {
-				mundos[i] = files[i + 1].path();
+			for (int i = 0; i < files.length; i++) {
+				if (files[i].path().contains(".tmx"))
+					mundos.add(files[i].path());
 			}
 		}
 
@@ -104,9 +112,9 @@ public class Assets {
 			map = null;
 		}
 		if (isDebug)
-			map = new TmxMapLoader().load(mundos[numeroMundo - 1]);
+			map = new TmxMapLoader().load(mundos.get(numeroMundo - 1));
 		else
 			// map=new AtlasTmxMapLoader().load(mundos[numeroMundo - 1]);
-			map = new TmxMapLoader().load(mundos[numeroMundo - 1]);
+			map = new TmxMapLoader().load(mundos.get(numeroMundo - 1));
 	}
 }
