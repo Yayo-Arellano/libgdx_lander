@@ -1,24 +1,20 @@
 package com.tiarsoft.lander;
 
-import com.badlogic.gdx.Application.ApplicationType;
+import java.util.LinkedHashMap;
+
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
-import com.badlogic.gdx.maps.tiled.AtlasTmxMapLoader;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
-import com.badlogic.gdx.utils.Array;
-import com.esotericsoftware.spine.Skeleton;
-import com.esotericsoftware.spine.SkeletonData;
-import com.esotericsoftware.spine.SkeletonJson;
 
 public class Assets {
 
 	public static boolean isDebug = true;
-	public static Animation nave;
+	public static AtlasRegion nave;
+	public static Animation naveFly;
 	public static Animation explosion;
 
 	public static AtlasRegion fondo;
@@ -28,26 +24,21 @@ public class Assets {
 	public static AtlasRegion bomba;
 
 	public static BitmapFont font;
-	public static Array<String> mundos;
+	public static LinkedHashMap<Integer, String> mundos;
 
 	public static TiledMap map;
-
-	public static Skeleton fondoSkeleton;
-	public static com.esotericsoftware.spine.Animation fondoAnim;
 
 	public static void cargar() {
 		TextureAtlas atlas = new TextureAtlas(Gdx.files.internal("data/atlasMap.txt"));
 
-		// AtlasRegion an1 = atlas.findRegion("f1");
-		// AtlasRegion an2 = atlas.findRegion("f2");
-		// AtlasRegion an3 = atlas.findRegion("f3");
-		// AtlasRegion an4 = atlas.findRegion("f4");
+		nave = atlas.findRegion("nave");
 
-		AtlasRegion an1 = atlas.findRegion("globo");
-		AtlasRegion an2 = atlas.findRegion("globo");
-		AtlasRegion an3 = atlas.findRegion("globo");
-		AtlasRegion an4 = atlas.findRegion("globo");
-		nave = new Animation(.15f, an1, an2, an3, an4);
+		AtlasRegion an1 = atlas.findRegion("nave1");
+		AtlasRegion an2 = atlas.findRegion("nave2");
+		AtlasRegion an3 = atlas.findRegion("nave3");
+		AtlasRegion an4 = atlas.findRegion("nave4");
+		AtlasRegion an5 = atlas.findRegion("nave5");
+		naveFly = new Animation(.15f, an1, an2, an3, an4, an5);
 
 		fondo = atlas.findRegion("fondo");
 
@@ -78,31 +69,11 @@ public class Assets {
 
 		font = new BitmapFont();
 
-		if (Gdx.app.getType() == ApplicationType.Desktop && isDebug == false) {
-			mundos = new Array<String>();
-			mundos.add("data/mundos/mundo01.tmx");
-			mundos.add("data/mundos/mundo02.tmx");
-			mundos.add("data/mundos/mundo03.tmx");
-			mundos.add("data/mundos/mundo04.tmx");
-		}
-		else {
-			String ruta = "data/mundos";
-			if (Gdx.app.getType() == ApplicationType.Desktop)
-				ruta = "./bin/data/mundos";
-			FileHandle[] files = Gdx.files.internal(ruta).list();
-			mundos = new Array<String>();
-
-			for (int i = 0; i < files.length; i++) {
-				if (files[i].path().contains(".tmx"))
-					mundos.add(files[i].path());
-			}
-		}
-
-		SkeletonJson json = new SkeletonJson(atlas);
-		json.setScale(.01f);
-		SkeletonData fondoSkeletonData = json.readSkeletonData(Gdx.files.internal("data/animaciones/background.json"));
-		fondoAnim = fondoSkeletonData.findAnimation("animation");
-		fondoSkeleton = new Skeleton(fondoSkeletonData);
+		mundos = new LinkedHashMap<Integer, String>();
+		mundos.put(0, "data/mundos/mundo01.tmx");
+		mundos.put(1, "data/mundos/mundo02.tmx");
+		mundos.put(2, "data/mundos/mundo03.tmx");
+		mundos.put(3, "data/mundos/mundo04.tmx");
 
 	}
 

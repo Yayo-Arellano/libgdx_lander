@@ -36,10 +36,6 @@ public class GameScreen extends Screens {
 
 		if (Gdx.input.isPeripheralAvailable(Peripheral.Accelerometer)) {
 			accelX = Gdx.input.getAccelerometerX() / sensibilidad * -1;
-			if (accelX < -1)
-				accelX = -1;
-			else if (accelX > 1)
-				accelX = 1;
 		}
 
 		if (Gdx.input.isKeyPressed(Keys.A) || Gdx.input.isKeyPressed(Keys.LEFT))
@@ -56,7 +52,7 @@ public class GameScreen extends Screens {
 
 			if (oWorld.state == WorldGame.STATE_NEXT_LEVEL)
 				mundo++;
-			if (mundo > Assets.mundos.size)
+			if (mundo > Assets.mundos.size())
 				mundo = 1;
 			game.setScreen(new GameScreen(game, mundo));
 

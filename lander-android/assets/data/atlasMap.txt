@@ -1,257 +1,200 @@
-
 atlasMap.png
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
-arboles1
+newExplosion3
   rotate: false
-  xy: 1510, 765
-  size: 480, 243
-  orig: 480, 243
-  offset: 0, 0
-  index: -1
-arboles2
-  rotate: false
-  xy: 1028, 443
-  size: 480, 243
-  orig: 480, 243
-  offset: 0, 0
-  index: -1
-arboles3
-  rotate: false
-  xy: 484, 249
-  size: 480, 245
-  orig: 480, 245
-  offset: 0, 0
-  index: -1
-bomba
-  rotate: false
-  xy: 1510, 471
-  size: 300, 292
-  orig: 300, 292
+  xy: 290, 407
+  size: 70, 69
+  orig: 70, 69
   offset: 0, 0
   index: -1
 estrella
   rotate: false
-  xy: 2, 5
+  xy: 304, 2
   size: 83, 81
   orig: 83, 81
   offset: 0, 0
   index: -1
-estrellas
+nave2
   rotate: false
-  xy: 1028, 688
-  size: 480, 320
-  orig: 480, 320
-  offset: 0, 0
-  index: -1
-f1
-  rotate: false
-  xy: 1992, 944
-  size: 29, 64
-  orig: 29, 64
-  offset: 0, 0
-  index: -1
-f2
-  rotate: false
-  xy: 447, 22
-  size: 29, 64
-  orig: 29, 64
-  offset: 0, 0
-  index: -1
-f3
-  rotate: false
-  xy: 966, 430
-  size: 29, 64
-  orig: 29, 64
-  offset: 0, 0
-  index: -1
-f4
-  rotate: false
-  xy: 997, 430
-  size: 29, 64
-  orig: 29, 64
-  offset: 0, 0
-  index: -1
-fondo
-  rotate: false
-  xy: 2, 496
-  size: 1024, 512
-  orig: 1024, 512
-  offset: 0, 0
-  index: -1
-fondoAzul
-  rotate: false
-  xy: 1812, 488
-  size: 1, 1
-  orig: 1, 1
-  offset: 0, 0
-  index: -1
-fondoAzulMarino
-  rotate: false
-  xy: 2, 2
-  size: 1, 1
-  orig: 1, 1
-  offset: 0, 0
-  index: -1
-gas
-  rotate: false
-  xy: 1812, 491
-  size: 185, 272
-  orig: 185, 272
-  offset: 0, 0
-  index: -1
-globo
-  rotate: false
-  xy: 718, 134
-  size: 63, 113
-  orig: 63, 113
-  offset: 0, 0
-  index: -1
-montanas
-  rotate: false
-  xy: 2, 88
-  size: 480, 406
-  orig: 480, 406
-  offset: 0, 0
-  index: -1
-newExplosion1
-  rotate: false
-  xy: 783, 178
-  size: 70, 69
-  orig: 70, 69
-  offset: 0, 0
-  index: -1
-newExplosion10
-  rotate: false
-  xy: 87, 17
-  size: 70, 69
-  orig: 70, 69
-  offset: 0, 0
-  index: -1
-newExplosion11
-  rotate: false
-  xy: 855, 178
-  size: 70, 69
-  orig: 70, 69
-  offset: 0, 0
-  index: -1
-newExplosion12
-  rotate: false
-  xy: 159, 17
-  size: 70, 69
-  orig: 70, 69
+  xy: 304, 246
+  size: 70, 159
+  orig: 70, 159
   offset: 0, 0
   index: -1
 newExplosion13
   rotate: false
-  xy: 231, 17
-  size: 70, 69
-  orig: 70, 69
-  offset: 0, 0
-  index: -1
-newExplosion14
-  rotate: false
-  xy: 303, 17
-  size: 70, 69
-  orig: 70, 69
-  offset: 0, 0
-  index: -1
-newExplosion15
-  rotate: false
-  xy: 375, 17
-  size: 70, 69
-  orig: 70, 69
-  offset: 0, 0
-  index: -1
-newExplosion16
-  rotate: false
-  xy: 718, 63
+  xy: 74, 509
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion17
   rotate: false
-  xy: 927, 178
-  size: 70, 69
-  orig: 70, 69
-  offset: 0, 0
-  index: -1
-newExplosion18
-  rotate: false
-  xy: 1510, 400
-  size: 70, 69
-  orig: 70, 69
-  offset: 0, 0
-  index: -1
-newExplosion19
-  rotate: false
-  xy: 1582, 400
-  size: 70, 69
-  orig: 70, 69
-  offset: 0, 0
-  index: -1
-newExplosion2
-  rotate: false
-  xy: 1654, 400
-  size: 70, 69
-  orig: 70, 69
-  offset: 0, 0
-  index: -1
-newExplosion3
-  rotate: false
-  xy: 1726, 400
-  size: 70, 69
-  orig: 70, 69
-  offset: 0, 0
-  index: -1
-newExplosion4
-  rotate: false
-  xy: 790, 107
-  size: 70, 69
-  orig: 70, 69
-  offset: 0, 0
-  index: -1
-newExplosion5
-  rotate: false
-  xy: 862, 107
+  xy: 218, 438
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion6
   rotate: false
-  xy: 934, 107
+  xy: 74, 367
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
-newExplosion7
+newExplosion2
   rotate: false
-  xy: 790, 36
+  xy: 74, 438
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
-newExplosion8
+nave3
   rotate: false
-  xy: 862, 36
+  xy: 376, 163
+  size: 70, 159
+  orig: 70, 159
+  offset: 0, 0
+  index: -1
+newExplosion12
+  rotate: false
+  xy: 2, 528
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+newExplosion16
+  rotate: false
+  xy: 290, 478
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion9
   rotate: false
-  xy: 934, 36
+  xy: 74, 296
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
-nube
+newExplosion1
   rotate: false
-  xy: 484, 80
-  size: 232, 167
-  orig: 232, 167
+  xy: 290, 549
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+newExplosion5
+  rotate: false
+  xy: 146, 367
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+nave4
+  rotate: false
+  xy: 304, 85
+  size: 70, 159
+  orig: 70, 159
+  offset: 0, 0
+  index: -1
+newExplosion11
+  rotate: false
+  xy: 146, 509
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+newExplosion15
+  rotate: false
+  xy: 362, 485
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+newExplosion19
+  rotate: false
+  xy: 2, 457
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+gas
+  rotate: false
+  xy: 461, 2
+  size: 41, 45
+  orig: 41, 45
+  offset: 0, 0
+  index: -1
+newExplosion8
+  rotate: false
+  xy: 146, 296
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+bomba
+  rotate: false
+  xy: 2, 2
+  size: 300, 292
+  orig: 300, 292
+  offset: 0, 0
+  index: -1
+newExplosion4
+  rotate: false
+  xy: 218, 367
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+nave5
+  rotate: false
+  xy: 389, 2
+  size: 70, 159
+  orig: 70, 159
+  offset: 0, 0
+  index: -1
+nave1
+  rotate: false
+  xy: 376, 324
+  size: 70, 159
+  orig: 70, 159
+  offset: 0, 0
+  index: -1
+newExplosion10
+  rotate: false
+  xy: 218, 509
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+newExplosion14
+  rotate: false
+  xy: 434, 485
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+newExplosion18
+  rotate: false
+  xy: 146, 438
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+newExplosion7
+  rotate: false
+  xy: 218, 296
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+nave
+  rotate: false
+  xy: 2, 296
+  size: 70, 159
+  orig: 70, 159
   offset: 0, 0
   index: -1

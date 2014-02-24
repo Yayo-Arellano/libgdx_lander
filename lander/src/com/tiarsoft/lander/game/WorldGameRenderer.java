@@ -7,7 +7,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
-import com.esotericsoftware.spine.SkeletonRenderer;
 import com.tiarsoft.lander.Assets;
 import com.tiarsoft.lander.game.objetos.Bomba;
 import com.tiarsoft.lander.game.objetos.Estrella;
@@ -31,7 +30,6 @@ public class WorldGameRenderer {
 	OrthographicCamera oCam;
 	OrthogonalTiledMapRenderer tiledRenderer;
 
-	SkeletonRenderer skelrender;
 	Box2DDebugRenderer renderBox;
 
 	public WorldGameRenderer(SpriteBatch batcher, WorldGame oWorld) {
@@ -52,7 +50,7 @@ public class WorldGameRenderer {
 		this.oWorld = oWorld;
 		this.renderBox = new Box2DDebugRenderer();
 		this.tiledRenderer = new OrthogonalTiledMapRenderer(Assets.map, oWorld.unitScale);
-		this.skelrender = new SkeletonRenderer();
+
 	}
 
 	public void render(float delta) {
@@ -74,12 +72,6 @@ public class WorldGameRenderer {
 		oCam.update();
 		batcher.setProjectionMatrix(oCam.combined);
 
-		batcher.disableBlending();
-		batcher.begin();
-		batcher.draw(Assets.fondo, 0, oCam.position.y - HEIGHT / 2f, 10.24f, HEIGHT);
-		// renderFondo(delta);
-		batcher.end();
-
 		renderTiled();
 
 		batcher.enableBlending();
@@ -92,18 +84,8 @@ public class WorldGameRenderer {
 		batcher.end();
 
 		if (Assets.isDebug) {
-			// renderBox.render(oWorld.oWorldBox, oCam.combined);
+			renderBox.render(oWorld.oWorldBox, oCam.combined);
 		}
-	}
-
-	private void renderFondo(float delta) {
-		Assets.fondoAnim.apply(Assets.fondoSkeleton, 0, 0, true, null);
-		Assets.fondoSkeleton.setX(oCam.position.x);
-		Assets.fondoSkeleton.setY(0);
-		Assets.fondoSkeleton.updateWorldTransform();
-		Assets.fondoSkeleton.update(delta);
-		skelrender.draw(batcher, Assets.fondoSkeleton);
-
 	}
 
 	public void renderTiled() {
@@ -117,8 +99,8 @@ public class WorldGameRenderer {
 		TextureRegion keyframe;
 
 		if (obj.state == Nave.STATE_NORMAL) {
-			keyframe = Assets.nave.getKeyFrame(obj.stateTime, true);
-			batcher.draw(keyframe, obj.position.x - .34f, obj.position.y - .6f, .34f, .6f, .68f, 1.2f, 1, 1, (float) Math.toDegrees(obj.angleRad));
+			keyframe = Assets.nave;
+			batcher.draw(keyframe, obj.position.x - .35f, obj.position.y - 1f, .35f, .795f, .7f, 1.59f, 1, 1, (float) Math.toDegrees(obj.angleRad));
 
 		}
 		else {
