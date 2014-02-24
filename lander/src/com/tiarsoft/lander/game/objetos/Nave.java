@@ -42,8 +42,7 @@ public class Nave {
 	}
 
 	public void update(float delta, Body body, float accelX, float accelY) {
-		if (accelX < .25f && accelX > -.25f)
-			accelX = 0;
+		accelX = 0;
 
 		if (state == STATE_NORMAL) {
 
