@@ -84,7 +84,7 @@ public class WorldGameRenderer {
 		batcher.end();
 
 		if (Assets.isDebug) {
-			// renderBox.render(oWorld.oWorldBox, oCam.combined);
+			renderBox.render(oWorld.oWorldBox, oCam.combined);
 		}
 	}
 
@@ -135,8 +135,15 @@ public class WorldGameRenderer {
 		Iterator<Laser> i = oWorld.arrLaser.iterator();
 		while (i.hasNext()) {
 			Laser obj = i.next();
-			// batcher.draw(Assets.estrella, obj.position.x - .25f, obj.position.y - .25f, .5f, .5f);
 
+			if (obj.direccion == Laser.DIRECCION_HORIZONTAL) {
+
+				if (obj.state == Laser.STATE_FIRE)
+					batcher.draw(Assets.laser.getKeyFrame(obj.stateTime, true), obj.position.x - obj.width / 2f, obj.position.y - obj.height / 2f, obj.width, obj.height);
+			}
+			else {
+
+			}
 		}
 	}
 

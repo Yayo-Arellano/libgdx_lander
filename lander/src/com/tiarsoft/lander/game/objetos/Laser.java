@@ -9,23 +9,29 @@ public class Laser {
 	public static int DIRECCION_VERTICAL = 1;
 
 	float TIME_TO_FIRE = 5;
+	public float timeToFire;
+
 	float TIME_FIRING = 3;
+	public float timeFiring;
 
 	public static int STATE_NORMAL = 0;
 	public static int STATE_FIRE = 1;
 
 	public Vector2 position;
 
-	public float timeToFire;
-	public float timeFiring;
 	public float stateTime;
 	public int state;
 	public int direccion;
 
-	public Laser(float x, float y, String direccion) {
+	public final float width, height;
+
+	public Laser(float x, float y, float width, float height, String direccion) {
 		position = new Vector2(x, y);
 		stateTime = timeToFire = timeFiring = 0;
 		state = STATE_NORMAL;
+		this.width = width;
+		this.height = height;
+
 		if (direccion.equals("horizontal"))
 			this.direccion = DIRECCION_HORIZONTAL;
 		else if (direccion.equals("vertical"))

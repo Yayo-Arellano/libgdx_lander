@@ -27,6 +27,8 @@ public class Assets {
 	public static Animation naveFly;
 	public static Animation explosion;
 
+	public static Animation laser;
+
 	public static AtlasRegion fondo;
 
 	public static AtlasRegion gas;
@@ -107,6 +109,11 @@ public class Assets {
 		AtlasRegion newExpl18 = atlas.findRegion("newExplosion18");
 		AtlasRegion newExpl19 = atlas.findRegion("newExplosion19");
 		explosion = new Animation(0.05f, newExpl1, newExpl2, newExpl3, newExpl4, newExpl5, newExpl6, newExpl7, newExpl8, newExpl9, newExpl10, newExpl11, newExpl12, newExpl13, newExpl14, newExpl15, newExpl16, newExpl17, newExpl18, newExpl19);
+
+		AtlasRegion laser1 = atlas.findRegion("laser1");
+		AtlasRegion laser2 = atlas.findRegion("laser2");
+		AtlasRegion laser3 = atlas.findRegion("laser3");
+		laser = new Animation(0.1f, laser1, laser2, laser3);
 
 		gas = atlas.findRegion("gas");
 		estrella = atlas.findRegion("estrella");

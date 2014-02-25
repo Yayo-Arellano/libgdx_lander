@@ -96,6 +96,10 @@ public class WorldGame {
 					arrBombas.removeValue(obj, true);
 				}
 			}
+			else if (body.getUserData() instanceof Laser) {
+				Laser obj = (Laser) body.getUserData();
+				updateLaser(delta, body);
+			}
 		}
 
 		if (oNave.gas <= 0 && state == STATE_RUNNING) {
@@ -113,6 +117,13 @@ public class WorldGame {
 		}
 
 		obj.update(delta, body, accelX, accelY);
+
+		if (oNave.willGetHurtByLaser) {
+			oNave.getHurtByLaser(50);
+			Vector2 blastDirection = body.getWorldCenter().sub(body.getWorldCenter());
+			blastDirection.nor();
+			body.applyLinearImpulse(blastDirection.scl(2f), body.getWorldCenter(), true);
+		}
 	}
 
 	private void updateBomba(float delta, Body body) {
@@ -123,6 +134,18 @@ public class WorldGame {
 			body.setLinearVelocity(obj.velocidad);
 		else
 			body.setLinearVelocity(0, 0);
+
+	}
+
+	private void updateLaser(float delta, Body body) {
+		Laser obj = (Laser) body.getUserData();
+		obj.update(delta, body);
+
+		if (oNave.isTouchingLaser) {
+			if (obj.state == Laser.STATE_FIRE) {
+				oNave.willGetHurtByLaser = true;
+			}
+		}
 
 	}
 

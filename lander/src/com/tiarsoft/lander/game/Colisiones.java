@@ -11,6 +11,7 @@ import com.badlogic.gdx.physics.box2d.Manifold;
 import com.tiarsoft.lander.game.objetos.Bomba;
 import com.tiarsoft.lander.game.objetos.Estrella;
 import com.tiarsoft.lander.game.objetos.Gas;
+import com.tiarsoft.lander.game.objetos.Laser;
 import com.tiarsoft.lander.game.objetos.Nave;
 import com.tiarsoft.lander.game.objetos.Plataforma;
 
@@ -74,6 +75,10 @@ public class Colisiones implements ContactListener {
 			}
 			return;
 		}
+		else if (oOtraCosa instanceof Laser) {
+			oNave.entroAreaLaser();
+			return;
+		}
 
 		Vector2 vel = bodyNave.getLinearVelocity().sub(bodyOtraCosa.getLinearVelocity());
 		float velocidadResultante = (float) Math.sqrt(vel.x * vel.x + vel.y * vel.y);
@@ -106,6 +111,29 @@ public class Colisiones implements ContactListener {
 
 	@Override
 	public void endContact(Contact contact) {
+		Fixture a = contact.getFixtureA();
+		Fixture b = contact.getFixtureB();
+
+		if (a != null && a.getBody().getUserData() instanceof Nave)
+			endContactNaveOtraCosa(contact.getFixtureA(), contact.getFixtureB());
+		else if (b != null && b.getBody().getUserData() instanceof Nave)
+			endContactNaveOtraCosa(contact.getFixtureB(), contact.getFixtureA());
+	}
+
+	private void endContactNaveOtraCosa(Fixture nave, Fixture otraCosa) {
+		if (nave == null || otraCosa == null)
+			return;
+
+		Body bodyNave = nave.getBody();
+		Nave oNave = (Nave) bodyNave.getUserData();
+
+		Body bodyOtraCosa = otraCosa.getBody();
+		Object oOtraCosa = bodyOtraCosa.getUserData();
+
+		if (oOtraCosa instanceof Laser) {
+			oNave.salioAreaLaser();
+			return;
+		}
 
 	}
 

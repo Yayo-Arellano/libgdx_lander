@@ -294,14 +294,14 @@ public class TiledMapManagerBox2d {
 		float x = (rectangle.x + rectangle.width * 0.5f) * m_units;
 		float y = (rectangle.y + rectangle.height * 0.5f) * m_units;
 
-		Laser obj = new Laser(x, y, object.getProperties().get("direccion").toString());
+		Laser obj = new Laser(x, y, rectangle.getWidth() * m_units, rectangle.height * m_units, object.getProperties().get("direccion").toString());
 		BodyDef bd = new BodyDef();
 		bd.position.y = obj.position.y;
 		bd.position.x = obj.position.x;
 		bd.type = BodyType.StaticBody;
 
 		PolygonShape pies = new PolygonShape();
-		pies.setAsBox(.05f, .05f);
+		pies.setAsBox(rectangle.getWidth() * 0.5f * m_units, rectangle.height * 0.5f * m_units);
 
 		FixtureDef fixture = new FixtureDef();
 		fixture.shape = pies;

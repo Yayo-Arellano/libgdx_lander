@@ -38,13 +38,15 @@ public class Nave {
 	public float vida;
 
 	public boolean isFlying;
+	public boolean isTouchingLaser;
+	public boolean willGetHurtByLaser;
 
 	public Nave(float x, float y) {
 		position = new Vector2(x, y);
 		state = STATE_NORMAL;
 		gas = GAS_INICIAL;
 		vida = VIDA_INICIAL;
-		isFlying = false;
+		isFlying = isTouchingLaser = false;
 	}
 
 	public void update(float delta, Body body, float accelX, float accelY) {
@@ -115,5 +117,18 @@ public class Nave {
 				stateTime = 0;
 			}
 		}
+	}
+
+	public void entroAreaLaser() {
+		isTouchingLaser = true;
+	}
+
+	public void salioAreaLaser() {
+		isTouchingLaser = false;
+	}
+
+	public void getHurtByLaser(float daño) {
+		willGetHurtByLaser = false;
+		colision(daño);
 	}
 }
