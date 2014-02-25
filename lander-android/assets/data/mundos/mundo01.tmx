@@ -9,12 +9,12 @@
  </tileset>
  <layer name="1" width="30" height="40">
   <data encoding="base64" compression="zlib">
-   eJzNV10PwyAINPt8duu2//9PZ5OSmEblDpjdAzFtqeV6cEhOKeWD7FnsXexjXLPBf7V7sZtjXfc4FTsP/Orn8l0rzjr+h/Lf6ucIXg2HxK+9fyl23a4RvBoOjV95fyn22q5HeFtx9nCP8LL8tuLs4Ubyucdvq74i+O35a+bld7T3L+t39N0Z9avplcSN8Cr+6x5I3tf+e7wSNxq/1COS97W/Vr9R+tzKZ6tORfKLrnv9sdSvJY/3+mPpv2jf9OhVS5/Rvuk5b6D9F+1H2n22/6L9SLvP9l8UD6NTzPlKw8PoFHO+YvJ0Rv1adI3VK1aPovCyehSBV+oNxcPMR0h/nYW3rk92/onov0vi558Z/Fp0PIJfi45H1m8Uv57+yvDrnfeseuWd9/5Nn1v/kdG0aPsCOrJDZA==
+   eJzNV10PgzAIbPb57Oa2//9PVxNJiGnLHTDnAzEqtpzAXZlKKdOf7FntXe3jvE4O/8Xu1W6B67LGqdp54Kffy75enDr+h/Hf9HsEr4VD4re+v1S7rvcIXguHlV/5fq72Wu9HeFtx9nCP8LL5bcXZw43Ucy+/rf7KyG/P37Jofkdr/7J/R/vu0b8WX0ncSF7Ff1kDqXvtv8UrcaPxSz8ida/9rf7N4udWPXt5KjO/6HXLP57+9dTxln88+ovqZoSvWvyM6mbkvIHqL6pH1nNWf1E9sp6z+oviYXiKOV9ZeBieYs5XTJ3u0b8eXmP5iuWjKF6t0RF9ZvHqfVE8zHx0JLy6P9n5J0N/58LPPxn1LHxq4WR4HOUrdv6xeDyzf7PyG9FXJr/Rec/LV9F572j83PqPDKdl2xdfSkNr
   </data>
  </layer>
  <layer name="2" width="30" height="40">
   <data encoding="base64" compression="zlib">
-   eJztz6ERAAAIxLBn/6UZAYOBS1xlE2BLDX3Ntx8AAABuak7AAAU=
+   eJztz7EJACEAA8A40m/kaI5q9Z2ghQjKXZdUSQLsUib5Nq/9AQBY8SVt0NXzSwD4dQKcAWc=
   </data>
  </layer>
  <objectgroup name="fisicos" width="30" height="40">
@@ -23,6 +23,9 @@
   </object>
   <object type="inicio" x="64" y="256" width="160" height="32"/>
   <object type="fin" x="768" y="288" width="160" height="32"/>
+  <object type="pared" x="288" y="960">
+   <polyline points="0,0 -64,0 -64,-96 0,-96 0,0"/>
+  </object>
  </objectgroup>
  <objectgroup name="interaccion" width="30" height="40">
   <object type="estrella" x="350" y="122"/>
@@ -39,5 +42,10 @@
    </properties>
   </object>
   <object type="gas" x="804" y="812"/>
+  <object type="laser" x="32" y="896" width="192" height="32">
+   <properties>
+    <property name="direccion" value="horizontal"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>
