@@ -19,7 +19,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
 public class Assets {
 
-	public static boolean isDebug = true;
+	public static boolean isDebug = false;
 
 	public static TextureRegionDrawable titulo;
 

@@ -8,6 +8,8 @@ public class Laser {
 	public static int DIRECCION_HORIZONTAL = 0;
 	public static int DIRECCION_VERTICAL = 1;
 
+	public static float DRAW_ANCHO = .35f;
+
 	float TIME_TO_FIRE = 5;
 	public float timeToFire;
 
@@ -29,6 +31,12 @@ public class Laser {
 		position = new Vector2(x, y);
 		stateTime = timeToFire = timeFiring = 0;
 		state = STATE_NORMAL;
+
+		if (height > width)
+			width = DRAW_ANCHO;
+		else
+			height = DRAW_ANCHO;
+
 		this.width = width;
 		this.height = height;
 
