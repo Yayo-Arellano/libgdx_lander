@@ -114,7 +114,7 @@ public class Assets {
 
 		mundos = new LinkedHashMap<Integer, String>();
 		mundos.put(0, "data/mundos/mundo01.tmx");
-		// mundos.put(1, "data/mundos/mundo02.tmx");
+		mundos.put(5, "data/mundos/mundo01.tmx");
 		// mundos.put(2, "data/mundos/mundo03.tmx");
 		// mundos.put(3, "data/mundos/mundo04.tmx");
 

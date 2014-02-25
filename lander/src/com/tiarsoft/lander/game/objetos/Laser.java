@@ -5,10 +5,8 @@ import com.badlogic.gdx.physics.box2d.Body;
 
 public class Laser {
 
-	public static int DIRECCION_UP = 0;
-	public static int DIRECCION_DOWN = 1;
-	public static int DIRECCION_LEFT = 2;
-	public static int DIRECCION_RIGHT = 3;
+	public static int DIRECCION_HORIZONTAL = 0;
+	public static int DIRECCION_VERTICAL = 1;
 
 	float TIME_TO_FIRE = 5;
 	float TIME_FIRING = 3;
@@ -28,14 +26,10 @@ public class Laser {
 		position = new Vector2(x, y);
 		stateTime = timeToFire = timeFiring = 0;
 		state = STATE_NORMAL;
-		if (direccion.equals("arriba"))
-			this.direccion = DIRECCION_UP;
-		else if (direccion.equals("abajo"))
-			this.direccion = DIRECCION_DOWN;
-		else if (direccion.equals("izquierda"))
-			this.direccion = DIRECCION_LEFT;
-		else if (direccion.equals("derecha"))
-			this.direccion = DIRECCION_RIGHT;
+		if (direccion.equals("horizontal"))
+			this.direccion = DIRECCION_HORIZONTAL;
+		else if (direccion.equals("vertical"))
+			this.direccion = DIRECCION_VERTICAL;
 
 	}
 
