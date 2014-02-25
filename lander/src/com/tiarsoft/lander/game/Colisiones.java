@@ -67,7 +67,7 @@ public class Colisiones implements ContactListener {
 			Bomba obj = (Bomba) oOtraCosa;
 			if (obj.state == Bomba.STATE_NORMAL) {
 				obj.state = Bomba.STATE_TOMADA;
-				oNave.colision(5);
+				oNave.colision(15);
 				Vector2 blastDirection = bodyNave.getWorldCenter().sub(bodyOtraCosa.getWorldCenter());
 				blastDirection.nor();
 				bodyNave.applyLinearImpulse(blastDirection.scl(2f), bodyNave.getWorldCenter(), true);

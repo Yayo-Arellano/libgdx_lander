@@ -3,9 +3,14 @@ package com.tiarsoft.lander.game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.Input.Peripheral;
+import com.badlogic.gdx.scenes.scene2d.Group;
+import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.tiarsoft.lander.Assets;
 import com.tiarsoft.lander.MainLander;
-import com.tiarsoft.lander.game.objetos.Nave;
+import com.tiarsoft.lander.Settings;
+import com.tiarsoft.lander.dialogs.VentanaGameOver;
+import com.tiarsoft.lander.game.objetos.LifeBar;
+import com.tiarsoft.lander.screens.MainMenuScreen;
 import com.tiarsoft.lander.screens.Screens;
 
 public class GameScreen extends Screens {
@@ -15,18 +20,41 @@ public class GameScreen extends Screens {
 	static int STATE_PAUSED = 3;
 	static int STATE_GAME_OVER = 4;
 
-	int mundo;
+	final int level;
 	WorldGame oWorld;
 	WorldGameRenderer renderer;
 
 	float sensibilidad = 3;
 
-	public GameScreen(MainLander game, int mundo) {
+	LifeBar lifeBar;
+	LifeBar gasBar;
+	Table marcoStats;
+
+	VentanaGameOver dialogGameover;
+
+	public GameScreen(MainLander game, int level) {
 		super(game);
-		this.mundo = mundo;
-		Assets.cargarMapa(mundo);
+		this.level = level;
+		Assets.cargarMapa(level);
 		oWorld = new WorldGame();
 		renderer = new WorldGameRenderer(batcher, oWorld);
+
+		dialogGameover = new VentanaGameOver(game, oWorld);
+
+		marcoStats = new Table();
+		marcoStats.setSize(172, 98);
+		marcoStats.setBackground(Assets.marcoStats);
+		marcoStats.setPosition(0, SCREEN_HEIGHT - 99);
+
+		lifeBar = new LifeBar(oWorld.oNave.vida);
+		gasBar = new LifeBar(oWorld.oNave.gas);
+
+		marcoStats.add(lifeBar).width(90).height(25).padLeft(35).padBottom(12);
+		marcoStats.row();
+		marcoStats.add(gasBar).width(90).height(25).padLeft(35).padTop(10);
+
+		stage.addActor(marcoStats);
+
 	}
 
 	@Override
@@ -48,13 +76,13 @@ public class GameScreen extends Screens {
 
 		oWorld.update(delta, accelY, accelX);
 
-		if (Gdx.input.justTouched() && (oWorld.state == WorldGame.STATE_NEXT_LEVEL || oWorld.state == WorldGame.STATE_GAME_OVER)) {
+		lifeBar.updateActualLife(oWorld.oNave.vida);
+		gasBar.updateActualLife(oWorld.oNave.gas);
 
-			if (oWorld.state == WorldGame.STATE_NEXT_LEVEL)
-				mundo++;
-			if (mundo > Assets.mundos.size())
-				mundo = 1;
-			game.setScreen(new GameScreen(game, mundo));
+		if (Gdx.input.justTouched() && (oWorld.state == WorldGame.STATE_NEXT_LEVEL || oWorld.state == WorldGame.STATE_GAME_OVER)) {
+			dialogGameover.show(stage);
+			Settings.setStarsFromLevel(level, oWorld.estrellasTomadas);
+			// game.setScreen(new GameScreen(game, mundo));
 
 		}
 	}
@@ -64,7 +92,9 @@ public class GameScreen extends Screens {
 		renderer.render(delta);
 		oCam.update();
 		batcher.setProjectionMatrix(oCam.combined);
+
 		batcher.begin();
+
 		// Assets.font.draw(batcher, "Velocidad " + oWorld.oNave.velocidadResultante, 10, 60);
 		// Assets.font.draw(batcher, "Velocidad X " + oWorld.oNave.velocity.x, 10, 40);
 		// Assets.font.draw(batcher, "Velocidad Y " + oWorld.oNave.velocity.y, 10, 20);
@@ -75,4 +105,12 @@ public class GameScreen extends Screens {
 
 	}
 
+	@Override
+	public boolean keyDown(int keycode) {
+		if (keycode == Keys.ESCAPE || keycode == Keys.BACK) {
+			game.setScreen(new MainMenuScreen(game));
+			return true;
+		}
+		return false;
+	}
 }

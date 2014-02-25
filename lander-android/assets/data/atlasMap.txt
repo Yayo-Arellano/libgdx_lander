@@ -1,200 +1,284 @@
+
 atlasMap.png
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
-newExplosion3
+barraMarcadorRojo
   rotate: false
-  xy: 290, 407
-  size: 70, 69
-  orig: 70, 69
+  xy: 2, 2
+  size: 101, 17
+  orig: 101, 17
   offset: 0, 0
   index: -1
-estrella
+barraMarcadorVerde
   rotate: false
-  xy: 304, 2
-  size: 83, 81
-  orig: 83, 81
-  offset: 0, 0
-  index: -1
-nave2
-  rotate: false
-  xy: 304, 246
-  size: 70, 159
-  orig: 70, 159
-  offset: 0, 0
-  index: -1
-newExplosion13
-  rotate: false
-  xy: 74, 509
-  size: 70, 69
-  orig: 70, 69
-  offset: 0, 0
-  index: -1
-newExplosion17
-  rotate: false
-  xy: 218, 438
-  size: 70, 69
-  orig: 70, 69
-  offset: 0, 0
-  index: -1
-newExplosion6
-  rotate: false
-  xy: 74, 367
-  size: 70, 69
-  orig: 70, 69
-  offset: 0, 0
-  index: -1
-newExplosion2
-  rotate: false
-  xy: 74, 438
-  size: 70, 69
-  orig: 70, 69
-  offset: 0, 0
-  index: -1
-nave3
-  rotate: false
-  xy: 376, 163
-  size: 70, 159
-  orig: 70, 159
-  offset: 0, 0
-  index: -1
-newExplosion12
-  rotate: false
-  xy: 2, 528
-  size: 70, 69
-  orig: 70, 69
-  offset: 0, 0
-  index: -1
-newExplosion16
-  rotate: false
-  xy: 290, 478
-  size: 70, 69
-  orig: 70, 69
-  offset: 0, 0
-  index: -1
-newExplosion9
-  rotate: false
-  xy: 74, 296
-  size: 70, 69
-  orig: 70, 69
-  offset: 0, 0
-  index: -1
-newExplosion1
-  rotate: false
-  xy: 290, 549
-  size: 70, 69
-  orig: 70, 69
-  offset: 0, 0
-  index: -1
-newExplosion5
-  rotate: false
-  xy: 146, 367
-  size: 70, 69
-  orig: 70, 69
-  offset: 0, 0
-  index: -1
-nave4
-  rotate: false
-  xy: 304, 85
-  size: 70, 159
-  orig: 70, 159
-  offset: 0, 0
-  index: -1
-newExplosion11
-  rotate: false
-  xy: 146, 509
-  size: 70, 69
-  orig: 70, 69
-  offset: 0, 0
-  index: -1
-newExplosion15
-  rotate: false
-  xy: 362, 485
-  size: 70, 69
-  orig: 70, 69
-  offset: 0, 0
-  index: -1
-newExplosion19
-  rotate: false
-  xy: 2, 457
-  size: 70, 69
-  orig: 70, 69
-  offset: 0, 0
-  index: -1
-gas
-  rotate: false
-  xy: 461, 2
-  size: 41, 45
-  orig: 41, 45
-  offset: 0, 0
-  index: -1
-newExplosion8
-  rotate: false
-  xy: 146, 296
-  size: 70, 69
-  orig: 70, 69
+  xy: 484, 208
+  size: 101, 17
+  orig: 101, 17
   offset: 0, 0
   index: -1
 bomba
   rotate: false
-  xy: 2, 2
+  xy: 484, 474
   size: 300, 292
   orig: 300, 292
   offset: 0, 0
   index: -1
-newExplosion4
+btLevelsDown
   rotate: false
-  xy: 218, 367
-  size: 70, 69
-  orig: 70, 69
+  xy: 766, 394
+  size: 24, 78
+  split: 12, 11, 39, 38
+  orig: 24, 78
   offset: 0, 0
   index: -1
-nave5
+btMenu
   rotate: false
-  xy: 389, 2
+  xy: 2, 107
+  size: 280, 84
+  orig: 280, 84
+  offset: 0, 0
+  index: -1
+btMenuDown
+  rotate: false
+  xy: 484, 388
+  size: 280, 84
+  orig: 280, 84
+  offset: 0, 0
+  index: -1
+btnLevels
+  rotate: false
+  xy: 616, 57
+  size: 24, 78
+  split: 11, 9, 37, 39
+  pad: 9, 9, 9, 9
+  orig: 24, 78
+  offset: 0, 0
+  index: -1
+dim
+  rotate: false
+  xy: 184, 29
+  size: 5, 5
+  split: 0, 0, 0, 0
+  orig: 5, 5
+  offset: 0, 0
+  index: -1
+estrella
+  rotate: false
+  xy: 284, 110
+  size: 83, 81
+  orig: 83, 81
+  offset: 0, 0
+  index: -1
+fondo
+  rotate: false
+  xy: 2, 193
+  size: 480, 800
+  orig: 480, 800
+  offset: 0, 0
+  index: -1
+gas
+  rotate: false
+  xy: 657, 180
+  size: 41, 45
+  orig: 41, 45
+  offset: 0, 0
+  index: -1
+marcador
+  rotate: false
+  xy: 2, 21
+  size: 180, 84
+  orig: 180, 84
+  offset: 0, 0
+  index: -1
+nave
+  rotate: false
+  xy: 933, 834
   size: 70, 159
   orig: 70, 159
   offset: 0, 0
   index: -1
 nave1
   rotate: false
-  xy: 376, 324
+  xy: 786, 607
   size: 70, 159
   orig: 70, 159
   offset: 0, 0
   index: -1
+nave2
+  rotate: false
+  xy: 484, 227
+  size: 70, 159
+  orig: 70, 159
+  offset: 0, 0
+  index: -1
+nave3
+  rotate: false
+  xy: 858, 607
+  size: 70, 159
+  orig: 70, 159
+  offset: 0, 0
+  index: -1
+nave4
+  rotate: false
+  xy: 556, 227
+  size: 70, 159
+  orig: 70, 159
+  offset: 0, 0
+  index: -1
+nave5
+  rotate: false
+  xy: 628, 227
+  size: 70, 159
+  orig: 70, 159
+  offset: 0, 0
+  index: -1
+newExplosion1
+  rotate: false
+  xy: 184, 36
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
 newExplosion10
   rotate: false
-  xy: 218, 509
+  xy: 369, 122
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+newExplosion11
+  rotate: false
+  xy: 862, 536
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+newExplosion12
+  rotate: false
+  xy: 933, 763
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+newExplosion13
+  rotate: false
+  xy: 930, 692
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion14
   rotate: false
-  xy: 434, 485
+  xy: 930, 621
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+newExplosion15
+  rotate: false
+  xy: 700, 317
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+newExplosion16
+  rotate: false
+  xy: 700, 246
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+newExplosion17
+  rotate: false
+  xy: 934, 550
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion18
   rotate: false
-  xy: 146, 438
+  xy: 441, 122
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+newExplosion19
+  rotate: false
+  xy: 513, 137
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+newExplosion2
+  rotate: false
+  xy: 862, 465
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+newExplosion3
+  rotate: false
+  xy: 934, 479
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+newExplosion4
+  rotate: false
+  xy: 256, 36
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+newExplosion5
+  rotate: false
+  xy: 328, 39
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+newExplosion6
+  rotate: false
+  xy: 400, 51
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
 newExplosion7
   rotate: false
-  xy: 218, 296
+  xy: 472, 51
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
   index: -1
-nave
+newExplosion8
   rotate: false
-  xy: 2, 296
-  size: 70, 159
-  orig: 70, 159
+  xy: 544, 66
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+newExplosion9
+  rotate: false
+  xy: 585, 137
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+recuadroGameOver
+  rotate: false
+  xy: 786, 498
+  size: 74, 107
+  split: 35, 38, 52, 54
+  pad: 2, 2, 41, 43
+  orig: 74, 107
+  offset: 0, 0
+  index: -1
+titulo
+  rotate: false
+  xy: 484, 768
+  size: 447, 225
+  orig: 447, 225
   offset: 0, 0
   index: -1

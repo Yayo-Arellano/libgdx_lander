@@ -84,7 +84,7 @@ public class WorldGameRenderer {
 		batcher.end();
 
 		if (Assets.isDebug) {
-			renderBox.render(oWorld.oWorldBox, oCam.combined);
+			// renderBox.render(oWorld.oWorldBox, oCam.combined);
 		}
 	}
 
@@ -99,8 +99,11 @@ public class WorldGameRenderer {
 		TextureRegion keyframe;
 
 		if (obj.state == Nave.STATE_NORMAL) {
-			keyframe = Assets.nave;
-			batcher.draw(keyframe, obj.position.x - .35f, obj.position.y - 1f, .35f, .795f, .7f, 1.59f, 1, 1, (float) Math.toDegrees(obj.angleRad));
+			if (obj.isFlying)
+				keyframe = Assets.naveFly.getKeyFrame(obj.stateTime, true);
+			else
+				keyframe = Assets.nave;
+			batcher.draw(keyframe, obj.position.x - Nave.DRAW_WIDTH / 2f, obj.position.y - 1.025f, Nave.DRAW_WIDTH / 2f, 1.025f, Nave.DRAW_WIDTH, Nave.DRAW_HEIGHT, 1, 1, (float) Math.toDegrees(obj.angleRad));
 
 		}
 		else {

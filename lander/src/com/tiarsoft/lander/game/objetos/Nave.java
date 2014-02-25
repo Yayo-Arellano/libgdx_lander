@@ -3,13 +3,15 @@ package com.tiarsoft.lander.game.objetos;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
+import com.sun.accessibility.internal.resources.accessibility;
 
 public class Nave {
 
-	final public static float DRAW_WIDTH = .68f;
-	final public static float DRAW_HEIGHT = 1.2f;
+	final public static float DRAW_WIDTH = .7f;
+	final public static float DRAW_HEIGHT = 1.59f;
 	final public static float WIDTH = .5f;
 	final public static float HEIGHT = 1.0f;
+
 	final public static float DENSIDAD_INICIAL = .7f;
 	final private int MAX_ANGLE_DEGREES = 35;
 
@@ -17,8 +19,9 @@ public class Nave {
 	final public static float MAX_SPEED_X = 1f;
 	final public static float VELOCIDAD_FLY = 2.f;
 	final public static float VELOCIDAD_MOVE = 1.5f;
+
 	final public static float GAS_INICIAL = 100;
-	final public static float VIDA_INICIAL = 1000;
+	final public static float VIDA_INICIAL = 20;
 
 	public static int STATE_NORMAL = 0;
 	public static int STATE_EXPLODE = 1;
@@ -34,20 +37,26 @@ public class Nave {
 	public float gas;
 	public float vida;
 
+	public boolean isFlying;
+
 	public Nave(float x, float y) {
 		position = new Vector2(x, y);
 		state = STATE_NORMAL;
 		gas = GAS_INICIAL;
 		vida = VIDA_INICIAL;
+		isFlying = false;
 	}
 
 	public void update(float delta, Body body, float accelX, float accelY) {
-		accelX = 0;
 
 		if (state == STATE_NORMAL) {
 
-			if (gas < 0)
+			if (gas < 0 || accelY == 0) {
 				accelX = accelY = 0;
+				isFlying = false;
+			}
+			else
+				isFlying = true;
 
 			// Le meto la velocidad
 			body.applyForceToCenter(Nave.VELOCIDAD_MOVE * accelX, Nave.VELOCIDAD_FLY * accelY, true);

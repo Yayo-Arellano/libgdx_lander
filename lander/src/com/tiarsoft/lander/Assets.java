@@ -3,16 +3,26 @@ package com.tiarsoft.lander;
 import java.util.LinkedHashMap;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.NinePatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
+import com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle;
+import com.badlogic.gdx.scenes.scene2d.ui.TextButton.TextButtonStyle;
+import com.badlogic.gdx.scenes.scene2d.ui.Window.WindowStyle;
+import com.badlogic.gdx.scenes.scene2d.utils.NinePatchDrawable;
+import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
 public class Assets {
 
 	public static boolean isDebug = true;
+
+	public static TextureRegionDrawable titulo;
+
 	public static AtlasRegion nave;
 	public static Animation naveFly;
 	public static Animation explosion;
@@ -23,13 +33,44 @@ public class Assets {
 	public static AtlasRegion estrella;
 	public static AtlasRegion bomba;
 
+	public static TextureRegionDrawable marcoStats;
+	public static AtlasRegion barraMarcadorRojo;
+	public static AtlasRegion barraMarcadorVerde;
+
 	public static BitmapFont font;
 	public static LinkedHashMap<Integer, String> mundos;
 
 	public static TiledMap map;
 
+	public static TextButtonStyle styleTextButtonMenu;
+	public static TextButtonStyle styleTextButtonLevels;
+	public static WindowStyle styleDialogGameOver;
+
+	static private void loadSceneStyles(TextureAtlas atlas) {
+		TextureRegionDrawable botonMenu = new TextureRegionDrawable(atlas.findRegion("btMenu"));
+		TextureRegionDrawable botonMenuDown = new TextureRegionDrawable(atlas.findRegion("btMenuDown"));
+		styleTextButtonMenu = new TextButtonStyle(botonMenu, botonMenuDown, null, font);
+		styleTextButtonMenu.fontColor = Color.GREEN;
+
+		NinePatchDrawable recuadroGame = new NinePatchDrawable(atlas.createPatch("recuadroGameOver"));
+		AtlasRegion dialogDim = atlas.findRegion("dim");
+		styleDialogGameOver = new WindowStyle(font, Color.GREEN, recuadroGame);
+		styleDialogGameOver.stageBackground = new NinePatchDrawable(new NinePatch(dialogDim));
+
+		NinePatchDrawable btLevels = new NinePatchDrawable(atlas.createPatch("btnLevels"));
+		NinePatchDrawable btLevelsDown = new NinePatchDrawable(atlas.createPatch("btLevelsDown"));
+		styleTextButtonLevels = new TextButtonStyle(btLevels, btLevelsDown, null, font);
+		styleTextButtonLevels.fontColor = Color.GREEN;
+
+	}
+
 	public static void cargar() {
 		TextureAtlas atlas = new TextureAtlas(Gdx.files.internal("data/atlasMap.txt"));
+
+		font = new BitmapFont();
+		loadSceneStyles(atlas);
+
+		titulo = new TextureRegionDrawable(atlas.findRegion("titulo"));
 
 		nave = atlas.findRegion("nave");
 
@@ -39,6 +80,10 @@ public class Assets {
 		AtlasRegion an4 = atlas.findRegion("nave4");
 		AtlasRegion an5 = atlas.findRegion("nave5");
 		naveFly = new Animation(.15f, an1, an2, an3, an4, an5);
+
+		barraMarcadorRojo = atlas.findRegion("barraMarcadorRojo");
+		barraMarcadorVerde = atlas.findRegion("barraMarcadorVerde");
+		marcoStats = new TextureRegionDrawable(atlas.findRegion("marcador"));
 
 		fondo = atlas.findRegion("fondo");
 
@@ -67,13 +112,13 @@ public class Assets {
 		estrella = atlas.findRegion("estrella");
 		bomba = atlas.findRegion("bomba");
 
-		font = new BitmapFont();
-
 		mundos = new LinkedHashMap<Integer, String>();
 		mundos.put(0, "data/mundos/mundo01.tmx");
-		mundos.put(1, "data/mundos/mundo02.tmx");
-		mundos.put(2, "data/mundos/mundo03.tmx");
-		mundos.put(3, "data/mundos/mundo04.tmx");
+		// mundos.put(1, "data/mundos/mundo02.tmx");
+		// mundos.put(2, "data/mundos/mundo03.tmx");
+		// mundos.put(3, "data/mundos/mundo04.tmx");
+
+		Settings.load(10);
 
 	}
 
@@ -83,9 +128,9 @@ public class Assets {
 			map = null;
 		}
 		if (isDebug)
-			map = new TmxMapLoader().load(mundos.get(numeroMundo - 1));
+			map = new TmxMapLoader().load(mundos.get(numeroMundo));
 		else
 			// map=new AtlasTmxMapLoader().load(mundos[numeroMundo - 1]);
-			map = new TmxMapLoader().load(mundos.get(numeroMundo - 1));
+			map = new TmxMapLoader().load(mundos.get(numeroMundo));
 	}
 }
