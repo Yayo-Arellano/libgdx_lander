@@ -14,7 +14,7 @@
  </layer>
  <layer name="2" width="30" height="40">
   <data encoding="base64" compression="zlib">
-   eJztz7EJACEAA8A40m/kaI5q9Z2ghQjKXZdUSQLsUib5Nq/9AQBY8SVt0NXzSwD4dQKcAWc=
+   eJzt0sENACAIQ9E6khsxmqM5igxg1IMhgfx3g15KggTgl3aZs6l2DwAAwIsujc3O4pugEv+hecgsrgmQ0wJEUwMJ
   </data>
  </layer>
  <objectgroup name="fisicos" width="30" height="40">
@@ -43,6 +43,11 @@
   </object>
   <object type="gas" x="804" y="812"/>
   <object type="laser" x="32" y="896" width="192" height="32">
+   <properties>
+    <property name="direccion" value="horizontal"/>
+   </properties>
+  </object>
+  <object type="laser" x="32" y="1056" width="256" height="32">
    <properties>
     <property name="direccion" value="horizontal"/>
    </properties>
