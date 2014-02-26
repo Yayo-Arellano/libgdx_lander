@@ -18,6 +18,8 @@ import com.tiarsoft.lander.screens.Screens;
 
 public class WorldGame {
 
+	public float velocidadImpacto;// debug
+
 	final float WIDTH = Screens.WORLD_SCREEN_WIDTH;
 	final float HEIGHT = Screens.WORLD_SCREEN_HEIGHT;
 
@@ -127,8 +129,10 @@ public class WorldGame {
 			oNave.getHurtByLaser(50);
 			Vector2 blastDirection = body.getWorldCenter().sub(body.getWorldCenter());
 			blastDirection.nor();
-			body.applyLinearImpulse(blastDirection.scl(2f), body.getWorldCenter(), true);
+			body.applyLinearImpulse(blastDirection.scl(.1f), body.getWorldCenter(), true);
 		}
+
+		velocidadImpacto = Math.abs(body.getLinearVelocity().x) + Math.abs(body.getLinearVelocity().y);
 	}
 
 	private void updateBomba(float delta, Body body) {

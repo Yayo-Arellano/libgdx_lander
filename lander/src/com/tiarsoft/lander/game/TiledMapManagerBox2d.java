@@ -178,6 +178,7 @@ public class TiledMapManagerBox2d {
 
 		float x = (rectangle.x + rectangle.width * 0.5f) * m_units;
 		float y = (rectangle.y + rectangle.height * 0.5f) * m_units;
+
 		float height = (rectangle.height * m_units * 0.5f);
 		float width = (rectangle.width * m_units * 0.5f);
 
@@ -294,7 +295,12 @@ public class TiledMapManagerBox2d {
 		float x = (rectangle.x + rectangle.width * 0.5f) * m_units;
 		float y = (rectangle.y + rectangle.height * 0.5f) * m_units;
 
-		Laser obj = new Laser(x, y, rectangle.getWidth() * m_units, rectangle.height * m_units, object.getProperties().get("direccion").toString());
+		String direccion = object.getProperties().get("direccion").toString();
+		float timeON = 3;// Float.parseFloat(object.getProperties().get("tiempoPrendido").toString());
+		float timeOFF = 1.5f;// Float.parseFloat(object.getProperties().get("tiempoApagado").toString());
+		float timeOffActual = 1.5f;// Float.parseFloat(object.getProperties().get("tiempoApagadoActual").toString());
+
+		Laser obj = new Laser(x, y, rectangle.getWidth() * m_units, rectangle.height * m_units, timeON, timeOFF, timeOffActual, direccion);
 		BodyDef bd = new BodyDef();
 		bd.position.y = obj.position.y;
 		bd.position.x = obj.position.x;

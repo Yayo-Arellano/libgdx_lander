@@ -8,6 +8,8 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
+import com.badlogic.gdx.scenes.scene2d.actions.RunnableAction;
+import com.badlogic.gdx.scenes.scene2d.actions.SizeToAction;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
@@ -35,12 +37,14 @@ public class VentanaPaused extends Window {
 	Image[] estrellas;
 
 	ImageButton btMenu, btResume, btTryAgain;
+	final int levelActual;
 
 	public VentanaPaused(final MainLander game, final WorldGame oWorld, final int levelActual) {
 		super("", Assets.styleDialogGameOver);
 		this.game = game;
 		this.oWorld = oWorld;
 		this.setMovable(false);
+		this.levelActual = levelActual;
 
 		Label paused = new Label("Paused", Assets.styleLabelMediana);
 		lblLevelActual = new Label("Level " + (levelActual + 1), Assets.styleLabelMediana);
@@ -51,7 +55,7 @@ public class VentanaPaused extends Window {
 		if (oWorld.estrellasTomadas >= 0) {
 			for (int star = 0; star < 3; star++) {
 				// Todas son grises la primera vez
-				estrellas[star] = new Image(Assets.bomba);
+				estrellas[star] = new Image(Assets.starOff);
 				starTable.add(estrellas[star]).width(50).height(50);
 			}
 		}
@@ -60,7 +64,8 @@ public class VentanaPaused extends Window {
 		btMenu.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				game.setScreen(new LevelScreen(game));
+				hide(LevelScreen.class);
+
 			}
 		});
 
@@ -68,7 +73,7 @@ public class VentanaPaused extends Window {
 		btResume.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				hide();
+				hide(null);
 				resumeGame();
 			}
 		});
@@ -77,7 +82,8 @@ public class VentanaPaused extends Window {
 		btTryAgain.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				game.setScreen(new GameScreen(game, levelActual));
+				hide(GameScreen.class);
+
 			}
 		});
 
@@ -108,12 +114,19 @@ public class VentanaPaused extends Window {
 		 * Se reemplazan las estrellas grises por las tomadas =)
 		 */
 		for (int i = 0; i < oWorld.estrellasTomadas; i++) {
-			estrellas[i].setDrawable(new TextureRegionDrawable(Assets.estrella));
+			estrellas[i].setDrawable(new TextureRegionDrawable(Assets.star));
 		}
 
 		this.pack();
-		setWidth(Screens.SCREEN_WIDTH);
-		this.setPosition(Screens.SCREEN_WIDTH / 2f - this.getWidth() / 2f, Screens.SCREEN_HEIGHT / 2f - this.getHeight() / 2f);
+
+		setSize(Screens.SCREEN_WIDTH, 0);
+
+		SizeToAction sizeAction = Actions.action(SizeToAction.class);
+		sizeAction.setSize(Screens.SCREEN_WIDTH, 500);// ALTURA FINAL
+		sizeAction.setDuration(.25f);
+
+		setPosition(Screens.SCREEN_WIDTH / 2f - getWidth() / 2f, Screens.SCREEN_HEIGHT / 2f - 500 / 2f);// 500 ALTURA FINAL
+		addAction(sizeAction);
 
 		stage.addActor(this);
 		if (fadeDuration > 0) {
@@ -124,15 +137,32 @@ public class VentanaPaused extends Window {
 	}
 
 	public void resumeGame() {
-		hide();
+		hide(null);
 		if (game.getScreen() instanceof GameScreen)
 			GameScreen.state = GameScreen.STATE_RUNNING;
 	}
 
-	public void hide() {
+	public void hide(final Class<?> newScreen) {
 		if (fadeDuration > 0) {
 			addCaptureListener(ignoreTouchDown);
-			addAction(sequence(fadeOut(fadeDuration, Interpolation.fade), Actions.removeListener(ignoreTouchDown, true), Actions.removeActor()));
+
+			SizeToAction sizeAction = Actions.action(SizeToAction.class);
+			sizeAction.setSize(Screens.SCREEN_WIDTH, 0);// ALTURA FINAL
+			sizeAction.setDuration(.25f);
+
+			RunnableAction run = Actions.run(new Runnable() {
+				@Override
+				public void run() {
+					if (newScreen == LevelScreen.class) {
+						game.setScreen(new LevelScreen(game));
+					}
+					else if (newScreen == GameScreen.class) {
+						game.setScreen(new GameScreen(game, levelActual));
+					}
+				}
+			});
+
+			addAction(sequence(Actions.parallel(fadeOut(fadeDuration, Interpolation.fade), sizeAction), Actions.removeListener(ignoreTouchDown, true), run, Actions.removeActor()));
 		}
 		else
 			remove();

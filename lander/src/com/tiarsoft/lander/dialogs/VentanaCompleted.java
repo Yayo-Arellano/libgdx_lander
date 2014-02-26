@@ -27,7 +27,7 @@ import com.tiarsoft.lander.screens.Screens;
 /**
  * Use la clase Window porque le tenia que poner la tachita
  */
-public class VentanaGameOver extends Window {
+public class VentanaCompleted extends Window {
 	static public float fadeDuration = 0.4f;
 
 	MainLander game;
@@ -39,7 +39,7 @@ public class VentanaGameOver extends Window {
 	ImageButton btMenu, btTryAgain;
 	final int levelActual;
 
-	public VentanaGameOver(final MainLander game, final WorldGame oWorld, final int levelActual) {
+	public VentanaCompleted(final MainLander game, final WorldGame oWorld, final int levelActual) {
 		super("", Assets.styleDialogGameOver);
 		this.game = game;
 		this.oWorld = oWorld;

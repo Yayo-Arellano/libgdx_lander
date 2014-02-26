@@ -135,6 +135,7 @@ public class GameScreen extends Screens {
 		Assets.font.draw(batcher, "Estrellas  " + oWorld.estrellasTomadas, 300, 60);
 		Assets.font.draw(batcher, "Vida  " + oWorld.oNave.vida, 300, 40);
 		Assets.font.draw(batcher, "Gas  " + oWorld.oNave.gas, 300, 20);
+		Assets.font.draw(batcher, "Velocidad " + oWorld.velocidadImpacto, 300, 80);
 		batcher.end();
 
 	}

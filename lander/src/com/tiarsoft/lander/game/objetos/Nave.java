@@ -27,6 +27,7 @@ public class Nave {
 	public static int STATE_NORMAL = 0;
 	public static int STATE_EXPLODE = 1;
 	public static float EXPLODE_TIME = .05f * 20;
+	public static float TIME_HURT_BY_BOMB = .05f;// Debe ser un numero pequeno
 
 	public Vector2 position;
 	public Vector2 velocity;
@@ -39,6 +40,7 @@ public class Nave {
 	public float vida;
 
 	public boolean isFlying;
+	public boolean isHurtByBomb;
 	public boolean isTouchingLaser;
 	public boolean willGetHurtByLaser;
 
@@ -68,22 +70,28 @@ public class Nave {
 			body.applyForceToCenter(body.getLinearVelocity().x * -.015f, 0, true);
 
 			velocity = body.getLinearVelocity();
-			if (velocity.y > Nave.MAX_SPEED_Y) {
-				velocity.y = Nave.MAX_SPEED_Y;
-				body.setLinearVelocity(velocity);
 
-			}
-			else if (velocity.y < MIN_SPEED_Y) {
-				velocity.y = MIN_SPEED_Y;
-				body.setLinearVelocity(velocity);
-			}
-			if (velocity.x > Nave.MAX_SPEED_X) {
-				velocity.x = Nave.MAX_SPEED_X;
-				body.setLinearVelocity(velocity);
-			}
-			else if (velocity.x < -Nave.MAX_SPEED_X) {
-				velocity.x = -Nave.MAX_SPEED_X;
-				body.setLinearVelocity(velocity);
+			if (isHurtByBomb && stateTime > TIME_HURT_BY_BOMB)
+				isHurtByBomb = false;
+
+			if (!isHurtByBomb) {
+				if (velocity.y > Nave.MAX_SPEED_Y) {
+					velocity.y = Nave.MAX_SPEED_Y;
+					body.setLinearVelocity(velocity);
+
+				}
+				else if (velocity.y < MIN_SPEED_Y) {
+					velocity.y = MIN_SPEED_Y;
+					body.setLinearVelocity(velocity);
+				}
+				if (velocity.x > Nave.MAX_SPEED_X) {
+					velocity.x = Nave.MAX_SPEED_X;
+					body.setLinearVelocity(velocity);
+				}
+				else if (velocity.x < -Nave.MAX_SPEED_X) {
+					velocity.x = -Nave.MAX_SPEED_X;
+					body.setLinearVelocity(velocity);
+				}
 			}
 
 			angleRad = MathUtils.atan2(-accelX, accelY);
@@ -130,6 +138,14 @@ public class Nave {
 
 	public void getHurtByLaser(float daño) {
 		willGetHurtByLaser = false;
+		isHurtByBomb = true;
+		stateTime = 0;
+		colision(daño);
+	}
+
+	public void getHurtByBomb(float daño) {
+		isHurtByBomb = true;
+		stateTime = 0;
 		colision(daño);
 	}
 }

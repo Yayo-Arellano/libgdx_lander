@@ -126,7 +126,7 @@ public class WorldGameRenderer {
 		Iterator<Estrella> i = oWorld.arrEstrellas.iterator();
 		while (i.hasNext()) {
 			Estrella obj = i.next();
-			batcher.draw(Assets.estrella, obj.position.x - .25f, obj.position.y - .25f, .5f, .5f);
+			batcher.draw(Assets.star, obj.position.x - .25f, obj.position.y - .25f, .5f, .5f);
 
 		}
 	}

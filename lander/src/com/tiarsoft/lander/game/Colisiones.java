@@ -68,10 +68,10 @@ public class Colisiones implements ContactListener {
 			Bomba obj = (Bomba) oOtraCosa;
 			if (obj.state == Bomba.STATE_NORMAL) {
 				obj.state = Bomba.STATE_TOMADA;
-				oNave.colision(15);
+				oNave.getHurtByBomb(15);
 				Vector2 blastDirection = bodyNave.getWorldCenter().sub(bodyOtraCosa.getWorldCenter());
 				blastDirection.nor();
-				bodyNave.applyLinearImpulse(blastDirection.scl(2f), bodyNave.getWorldCenter(), true);
+				bodyNave.applyLinearImpulse(blastDirection.scl(.1f), bodyNave.getWorldCenter(), true);
 			}
 			return;
 		}
@@ -80,14 +80,11 @@ public class Colisiones implements ContactListener {
 			return;
 		}
 
-		Vector2 vel = bodyNave.getLinearVelocity().sub(bodyOtraCosa.getLinearVelocity());
-		float velocidadResultante = (float) Math.sqrt(vel.x * vel.x + vel.y * vel.y);
-		if (velocidadResultante > 1 || velocidadResultante < -1) {
-			oNave.colision(velocidadResultante);
-			Gdx.app.log("Velocidad Muerte X", vel.x + "");
-			Gdx.app.log("Velocidad Muerte Y", vel.y + "");
-			Gdx.app.log("Velocidad Muerte Res", velocidadResultante + "");
+		float velocidadImpacto = Math.abs(bodyNave.getLinearVelocity().x) + Math.abs(bodyNave.getLinearVelocity().y);
+		if (velocidadImpacto > 1.5f) {
+			oNave.colision(velocidadImpacto * 2.5f);
 		}
+		Gdx.app.log("Velocidad Impacto", velocidadImpacto + "");
 
 		if (oOtraCosa instanceof Plataforma)
 			if (((Plataforma) oOtraCosa).isFinal)

@@ -34,7 +34,8 @@ public class Assets {
 	public static AtlasRegion fondo;
 
 	public static AtlasRegion gas;
-	public static AtlasRegion estrella;
+	public static AtlasRegion star;
+	public static AtlasRegion starOff;
 	public static AtlasRegion bomba;
 
 	public static TextureRegionDrawable marcoStats;
@@ -138,7 +139,8 @@ public class Assets {
 		laserVertical = new Animation(0.1f, laser1, laser2, laser3);
 
 		gas = atlas.findRegion("gas");
-		estrella = atlas.findRegion("estrella");
+		star = atlas.findRegion("star");
+		starOff = atlas.findRegion("starOff");
 		bomba = atlas.findRegion("bomba");
 
 		mundos = new LinkedHashMap<Integer, String>();

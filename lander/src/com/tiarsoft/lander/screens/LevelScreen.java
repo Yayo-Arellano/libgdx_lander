@@ -26,7 +26,7 @@ public class LevelScreen extends Screens {
 		contenedor.setFillParent(true);
 
 		int level = 0;
-		for (int l = 0; l < 1; l++) {// Paginas
+		for (int l = 0; l < 10; l++) {// Paginas
 
 			Table levels = new Table().padBottom(100);
 			levels.defaults().pad(20, 20, 20, 20);
@@ -41,7 +41,6 @@ public class LevelScreen extends Screens {
 		}
 
 		contenedor.add(scroll).expand().fill().pad(32).top();
-		scroll.scrollTo(0, 0, 300, 800);
 
 		stage.addActor(contenedor);
 	}
@@ -59,10 +58,10 @@ public class LevelScreen extends Screens {
 		if (stars >= 0) {
 			for (int star = 0; star < 3; star++) {
 				if (stars > star) {
-					starTable.add(new Image(Assets.estrella)).width(20).height(20);
+					starTable.add(new Image(Assets.star)).width(20).height(20);
 				}
 				else {
-					starTable.add(new Image(Assets.bomba)).width(20).height(20);
+					starTable.add(new Image(Assets.starOff)).width(20).height(20);
 				}
 			}
 		}
