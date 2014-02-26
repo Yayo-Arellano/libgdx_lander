@@ -25,7 +25,7 @@ import com.tiarsoft.lander.screens.Screens;
 /**
  * Use la clase Window porque le tenia que poner la tachita
  */
-public class VentanaGameOver extends Window {
+public class VentanaPaused extends Window {
 	static public float fadeDuration = 0.4f;
 
 	MainLander game;
@@ -34,15 +34,15 @@ public class VentanaGameOver extends Window {
 	Label lblLevelActual;
 	Image[] estrellas;
 
-	ImageButton btMenu, btTryAgain;
+	ImageButton btMenu, btResume, btTryAgain;
 
-	public VentanaGameOver(final MainLander game, final WorldGame oWorld, final int levelActual) {
+	public VentanaPaused(final MainLander game, final WorldGame oWorld, final int levelActual) {
 		super("", Assets.styleDialogGameOver);
 		this.game = game;
 		this.oWorld = oWorld;
 		this.setMovable(false);
 
-		Label paused = new Label("Gameover", Assets.styleLabelMediana);
+		Label paused = new Label("Paused", Assets.styleLabelMediana);
 		lblLevelActual = new Label("Level " + (levelActual + 1), Assets.styleLabelMediana);
 
 		estrellas = new Image[3];
@@ -64,6 +64,15 @@ public class VentanaGameOver extends Window {
 			}
 		});
 
+		btResume = new ImageButton(Assets.StyleImageButtonPause);
+		btResume.addListener(new ClickListener() {
+			@Override
+			public void clicked(InputEvent event, float x, float y) {
+				hide();
+				resumeGame();
+			}
+		});
+
 		btTryAgain = new ImageButton(Assets.StyleImageButtonPause);
 		btTryAgain.addListener(new ClickListener() {
 			@Override
@@ -73,21 +82,22 @@ public class VentanaGameOver extends Window {
 		});
 
 		this.row().padTop(30);
-		this.add(paused).colspan(2);
+		this.add(paused).colspan(3);
 
 		this.row().padTop(30);
-		this.add(lblLevelActual).colspan(2);
+		this.add(lblLevelActual).colspan(3);
 
 		this.row().padTop(30);
-		this.add(starTable).colspan(2);
+		this.add(starTable).colspan(3);
 
 		this.row().padTop(30).expandX();
 		this.add(btMenu);
-
+		this.add(btResume);
 		this.add(btTryAgain);
 
 		this.row().expandX();
 		this.add(new Label("Menu", Assets.styleLabelMediana));
+		this.add(new Label("Resume", Assets.styleLabelMediana));
 		this.add(new Label("Try Again", Assets.styleLabelMediana));
 
 	}

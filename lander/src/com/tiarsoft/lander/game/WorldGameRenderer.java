@@ -137,12 +137,12 @@ public class WorldGameRenderer {
 			Laser obj = i.next();
 
 			if (obj.direccion == Laser.DIRECCION_HORIZONTAL) {
-
 				if (obj.state == Laser.STATE_FIRE)
 					batcher.draw(Assets.laser.getKeyFrame(obj.stateTime, true), obj.position.x - obj.width / 2f, obj.position.y - obj.height / 2f, obj.width, obj.height);
 			}
 			else {
-
+				if (obj.state == Laser.STATE_FIRE)
+					batcher.draw(Assets.laserVertical.getKeyFrame(obj.stateTime, true), obj.position.x - obj.width / 2f, obj.position.y - obj.height / 2f, obj.width, obj.height);
 			}
 		}
 	}

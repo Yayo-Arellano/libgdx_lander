@@ -46,7 +46,7 @@ public abstract class Screens extends InputAdapter implements Screen {
 
 		// skelrender = new SkeletonRenderer();
 
-		InputMultiplexer input = new InputMultiplexer(this, stage);
+		InputMultiplexer input = new InputMultiplexer(stage, this);
 		Gdx.input.setInputProcessor(input);
 
 		ScreenlastStatetime = ScreenStateTime = 0;

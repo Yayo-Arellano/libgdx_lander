@@ -30,6 +30,9 @@ public class WorldGame {
 	public Vector2 graivity;
 	float unitScale = 1 / 100f;
 
+	final float TIME_OUT_OF_GAS = 1.5f;
+	float timeOutOfGas;
+
 	Nave oNave;
 	Array<Plataforma> arrPlataformas;
 	Array<Estrella> arrEstrellas;
@@ -42,7 +45,7 @@ public class WorldGame {
 	Random oRan;
 	public int state;
 
-	int estrellasTomadas;
+	public int estrellasTomadas;
 
 	public WorldGame() {
 		graivity = new Vector2(0, -4.9f);
@@ -97,13 +100,15 @@ public class WorldGame {
 				}
 			}
 			else if (body.getUserData() instanceof Laser) {
-				Laser obj = (Laser) body.getUserData();
+				// Laser obj = (Laser) body.getUserData();
 				updateLaser(delta, body);
 			}
 		}
 
 		if (oNave.gas <= 0 && state == STATE_RUNNING) {
-			state = STATE_GAME_OVER;
+			timeOutOfGas += delta;
+			if (timeOutOfGas >= TIME_OUT_OF_GAS)
+				state = STATE_GAME_OVER;
 		}
 
 	}

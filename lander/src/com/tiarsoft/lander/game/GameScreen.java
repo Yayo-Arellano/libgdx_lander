@@ -3,24 +3,26 @@ package com.tiarsoft.lander.game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.Input.Peripheral;
-import com.badlogic.gdx.scenes.scene2d.Group;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.tiarsoft.lander.Assets;
 import com.tiarsoft.lander.MainLander;
-import com.tiarsoft.lander.Settings;
 import com.tiarsoft.lander.dialogs.VentanaGameOver;
+import com.tiarsoft.lander.dialogs.VentanaPaused;
 import com.tiarsoft.lander.game.objetos.LifeBar;
 import com.tiarsoft.lander.screens.MainMenuScreen;
 import com.tiarsoft.lander.screens.Screens;
 
 public class GameScreen extends Screens {
-	static int STATE_TUTORIAL = 0;
-	static int STATE_READY = 1;
-	static int STATE_RUNNING = 2;
-	static int STATE_PAUSED = 3;
-	static int STATE_GAME_OVER = 4;
+	public static final int STATE_READY = 0;
+	public static final int STATE_RUNNING = 1;
+	public static final int STATE_PAUSED = 2;
+	public static final int STATE_GAME_OVER = 3;
+	public static int state;
 
-	final int level;
+	public final int level;
 	WorldGame oWorld;
 	WorldGameRenderer renderer;
 
@@ -30,7 +32,9 @@ public class GameScreen extends Screens {
 	LifeBar gasBar;
 	Table marcoStats;
 
+	ImageButton btPause;
 	VentanaGameOver dialogGameover;
+	VentanaPaused dialogPaused;
 
 	public GameScreen(MainLander game, int level) {
 		super(game);
@@ -39,8 +43,10 @@ public class GameScreen extends Screens {
 		oWorld = new WorldGame();
 		renderer = new WorldGameRenderer(batcher, oWorld);
 
-		dialogGameover = new VentanaGameOver(game, oWorld);
+		dialogGameover = new VentanaGameOver(game, oWorld, level);
+		dialogPaused = new VentanaPaused(game, oWorld, level);
 
+		// Marcador Stats
 		marcoStats = new Table();
 		marcoStats.setSize(172, 98);
 		marcoStats.setBackground(Assets.marcoStats);
@@ -53,13 +59,40 @@ public class GameScreen extends Screens {
 		marcoStats.row();
 		marcoStats.add(gasBar).width(90).height(25).padLeft(35).padTop(10);
 
-		stage.addActor(marcoStats);
+		// Boton Pause
+		btPause = new ImageButton(Assets.StyleImageButtonPause);
+		btPause.setSize(32, 32);
+		btPause.setPosition(SCREEN_WIDTH - btPause.getWidth() - 5, SCREEN_HEIGHT - btPause.getHeight() - 5);
+		btPause.addListener(new ClickListener() {
+			@Override
+			public void clicked(InputEvent event, float x, float y) {
+				setPaused();
+			}
+		});
 
+		stage.addActor(marcoStats);
+		stage.addActor(btPause);
+
+		state = STATE_RUNNING;
 	}
 
 	@Override
 	public void update(float delta) {
+		switch (state) {
+			case STATE_READY:
+				updateReady(delta);
+				break;
+			case STATE_RUNNING:
+				updateRunning(delta);
+				break;
+		}
+	}
 
+	private void updateReady(float delta) {
+
+	}
+
+	private void updateRunning(float delta) {
 		float accelX = 0, accelY = 0;
 
 		if (Gdx.input.isPeripheralAvailable(Peripheral.Accelerometer)) {
@@ -79,12 +112,13 @@ public class GameScreen extends Screens {
 		lifeBar.updateActualLife(oWorld.oNave.vida);
 		gasBar.updateActualLife(oWorld.oNave.gas);
 
-		if (Gdx.input.justTouched() && (oWorld.state == WorldGame.STATE_NEXT_LEVEL || oWorld.state == WorldGame.STATE_GAME_OVER)) {
-			dialogGameover.show(stage);
-			Settings.setStarsFromLevel(level, oWorld.estrellasTomadas);
-			// game.setScreen(new GameScreen(game, mundo));
+		if (oWorld.state == WorldGame.STATE_GAME_OVER) {
+			setGameover();
+		}
+		else if (oWorld.state == WorldGame.STATE_NEXT_LEVEL) {
 
 		}
+
 	}
 
 	@Override
@@ -105,6 +139,17 @@ public class GameScreen extends Screens {
 
 	}
 
+	private void setPaused() {
+		state = STATE_PAUSED;
+		dialogPaused.show(stage);
+	}
+
+	private void setGameover() {
+		state = STATE_GAME_OVER;
+		dialogGameover.show(stage);
+
+	}
+
 	@Override
 	public boolean keyDown(int keycode) {
 		if (keycode == Keys.ESCAPE || keycode == Keys.BACK) {
@@ -113,4 +158,5 @@ public class GameScreen extends Screens {
 		}
 		return false;
 	}
+
 }

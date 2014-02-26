@@ -3,7 +3,6 @@ package com.tiarsoft.lander.game.objetos;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
-import com.sun.accessibility.internal.resources.accessibility;
 
 public class Nave {
 
@@ -16,8 +15,10 @@ public class Nave {
 	final private int MAX_ANGLE_DEGREES = 35;
 
 	final public static float MAX_SPEED_Y = 2;
+	final public static float MIN_SPEED_Y = -4;
+
 	final public static float MAX_SPEED_X = 1f;
-	final public static float VELOCIDAD_FLY = 2.f;
+	final public static float VELOCIDAD_FLY = 2f;
 	final public static float VELOCIDAD_MOVE = 1.5f;
 
 	final public static float GAS_INICIAL = 100;
@@ -72,8 +73,8 @@ public class Nave {
 				body.setLinearVelocity(velocity);
 
 			}
-			else if (velocity.y < -Nave.MAX_SPEED_Y) {
-				velocity.y = -Nave.MAX_SPEED_Y;
+			else if (velocity.y < MIN_SPEED_Y) {
+				velocity.y = MIN_SPEED_Y;
 				body.setLinearVelocity(velocity);
 			}
 			if (velocity.x > Nave.MAX_SPEED_X) {

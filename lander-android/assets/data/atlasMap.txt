@@ -46,6 +46,20 @@ btMenuDown
   orig: 280, 84
   offset: 0, 0
   index: -1
+btPause
+  rotate: false
+  xy: 792, 468
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+btPauseDown
+  rotate: false
+  xy: 792, 416
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
 btnLevels
   rotate: false
   xy: 269, 49
@@ -79,7 +93,7 @@ fondo
   index: -1
 gas
   rotate: false
-  xy: 792, 473
+  xy: 772, 369
   size: 41, 45
   orig: 41, 45
   offset: 0, 0
