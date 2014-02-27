@@ -20,7 +20,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
 public class Assets {
 
-	public static boolean isDebug = false;
+	public static boolean isDebug = !!!!!!!!false;
 
 	public static TextureRegionDrawable titulo;
 
@@ -38,6 +38,9 @@ public class Assets {
 	public static AtlasRegion starOff;
 	public static AtlasRegion bomba;
 
+	public static AtlasRegion upgradeOn;
+	public static AtlasRegion upgradeOff;
+
 	public static TextureRegionDrawable marcoStats;
 	public static AtlasRegion barraMarcadorRojo;
 	public static AtlasRegion barraMarcadorVerde;
@@ -52,7 +55,9 @@ public class Assets {
 
 	public static LabelStyle styleLabelMediana;
 
-	public static ImageButtonStyle StyleImageButtonPause;
+	public static ImageButtonStyle styleImageButtonPause;
+	public static ImageButtonStyle styleImageButtonUpgradePlus;
+
 	public static WindowStyle styleDialogGameOver;
 
 	static private void loadSceneStyles(TextureAtlas atlas) {
@@ -65,6 +70,11 @@ public class Assets {
 		styleTextButtonMenu = new TextButtonStyle(botonMenu, botonMenuDown, null, font);
 		styleTextButtonMenu.fontColor = Color.GREEN;
 
+		// Boton + de la ventana upgrades
+		TextureRegionDrawable btUp = new TextureRegionDrawable(atlas.findRegion("btUpgrade"));
+		TextureRegionDrawable btUpDown = new TextureRegionDrawable(atlas.findRegion("btUpgradeDown"));
+		styleImageButtonUpgradePlus = new ImageButtonStyle(btUp, btUpDown, null, null, null, null);
+
 		// Dialogo GameOVer, Paused, Tienda
 		NinePatchDrawable recuadroGame = new NinePatchDrawable(atlas.createPatch("recuadroGameOver"));
 		AtlasRegion dialogDim = atlas.findRegion("dim");
@@ -74,7 +84,7 @@ public class Assets {
 		// Botton Pausa
 		TextureRegionDrawable btPause = new TextureRegionDrawable(atlas.findRegion("btPause"));
 		TextureRegionDrawable btPauseDown = new TextureRegionDrawable(atlas.findRegion("btPauseDown"));
-		StyleImageButtonPause = new ImageButtonStyle(btPause, btPauseDown, null, null, null, null);
+		styleImageButtonPause = new ImageButtonStyle(btPause, btPauseDown, null, null, null, null);
 
 		// Botones levels
 		NinePatchDrawable btLevels = new NinePatchDrawable(atlas.createPatch("btnLevels"));
@@ -128,14 +138,14 @@ public class Assets {
 		AtlasRegion newExpl19 = atlas.findRegion("newExplosion19");
 		explosion = new Animation(0.05f, newExpl1, newExpl2, newExpl3, newExpl4, newExpl5, newExpl6, newExpl7, newExpl8, newExpl9, newExpl10, newExpl11, newExpl12, newExpl13, newExpl14, newExpl15, newExpl16, newExpl17, newExpl18, newExpl19);
 
-		AtlasRegion laser1 = atlas.findRegion("laser1");
-		AtlasRegion laser2 = atlas.findRegion("laser2");
-		AtlasRegion laser3 = atlas.findRegion("laser3");
+		AtlasRegion laser1 = atlas.findRegion("rayo0");
+		AtlasRegion laser2 = atlas.findRegion("rayo1");
+		AtlasRegion laser3 = atlas.findRegion("rayo2");
 		laser = new Animation(0.1f, laser1, laser2, laser3);
 
-		laser1 = atlas.findRegion("laser1");
-		laser2 = atlas.findRegion("laser2");
-		laser3 = atlas.findRegion("laser3");
+		laser1 = atlas.findRegion("rayo0Vertical");
+		laser2 = atlas.findRegion("rayo1Vertical");
+		laser3 = atlas.findRegion("rayo2Vertical");
 		laserVertical = new Animation(0.1f, laser1, laser2, laser3);
 
 		gas = atlas.findRegion("gas");
@@ -143,8 +153,11 @@ public class Assets {
 		starOff = atlas.findRegion("starOff");
 		bomba = atlas.findRegion("bomba");
 
+		upgradeOn = atlas.findRegion("upgradeOn");
+		upgradeOff = atlas.findRegion("upgradeOff");
+
 		mundos = new LinkedHashMap<Integer, String>();
-		mundos.put(0, "data/mundos/mundo01.tmx");
+		mundos.put(0, "data/mundos/mundo00.tmx");
 		mundos.put(1, "data/mundos/mundo01.tmx");
 		mundos.put(2, "data/mundos/mundo01.tmx");
 		mundos.put(3, "data/mundos/mundo01.tmx");

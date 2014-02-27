@@ -60,7 +60,7 @@ public class VentanaPaused extends Window {
 			}
 		}
 
-		btMenu = new ImageButton(Assets.StyleImageButtonPause);
+		btMenu = new ImageButton(Assets.styleImageButtonPause);
 		btMenu.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
@@ -69,7 +69,7 @@ public class VentanaPaused extends Window {
 			}
 		});
 
-		btResume = new ImageButton(Assets.StyleImageButtonPause);
+		btResume = new ImageButton(Assets.styleImageButtonPause);
 		btResume.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
@@ -78,7 +78,7 @@ public class VentanaPaused extends Window {
 			}
 		});
 
-		btTryAgain = new ImageButton(Assets.StyleImageButtonPause);
+		btTryAgain = new ImageButton(Assets.styleImageButtonPause);
 		btTryAgain.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {

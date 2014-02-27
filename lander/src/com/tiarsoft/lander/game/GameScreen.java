@@ -11,6 +11,7 @@ import com.tiarsoft.lander.Assets;
 import com.tiarsoft.lander.MainLander;
 import com.tiarsoft.lander.dialogs.VentanaGameOver;
 import com.tiarsoft.lander.dialogs.VentanaPaused;
+import com.tiarsoft.lander.dialogs.VentanaShop;
 import com.tiarsoft.lander.game.objetos.LifeBar;
 import com.tiarsoft.lander.screens.MainMenuScreen;
 import com.tiarsoft.lander.screens.Screens;
@@ -35,6 +36,7 @@ public class GameScreen extends Screens {
 	ImageButton btPause;
 	VentanaGameOver dialogGameover;
 	VentanaPaused dialogPaused;
+	VentanaShop dialogShop;
 
 	public GameScreen(MainLander game, int level) {
 		super(game);
@@ -45,6 +47,8 @@ public class GameScreen extends Screens {
 
 		dialogGameover = new VentanaGameOver(game, oWorld, level);
 		dialogPaused = new VentanaPaused(game, oWorld, level);
+		dialogShop = new VentanaShop(game);
+		dialogShop.show(stage);
 
 		// Marcador Stats
 		marcoStats = new Table();
@@ -60,7 +64,7 @@ public class GameScreen extends Screens {
 		marcoStats.add(gasBar).width(90).height(25).padLeft(35).padTop(10);
 
 		// Boton Pause
-		btPause = new ImageButton(Assets.StyleImageButtonPause);
+		btPause = new ImageButton(Assets.styleImageButtonPause);
 		btPause.setSize(32, 32);
 		btPause.setPosition(SCREEN_WIDTH - btPause.getWidth() - 5, SCREEN_HEIGHT - btPause.getHeight() - 5);
 		btPause.addListener(new ClickListener() {
@@ -135,7 +139,6 @@ public class GameScreen extends Screens {
 		Assets.font.draw(batcher, "Estrellas  " + oWorld.estrellasTomadas, 300, 60);
 		Assets.font.draw(batcher, "Vida  " + oWorld.oNave.vida, 300, 40);
 		Assets.font.draw(batcher, "Gas  " + oWorld.oNave.gas, 300, 20);
-		Assets.font.draw(batcher, "Velocidad " + oWorld.velocidadImpacto, 300, 80);
 		batcher.end();
 
 	}

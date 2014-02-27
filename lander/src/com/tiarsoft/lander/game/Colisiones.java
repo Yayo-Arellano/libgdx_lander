@@ -76,7 +76,8 @@ public class Colisiones implements ContactListener {
 			return;
 		}
 		else if (oOtraCosa instanceof Laser) {
-			oNave.entroAreaLaser();
+			Laser obj = (Laser) oOtraCosa;
+			obj.isTouchingShip = true;
 			return;
 		}
 
@@ -128,7 +129,8 @@ public class Colisiones implements ContactListener {
 		Object oOtraCosa = bodyOtraCosa.getUserData();
 
 		if (oOtraCosa instanceof Laser) {
-			oNave.salioAreaLaser();
+			Laser obj = (Laser) oOtraCosa;
+			obj.isTouchingShip = false;
 			return;
 		}
 

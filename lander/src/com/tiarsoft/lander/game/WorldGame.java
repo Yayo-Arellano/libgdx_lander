@@ -18,8 +18,6 @@ import com.tiarsoft.lander.screens.Screens;
 
 public class WorldGame {
 
-	public float velocidadImpacto;// debug
-
 	final float WIDTH = Screens.WORLD_SCREEN_WIDTH;
 	final float HEIGHT = Screens.WORLD_SCREEN_HEIGHT;
 
@@ -77,7 +75,7 @@ public class WorldGame {
 			Body body = i.next();
 
 			if (body.getUserData() instanceof Nave) {
-				updateShanti(body, delta, accelY, accelX);
+				updateNave(body, delta, accelY, accelX);
 			}
 			else if (body.getUserData() instanceof Gas) {
 				Gas obj = (Gas) body.getUserData();
@@ -115,7 +113,7 @@ public class WorldGame {
 
 	}
 
-	private void updateShanti(Body body, float delta, float accelY, float accelX) {
+	private void updateNave(Body body, float delta, float accelY, float accelX) {
 		Nave obj = (Nave) body.getUserData();
 		if (obj.state == Nave.STATE_EXPLODE && obj.stateTime > Nave.EXPLODE_TIME && !oWorldBox.isLocked()) {
 			oWorldBox.destroyBody(body);
@@ -125,14 +123,6 @@ public class WorldGame {
 
 		obj.update(delta, body, accelX, accelY);
 
-		if (oNave.willGetHurtByLaser) {
-			oNave.getHurtByLaser(50);
-			Vector2 blastDirection = body.getWorldCenter().sub(body.getWorldCenter());
-			blastDirection.nor();
-			body.applyLinearImpulse(blastDirection.scl(.1f), body.getWorldCenter(), true);
-		}
-
-		velocidadImpacto = Math.abs(body.getLinearVelocity().x) + Math.abs(body.getLinearVelocity().y);
 	}
 
 	private void updateBomba(float delta, Body body) {
@@ -150,9 +140,12 @@ public class WorldGame {
 		Laser obj = (Laser) body.getUserData();
 		obj.update(delta, body);
 
-		if (oNave.isTouchingLaser) {
+		if (obj.isTouchingShip && oNave.state == Nave.STATE_NORMAL) {
 			if (obj.state == Laser.STATE_FIRE) {
-				oNave.willGetHurtByLaser = true;
+				oNave.getHurtByLaser(25);
+				Vector2 blastDirection = body.getWorldCenter().sub(body.getWorldCenter());
+				blastDirection.nor();
+				body.applyLinearImpulse(blastDirection.scl(.1f), body.getWorldCenter(), true);
 			}
 		}
 

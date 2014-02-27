@@ -27,6 +27,8 @@ public class Laser {
 
 	public final float width, height;
 
+	public boolean isTouchingShip;
+
 	public Laser(float x, float y, float width, float height, float tiempoEncendido, float tiempoApagado, float tiempoApagadoInicio, String direccion) {
 		position = new Vector2(x, y);
 		timeOFF = tiempoApagadoInicio;
