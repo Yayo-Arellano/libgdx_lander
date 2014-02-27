@@ -45,11 +45,17 @@
   <object type="laser" x="32" y="909" width="190" height="7">
    <properties>
     <property name="direccion" value="horizontal"/>
+    <property name="tiempoApagado" value="05.00"/>
+    <property name="tiempoApagadoActual" value="00.00"/>
+    <property name="tiempoPrendido" value="02.00"/>
    </properties>
   </object>
-  <object type="laser" x="33" y="1070" width="252">
+  <object type="laser" x="35" y="1068" width="251" height="8">
    <properties>
     <property name="direccion" value="horizontal"/>
+    <property name="tiempoApagado" value="05.00"/>
+    <property name="tiempoApagadoActual" value="03.00"/>
+    <property name="tiempoPrendido" value="02.00"/>
    </properties>
   </object>
  </objectgroup>
