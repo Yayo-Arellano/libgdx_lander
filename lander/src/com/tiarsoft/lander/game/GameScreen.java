@@ -9,9 +9,9 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.tiarsoft.lander.Assets;
 import com.tiarsoft.lander.MainLander;
+import com.tiarsoft.lander.Settings;
 import com.tiarsoft.lander.dialogs.VentanaGameOver;
 import com.tiarsoft.lander.dialogs.VentanaPaused;
-import com.tiarsoft.lander.dialogs.VentanaShop;
 import com.tiarsoft.lander.game.objetos.LifeBar;
 import com.tiarsoft.lander.screens.MainMenuScreen;
 import com.tiarsoft.lander.screens.Screens;
@@ -36,7 +36,6 @@ public class GameScreen extends Screens {
 	ImageButton btPause;
 	VentanaGameOver dialogGameover;
 	VentanaPaused dialogPaused;
-	
 
 	public GameScreen(MainLander game, int level) {
 		super(game);
@@ -47,7 +46,6 @@ public class GameScreen extends Screens {
 
 		dialogGameover = new VentanaGameOver(game, oWorld, level);
 		dialogPaused = new VentanaPaused(game, oWorld, level);
-		
 
 		// Marcador Stats
 		marcoStats = new Table();
@@ -119,7 +117,8 @@ public class GameScreen extends Screens {
 			setGameover();
 		}
 		else if (oWorld.state == WorldGame.STATE_NEXT_LEVEL) {
-
+			Settings.setStarsFromLevel(level, oWorld.estrellasTomadas);
+			setGameover();
 		}
 
 	}
@@ -135,9 +134,10 @@ public class GameScreen extends Screens {
 		// Assets.font.draw(batcher, "Velocidad " + oWorld.oNave.velocidadResultante, 10, 60);
 		// Assets.font.draw(batcher, "Velocidad X " + oWorld.oNave.velocity.x, 10, 40);
 		// Assets.font.draw(batcher, "Velocidad Y " + oWorld.oNave.velocity.y, 10, 20);
-		Assets.font.draw(batcher, "Estrellas  " + oWorld.estrellasTomadas, 300, 60);
-		Assets.font.draw(batcher, "Vida  " + oWorld.oNave.vida, 300, 40);
-		Assets.font.draw(batcher, "Gas  " + oWorld.oNave.gas, 300, 20);
+
+		// Assets.font.draw(batcher, "Estrellas  " + oWorld.estrellasTomadas, 300, 60);
+		// Assets.font.draw(batcher, "Vida  " + oWorld.oNave.vida, 300, 40);
+		// Assets.font.draw(batcher, "Gas  " + oWorld.oNave.gas, 300, 20);
 		batcher.end();
 
 	}

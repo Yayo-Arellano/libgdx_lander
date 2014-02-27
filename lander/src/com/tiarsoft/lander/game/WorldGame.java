@@ -33,6 +33,9 @@ public class WorldGame {
 	final float TIME_OUT_OF_GAS = 1.5f;
 	float timeOutOfGas;
 
+	final float TIME_FOR_NEXT_LEVEL = .75f;
+	float timeforNextLevel;
+
 	Nave oNave;
 	Array<Plataforma> arrPlataformas;
 	Array<Estrella> arrEstrellas;
@@ -109,6 +112,15 @@ public class WorldGame {
 			timeOutOfGas += delta;
 			if (timeOutOfGas >= TIME_OUT_OF_GAS)
 				state = STATE_GAME_OVER;
+		}
+
+		if (oNave.isLanded) {
+			timeforNextLevel += delta;
+			if (timeforNextLevel >= TIME_FOR_NEXT_LEVEL)
+				state = STATE_NEXT_LEVEL;
+		}
+		else {
+			timeforNextLevel = 0;
 		}
 
 	}

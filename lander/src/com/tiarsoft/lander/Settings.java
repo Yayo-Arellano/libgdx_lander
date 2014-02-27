@@ -18,6 +18,8 @@ public class Settings {
 	public static void load(int numMapas) {
 		arrEstrellasMundo = new int[numMapas];
 
+		pref.clear();
+		pref.flush();
 		for (int i = 0; i < numMapas; i++) {
 			arrEstrellasMundo[i] = pref.getInteger("arrEstrellasMundo" + i, 0);
 		}

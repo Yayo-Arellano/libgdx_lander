@@ -45,6 +45,11 @@ public class Nave {
 	public boolean isFlying;
 	public boolean isHurtByBomb;
 
+	/**
+	 * Cuando aterrizo en el area de ganar el juego
+	 */
+	public boolean isLanded;
+
 	public Nave(float x, float y) {
 		position = new Vector2(x, y);
 		state = STATE_NORMAL;
@@ -119,6 +124,9 @@ public class Nave {
 
 			if (accelX != 0 || accelY != 0)
 				gas -= (5 * delta);
+		}
+		else {
+			body.setLinearVelocity(0, 0);
 		}
 
 		stateTime += delta;

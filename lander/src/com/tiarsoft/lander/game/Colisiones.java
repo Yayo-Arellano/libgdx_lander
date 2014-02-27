@@ -89,7 +89,7 @@ public class Colisiones implements ContactListener {
 
 		if (oOtraCosa instanceof Plataforma)
 			if (((Plataforma) oOtraCosa).isFinal)
-				oWorld.state = WorldGame.STATE_NEXT_LEVEL;
+				oNave.isLanded = true;
 
 	}
 
@@ -132,6 +132,10 @@ public class Colisiones implements ContactListener {
 			Laser obj = (Laser) oOtraCosa;
 			obj.isTouchingShip = false;
 			return;
+		}
+		else if (oOtraCosa instanceof Plataforma) {
+			if (((Plataforma) oOtraCosa).isFinal)
+				oNave.isLanded = false;
 		}
 
 	}
