@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="30" height="40" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="tamanoMapaX" value="30"/>
+  <property name="tamanoMapaY" value="40"/>
+ </properties>
+ <tileset firstgid="1" name="tiled" tilewidth="32" tileheight="32">
+  <image source="tiled.png" width="512" height="512"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="30" height="40">
+  <data encoding="base64" compression="zlib">
+   eJzdlzlPBDEMhafgqEdioefsOf8ap2g5tR03ouNGtJyi5RR/iVfEUhR5k9jx7EoUn6wUmHl+seOtq6qqe8QIGC6Mkjz0fwfBgDKOgrGMPJNgyp0t9E6DmYw882DBQC/pHAcTLo9/jv19iV7SOQvmXB7/rPXX98PCX78OMb2+Hxb++nWwuM8UJXWT9Li2f7m65egl/7R6tfeZ/OvWvCKdfaA/Q3dd8fXh+jmml3QOgVaG7rri68P1s8ZfOocxnFex+mj8pXMYw3kVq4+kf+n7F8ESWAYrYBWsuTzrEZ3a94i+fwNsgi2wDXbArsvTjuiUvkf0/XtgHxyAQ3AEjsEJOHV5zhK+avw9BxfgElyBa3ADbsGdy3Of8FVznyk+gEfwBJ7BC3h1ed4YvdL+7XR/38EH+ARf4Bv8uDy/jF5t/6b0+/3b5D7ZqX/DGJvvlu+vZL5b7s+S+Z7zHoX3UKtb+h6Fvmh1p/xN+WLhP6c35YuF///FX+nckPgi1cntH9L+lfgb/n7K7V9uX+iGv9y+0GT/Wvlbum+UzqvSfbIJvb3gD2L0dRE=
+  </data>
+ </layer>
+ <layer name="Tile Layer 2" width="30" height="40">
+  <data encoding="base64" compression="zlib">
+   eJzt17kRACAAAjAcyY0czVGdwLPzfJIOKloS4AVlkQEA4FY16ZO+7V0CfzjxXw60cwFn
+  </data>
+ </layer>
+ <objectgroup name="fisicos" width="30" height="40">
+  <object type="pared" x="32" y="320">
+   <polyline points="0,0 0,928 320,928 320,512 352,512 352,928 896,928 896,704 576,704 576,672 896,672 896,416 544,416 544,-288 0,-288 0,-32 288,-32 288,0 0,0"/>
+  </object>
+  <object type="inicio" x="96" y="288" width="160" height="32"/>
+  <object type="fin" x="736" y="1248" width="160" height="32"/>
+ </objectgroup>
+ <objectgroup name="interaccion" width="30" height="40">
+  <object type="laser" x="389" y="1006" width="214" height="9">
+   <properties>
+    <property name="direccion" value="horizontal"/>
+    <property name="tiempoApagado" value="02.50"/>
+    <property name="tiempoApagadoActual" value="00.00"/>
+    <property name="tiempoPrendido" value="05.00"/>
+   </properties>
+  </object>
+  <object type="bomba" x="181" y="865">
+   <properties>
+    <property name="direccion" value="derecha"/>
+   </properties>
+  </object>
+  <object type="bomba" x="125" y="945">
+   <properties>
+    <property name="direccion" value="derecha"/>
+   </properties>
+  </object>
+  <object type="bomba" x="75" y="1015">
+   <properties>
+    <property name="direccion" value="derecha"/>
+   </properties>
+  </object>
+  <object type="estrella" x="159" y="1160"/>
+  <object type="estrella" x="875" y="861"/>
+  <object type="estrella" x="560" y="1139"/>
+  <object type="gas" x="77" y="356"/>
+ </objectgroup>
+</map>
