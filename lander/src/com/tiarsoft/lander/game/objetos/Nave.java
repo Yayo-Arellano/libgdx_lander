@@ -3,7 +3,7 @@ package com.tiarsoft.lander.game.objetos;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
-import com.tiarsoft.lander.dialogs.VentanaShop;
+import com.tiarsoft.lander.Settings;
 
 public class Nave {
 
@@ -20,7 +20,8 @@ public class Nave {
 	final public static float MIN_SPEED_Y = -4;
 	public float velocidadFly;
 
-	final public static float VELOCIDAD_MOVE = 1.5f;
+	final public static float VELOCIDAD_MOVE = 1.3f;
+	public float velocidadMove;
 	final public static float MAX_SPEED_X = 1f;
 
 	final public static float GAS_INICIAL = 100;
@@ -50,12 +51,14 @@ public class Nave {
 		gas = GAS_INICIAL;
 		vida = VIDA_INICIAL;
 		velocidadFly = VELOCIDAD_FLY;
+		velocidadMove = VELOCIDAD_MOVE;
 		isFlying = false;
 
 		// Upgrades
-		velocidadFly += (.09 * VentanaShop.nivelVelocidad);
-		vida += (5.3f * VentanaShop.nivelVida);
-		gas += (33.3f * VentanaShop.nivelGas);
+		velocidadFly += (.09 * Settings.nivelVelocidadY);
+		velocidadMove += (.02 * Settings.nivelRotacion);
+		vida += (5.3f * Settings.nivelVida);
+		gas += (33.3f * Settings.nivelGas);
 	}
 
 	public void update(float delta, Body body, float accelX, float accelY) {
@@ -70,7 +73,7 @@ public class Nave {
 				isFlying = true;
 
 			// Le meto la velocidad
-			body.applyForceToCenter(Nave.VELOCIDAD_MOVE * accelX, velocidadFly * accelY, true);
+			body.applyForceToCenter(velocidadMove * accelX, velocidadFly * accelY, true);
 
 			// Le meto la velocidad en x al contrario para que reduzca su velocidad
 			body.applyForceToCenter(body.getLinearVelocity().x * -.015f, 0, true);

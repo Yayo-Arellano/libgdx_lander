@@ -12,6 +12,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.tiarsoft.lander.MainLander;
+import com.tiarsoft.lander.Settings;
 
 public abstract class Screens extends InputAdapter implements Screen {
 	public static final int SCREEN_WIDTH = 480;
@@ -104,7 +105,7 @@ public abstract class Screens extends InputAdapter implements Screen {
 
 	@Override
 	public void hide() {
-		// Settings.guardar();
+		Settings.save();
 	}
 
 	@Override

@@ -297,16 +297,16 @@ public class TiledMapManagerBox2d {
 
 		String direccion = object.getProperties().get("direccion").toString();
 		float timeON, timeOFF, timeOffActual;
-		try {
-			timeON = Float.parseFloat(object.getProperties().get("tiempoPrendido").toString());
-			timeOFF = Float.parseFloat(object.getProperties().get("tiempoApagado").toString());
-			timeOffActual = Float.parseFloat(object.getProperties().get("tiempoApagadoActual").toString());
-		}
-		catch (Exception xx) {
-			timeON = 1;
-			timeOFF = 5;
-			timeOffActual = 3;
-		}
+		// try {
+		timeON = Float.parseFloat(object.getProperties().get("tiempoPrendido").toString());
+		timeOFF = Float.parseFloat(object.getProperties().get("tiempoApagado").toString());
+		timeOffActual = Float.parseFloat(object.getProperties().get("tiempoApagadoActual").toString());
+		// }
+		// catch (Exception xx) {
+		// timeON = 1;
+		// timeOFF = 5;
+		// timeOffActual = 3;
+		// }
 
 		Laser obj = new Laser(x, y, rectangle.getWidth() * m_units, rectangle.height * m_units, timeON, timeOFF, timeOffActual, direccion);
 		BodyDef bd = new BodyDef();

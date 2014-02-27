@@ -36,7 +36,7 @@ public class GameScreen extends Screens {
 	ImageButton btPause;
 	VentanaGameOver dialogGameover;
 	VentanaPaused dialogPaused;
-	VentanaShop dialogShop;
+	
 
 	public GameScreen(MainLander game, int level) {
 		super(game);
@@ -47,8 +47,7 @@ public class GameScreen extends Screens {
 
 		dialogGameover = new VentanaGameOver(game, oWorld, level);
 		dialogPaused = new VentanaPaused(game, oWorld, level);
-		dialogShop = new VentanaShop(game);
-		dialogShop.show(stage);
+		
 
 		// Marcador Stats
 		marcoStats = new Table();
@@ -59,9 +58,9 @@ public class GameScreen extends Screens {
 		lifeBar = new LifeBar(oWorld.oNave.vida);
 		gasBar = new LifeBar(oWorld.oNave.gas);
 
-		marcoStats.add(lifeBar).width(90).height(25).padLeft(35).padBottom(12);
+		marcoStats.add(lifeBar).width(90).height(25).padLeft(35).padBottom(5);
 		marcoStats.row();
-		marcoStats.add(gasBar).width(90).height(25).padLeft(35).padTop(10);
+		marcoStats.add(gasBar).width(90).height(25).padLeft(35).padTop(6);
 
 		// Boton Pause
 		btPause = new ImageButton(Assets.styleImageButtonPause);

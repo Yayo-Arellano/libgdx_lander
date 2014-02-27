@@ -10,10 +10,13 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.tiarsoft.lander.Assets;
 import com.tiarsoft.lander.MainLander;
+import com.tiarsoft.lander.dialogs.VentanaShop;
 
 public class MainMenuScreen extends Screens {
 
 	TextButton btPlay, btSettings, btMore;
+
+	VentanaShop dialogShop;
 
 	public MainMenuScreen(MainLander game) {
 		super(game);
@@ -38,6 +41,9 @@ public class MainMenuScreen extends Screens {
 		stage.addActor(btSettings);
 		stage.addActor(btMore);
 		stage.addActor(titulo);
+
+		dialogShop = new VentanaShop(game);
+
 	}
 
 	private void initButtons() {
@@ -61,7 +67,7 @@ public class MainMenuScreen extends Screens {
 		btSettings.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-
+				dialogShop.show(stage);
 			}
 		});
 
