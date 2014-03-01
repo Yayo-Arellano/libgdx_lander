@@ -10,6 +10,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.tiarsoft.lander.Assets;
 import com.tiarsoft.lander.MainLander;
 import com.tiarsoft.lander.Settings;
+import com.tiarsoft.lander.dialogs.VentanaCompleted;
 import com.tiarsoft.lander.dialogs.VentanaGameOver;
 import com.tiarsoft.lander.dialogs.VentanaPaused;
 import com.tiarsoft.lander.game.objetos.LifeBar;
@@ -36,6 +37,7 @@ public class GameScreen extends Screens {
 	ImageButton btPause;
 	VentanaGameOver dialogGameover;
 	VentanaPaused dialogPaused;
+	VentanaCompleted dialogNextLevel;
 
 	public GameScreen(MainLander game, int level) {
 		super(game);
@@ -46,6 +48,7 @@ public class GameScreen extends Screens {
 
 		dialogGameover = new VentanaGameOver(game, oWorld, level);
 		dialogPaused = new VentanaPaused(game, oWorld, level);
+		dialogNextLevel = new VentanaCompleted(game, oWorld, level);
 
 		// Marcador Stats
 		marcoStats = new Table();
@@ -117,8 +120,7 @@ public class GameScreen extends Screens {
 			setGameover();
 		}
 		else if (oWorld.state == WorldGame.STATE_NEXT_LEVEL) {
-			Settings.setStarsFromLevel(level, oWorld.estrellasTomadas);
-			setGameover();
+			setNextLevel();
 		}
 
 	}
@@ -151,6 +153,12 @@ public class GameScreen extends Screens {
 		state = STATE_GAME_OVER;
 		dialogGameover.show(stage);
 
+	}
+
+	private void setNextLevel() {
+		state = STATE_GAME_OVER;
+		Settings.setStarsFromLevel(level, oWorld.estrellasTomadas);
+		dialogNextLevel.show(stage);
 	}
 
 	@Override

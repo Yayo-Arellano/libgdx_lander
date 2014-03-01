@@ -36,17 +36,15 @@ public class VentanaCompleted extends Window {
 	Label lblLevelActual;
 	Image[] estrellas;
 
-	ImageButton btMenu, btTryAgain;
-	final int levelActual;
+	ImageButton btMenu, btTryAgain, btNextLevel;
 
 	public VentanaCompleted(final MainLander game, final WorldGame oWorld, final int levelActual) {
 		super("", Assets.styleDialogGameOver);
 		this.game = game;
 		this.oWorld = oWorld;
 		this.setMovable(false);
-		this.levelActual = levelActual;
 
-		Label paused = new Label("Gameover", Assets.styleLabelMediana);
+		Label paused = new Label("Level Completed", Assets.styleLabelMediana);
 		lblLevelActual = new Label("Level " + (levelActual + 1), Assets.styleLabelMediana);
 
 		estrellas = new Image[3];
@@ -64,7 +62,7 @@ public class VentanaCompleted extends Window {
 		btMenu.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				hide(LevelScreen.class);
+				hide(LevelScreen.class, 0);
 			}
 		});
 
@@ -72,27 +70,36 @@ public class VentanaCompleted extends Window {
 		btTryAgain.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				hide(GameScreen.class);
+				hide(GameScreen.class, levelActual);
+			}
+		});
+
+		btNextLevel = new ImageButton(Assets.styleImageButtonPause);
+		btNextLevel.addListener(new ClickListener() {
+			@Override
+			public void clicked(InputEvent event, float x, float y) {
+				hide(GameScreen.class, levelActual + 1);
 			}
 		});
 
 		this.row().padTop(30);
-		this.add(paused).colspan(2);
+		this.add(paused).colspan(3);
 
 		this.row().padTop(30);
-		this.add(lblLevelActual).colspan(2);
+		this.add(lblLevelActual).colspan(3);
 
 		this.row().padTop(30);
-		this.add(starTable).colspan(2);
+		this.add(starTable).colspan(3);
 
 		this.row().padTop(30).expandX();
 		this.add(btMenu);
-
 		this.add(btTryAgain);
+		this.add(btNextLevel);
 
 		this.row().expandX();
 		this.add(new Label("Menu", Assets.styleLabelMediana));
 		this.add(new Label("Try Again", Assets.styleLabelMediana));
+		this.add(new Label("Next Level", Assets.styleLabelMediana));
 
 	}
 
@@ -124,12 +131,12 @@ public class VentanaCompleted extends Window {
 	}
 
 	public void resumeGame() {
-		hide(null);
+		hide(null, 0);
 		if (game.getScreen() instanceof GameScreen)
 			GameScreen.state = GameScreen.STATE_RUNNING;
 	}
 
-	public void hide(final Class<?> newScreen) {
+	public void hide(final Class<?> newScreen, final int level) {
 		if (fadeDuration > 0) {
 			addCaptureListener(ignoreTouchDown);
 
@@ -144,7 +151,7 @@ public class VentanaCompleted extends Window {
 						game.setScreen(new LevelScreen(game));
 					}
 					else if (newScreen == GameScreen.class) {
-						game.setScreen(new GameScreen(game, levelActual));
+						game.setScreen(new GameScreen(game, level));
 					}
 				}
 			});

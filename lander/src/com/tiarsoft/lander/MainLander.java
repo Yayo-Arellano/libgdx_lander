@@ -3,7 +3,6 @@ package com.tiarsoft.lander;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.tiarsoft.lander.game.GameScreen;
 import com.tiarsoft.lander.screens.MainMenuScreen;
 
 public class MainLander extends Game {

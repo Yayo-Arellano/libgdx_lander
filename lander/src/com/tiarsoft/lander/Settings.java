@@ -14,14 +14,20 @@ public class Settings {
 	private final static Preferences pref = Gdx.app.getPreferences("com.tiar.aaa.aaa.aa");
 
 	public static int[] arrEstrellasMundo;// Cada posicion es un mundo
+	public static boolean[] arrIsWorldLocked;
 
 	public static void load(int numMapas) {
 		arrEstrellasMundo = new int[numMapas];
-
+		arrIsWorldLocked = new boolean[numMapas];
 		pref.clear();
 		pref.flush();
 		for (int i = 0; i < numMapas; i++) {
 			arrEstrellasMundo[i] = pref.getInteger("arrEstrellasMundo" + i, 0);
+
+			if (i == 0)
+				arrIsWorldLocked[0] = false;
+			else
+				arrIsWorldLocked[i] = pref.getBoolean("arrIsWorldLocked" + i, true);
 		}
 
 		// Upgrades
@@ -39,6 +45,7 @@ public class Settings {
 
 		for (int i = 0; i < arrEstrellasMundo.length; i++) {
 			pref.putInteger("arrEstrellasMundo" + i, arrEstrellasMundo[i]);
+			pref.putBoolean("arrIsWorldLocked" + i, arrIsWorldLocked[i]);
 		}
 
 		// Upgrades
@@ -53,19 +60,20 @@ public class Settings {
 		pref.flush();
 	}
 
-	public static int getStarsFromLevel(int level) {
-
-		if (level >= arrEstrellasMundo.length)
-			return 0;
-		return arrEstrellasMundo[level];
-	}
-
+	/**
+	 * Guarda el numero de estrellas del mundo que se completo y desbloque el siguiente mundo
+	 */
 	public static void setStarsFromLevel(int level, int numStars) {
 		int startActuales = arrEstrellasMundo[level];
 
 		if (startActuales < numStars) {
 			arrEstrellasMundo[level] = numStars;
-			save();
 		}
+
+		if (arrIsWorldLocked.length >= level + 1)
+			arrIsWorldLocked[level + 1] = false;
+
+		save();
+
 	}
 }

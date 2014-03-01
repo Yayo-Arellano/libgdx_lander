@@ -33,6 +33,7 @@ public class Assets {
 
 	public static AtlasRegion fondo;
 
+	public static AtlasRegion candado;
 	public static AtlasRegion gas;
 	public static AtlasRegion star;
 	public static AtlasRegion starOff;
@@ -152,6 +153,7 @@ public class Assets {
 		star = atlas.findRegion("star");
 		starOff = atlas.findRegion("starOff");
 		bomba = atlas.findRegion("bomba");
+		candado = atlas.findRegion("candado");
 
 		upgradeOn = atlas.findRegion("upgradeOn");
 		upgradeOff = atlas.findRegion("upgradeOff");
@@ -166,7 +168,7 @@ public class Assets {
 		// mundos.put(2, "data/mundos/mundo03.tmx");
 		// mundos.put(3, "data/mundos/mundo04.tmx");
 
-		Settings.load(10);
+		Settings.load(500);
 
 	}
 

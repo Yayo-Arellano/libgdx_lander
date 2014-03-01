@@ -1,9 +1,11 @@
 package com.tiarsoft.lander.screens;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
@@ -28,7 +30,7 @@ public class LevelScreen extends Screens {
 		int level = 0;
 		for (int l = 0; l < 10; l++) {// Paginas
 
-			Table levels = new Table().padBottom(100);
+			Table levels = new Table().padBottom(100);// Modificar para el margen
 			levels.defaults().pad(20, 20, 20, 20);
 			for (int y = 0; y < 4; y++) {// Filas
 				levels.row();
@@ -47,11 +49,17 @@ public class LevelScreen extends Screens {
 
 	public Button getLevelButton(final int level) {
 
-		TextButton button = new TextButton("" + (level + 1), Assets.styleTextButtonLevels);
+		final TextButton button = new TextButton("" + (level + 1), Assets.styleTextButtonLevels);
 
-		int stars = Settings.getStarsFromLevel(level);
+		int stars = Settings.arrEstrellasMundo[level];
 
-		// button.stack(new Image(Assets.bomba));
+		if (Settings.arrIsWorldLocked[level]) {
+
+			Label nivel = button.getLabel();
+			nivel.remove();
+			button.stack(new Image(Assets.candado), nivel);
+			button.setDisabled(true);
+		}
 
 		Table starTable = new Table();
 		starTable.defaults().pad(5);
@@ -72,7 +80,11 @@ public class LevelScreen extends Screens {
 		button.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				game.setScreen(new GameScreen(game, level));
+				if (button.isDisabled()) {
+					Gdx.app.log("Locked", "El mundo " + (level + 1) + "esta bloqueado");
+				}
+				else
+					game.setScreen(new GameScreen(game, level));
 			}
 		});
 
@@ -94,8 +106,6 @@ public class LevelScreen extends Screens {
 
 	@Override
 	public void update(float delta) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override

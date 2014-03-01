@@ -69,7 +69,7 @@ btUpgrade
   index: -1
 btUpgradeDown
   rotate: false
-  xy: 770, 269
+  xy: 862, 511
   size: 36, 36
   orig: 36, 36
   offset: 0, 0
@@ -81,6 +81,13 @@ btnLevels
   split: 11, 9, 37, 39
   pad: 9, 9, 9, 9
   orig: 24, 78
+  offset: 0, 0
+  index: -1
+candado
+  rotate: false
+  xy: 400, 46
+  size: 45, 45
+  orig: 45, 45
   offset: 0, 0
   index: -1
 dim
@@ -100,7 +107,7 @@ fondo
   index: -1
 gas
   rotate: false
-  xy: 400, 46
+  xy: 770, 260
   size: 41, 45
   orig: 41, 45
   offset: 0, 0
@@ -240,7 +247,7 @@ newExplosion2
   index: -1
 newExplosion3
   rotate: false
-  xy: 443, 2
+  xy: 447, 2
   size: 70, 69
   orig: 70, 69
   offset: 0, 0
@@ -340,14 +347,14 @@ recuadroGameOver
   index: -1
 star
   rotate: false
-  xy: 862, 522
+  xy: 813, 280
   size: 27, 25
   orig: 27, 25
   offset: 0, 0
   index: -1
 starOff
   rotate: false
-  xy: 808, 275
+  xy: 858, 479
   size: 33, 30
   orig: 33, 30
   offset: 0, 0
