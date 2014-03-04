@@ -139,15 +139,17 @@ public class Assets {
 		AtlasRegion newExpl19 = atlas.findRegion("newExplosion19");
 		explosion = new Animation(0.05f, newExpl1, newExpl2, newExpl3, newExpl4, newExpl5, newExpl6, newExpl7, newExpl8, newExpl9, newExpl10, newExpl11, newExpl12, newExpl13, newExpl14, newExpl15, newExpl16, newExpl17, newExpl18, newExpl19);
 
-		AtlasRegion laser1 = atlas.findRegion("rayo0");
-		AtlasRegion laser2 = atlas.findRegion("rayo1");
-		AtlasRegion laser3 = atlas.findRegion("rayo2");
-		laser = new Animation(0.1f, laser1, laser2, laser3);
+		AtlasRegion laser0 = atlas.findRegion("rayo0");
+		AtlasRegion laser1 = atlas.findRegion("rayo1");
+		AtlasRegion laser2 = atlas.findRegion("rayo2");
+		AtlasRegion laser3 = atlas.findRegion("rayo3");
+		laser = new Animation(0.1f, laser0, laser1, laser2, laser3);
 
-		laser1 = atlas.findRegion("rayo0Vertical");
-		laser2 = atlas.findRegion("rayo1Vertical");
-		laser3 = atlas.findRegion("rayo2Vertical");
-		laserVertical = new Animation(0.1f, laser1, laser2, laser3);
+		laser0 = atlas.findRegion("rayo0Vertical");
+		laser1 = atlas.findRegion("rayo1Vertical");
+		laser2 = atlas.findRegion("rayo2Vertical");
+		laser3 = atlas.findRegion("rayo3Vertical");
+		laserVertical = new Animation(0.1f, laser0, laser1, laser2, laser3);
 
 		gas = atlas.findRegion("gas");
 		star = atlas.findRegion("star");
