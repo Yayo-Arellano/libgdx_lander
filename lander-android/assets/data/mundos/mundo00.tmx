@@ -5,23 +5,58 @@
   <property name="tamanoMapaY" value="40"/>
  </properties>
  <tileset firstgid="1" name="tiled" tilewidth="32" tileheight="32">
-  <image source="tiled.png" width="512" height="512"/>
+  <image source="tiled.png" width="512" height="256"/>
  </tileset>
- <layer name="Tile Layer 1" width="30" height="40">
+ <layer name="1" width="30" height="40">
   <data encoding="base64" compression="zlib">
-   eJy9V0duAzEMXKQ5OW56jk7PNT2/Tb+n3lPvqe/JLJABCIKUKNnwYUBDJu0dcTgrtU3TtED/P0rk1voi9p01C/y+1zSnS0A0djXR/Fnkzql8/u8UPi8C0djV5PJWkbMGTACTwBgw/l9Xy7cN8N1Fzh4wDywAkjf32nreaazPOLzaAF9GyVPWe3yXsb7i8IrwzfXX41va322s7QT3gfs8DD0fY+0kuA96zvSses9b0l+vvoZvSX+9/arpbwlfay5G4VfWXLCv1vOl9Nk9L/PWgQ1gE9gq0LPmy+dL6bP7X+btAwfAIXBUqOea+aUP0X/hi50nh+tr55c+RP+FF5+uBestvhHfkX5FnqV+pfsb8R2pZ/Is8StLz8OeX0vno/ArS+cRv7LenxE9sI5zrs8bOb7W+zOiB9ZxzuXvpOZXz2eOt7c/pecNPZ853t7+WHURPUd5ls7/oP2tOXfU+vOgsXZ+e6LWusPo+4h3j6np1yC6iPD1+pU7p6R0kdqPXJ/Il36kfSk199b7KHp+Yh39SPtSau69c3Lkvqf5ngHnwAVwCVwB1yPgewPcAnfAPfAAPAb4St3K/ub0TD5PwDPwArwCb8C7w1fqWepW8s3pmXw+gE/gC/gGfoBfh6/nzxE9t4pvLkb6GzlPtIpvLkb4RvRMvrwvlJ6/tb96d9JUbsqLrbou/gG2jk21
+   eJzNV10PgzAIbPb57Oa2//9PVxNJiGnLHTDnAzEqtpzAXZlKKdOf7FntXe3jvE4O/8Xu1W6B67LGqdp54Kffy75enDr+h/Hf9HsEr4VD4re+v1S7rvcIXguHlV/5fq72Wu9HeFtx9nCP8LL5bcXZw43Ucy+/rf7KyG/P37Jofkdr/7J/R/vu0b8WX0ncSF7Ff1kDqXvtv8UrcaPxSz8ida/9rf7N4udWPXt5KjO/6HXLP57+9dTxln88+ovqZoSvWvyM6mbkvIHqL6pH1nNWf1E9sp6z+oviYXiKOV9ZeBieYs5XTJ3u0b8eXmP5iuWjKF6t0RF9ZvHqfVE8zHx0JLy6P9n5J0N/58LPPxn1LHxq4WR4HOUrdv6xeDyzf7PyG9FXJr/Rec/LV9F572j83PqPDKdl2xdfSkNr
   </data>
  </layer>
- <layer name="Tile Layer 2" width="30" height="40">
+ <layer name="2" width="30" height="40">
   <data encoding="base64" compression="zlib">
-   eJzt1qEBAAAIw7Dx/9NIJAhk4vpBE+BLLQ0AwPBOAFw1PegABQ==
+   eJzt0sENACAIQ9E6khsxmqM5igxg1IMhgfx3g15KggTgl3aZs6l2DwAAwIsujc3O4pugEv+hecgsrgmQ0wJEUwMJ
   </data>
  </layer>
- <objectgroup name="fisicos" width="30" height="40">
-  <object type="pared" x="32" y="960">
-   <polyline points="0,0 160,0 160,288 416,288 416,-96 896,-96 896,-928 416,-928 416,-320 384,-320 384,-928 0,-928 0,-704 192,-704 192,-672 0,-672 0,0"/>
+ <objectgroup name="fisicos" width="30" height="40" visible="0">
+  <object type="pared" x="32" y="32">
+   <polyline points="0,0 0,256 32,256 32,224 192,224 192,256 224,256 224,288 0,288 0,1216 256,1216 256,800 288,800 288,1216 896,1216 896,896 608,896 608,864 896,864 896,320 736,320 736,256 896,256 896,0 544,0 544,608 512,608 512,0 0,0"/>
   </object>
   <object type="inicio" x="64" y="256" width="160" height="32"/>
-  <object type="fin" x="736" y="864" width="160" height="32"/>
+  <object type="fin" x="768" y="288" width="160" height="32"/>
+  <object type="pared" x="288" y="960">
+   <polyline points="0,0 -64,0 -64,-96 0,-96 0,0"/>
+  </object>
+ </objectgroup>
+ <objectgroup name="interaccion" width="30" height="40">
+  <object type="estrella" x="350" y="122"/>
+  <object type="estrella" x="145" y="1225"/>
+  <object type="estrella" x="446" y="116"/>
+  <object type="bomba" x="421" y="420">
+   <properties>
+    <property name="direccion" value="derecha"/>
+   </properties>
+  </object>
+  <object type="bomba" x="215" y="563">
+   <properties>
+    <property name="direccion" value="derecha"/>
+   </properties>
+  </object>
+  <object type="gas" x="452" y="869"/>
+  <object type="laser" x="32" y="909" width="190" height="7">
+   <properties>
+    <property name="direccion" value="horizontal"/>
+    <property name="tiempoApagado" value="05.00"/>
+    <property name="tiempoApagadoActual" value="00.00"/>
+    <property name="tiempoPrendido" value="02.00"/>
+   </properties>
+  </object>
+  <object type="laser" x="35" y="1068" width="251" height="8">
+   <properties>
+    <property name="direccion" value="horizontal"/>
+    <property name="tiempoApagado" value="05.00"/>
+    <property name="tiempoApagadoActual" value="03.00"/>
+    <property name="tiempoPrendido" value="02.00"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>
