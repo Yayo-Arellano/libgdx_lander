@@ -22,7 +22,7 @@ public class Main {
 		set.flattenPaths = true;
 		set.combineSubdirectories = true;
 
-		TexturePacker2.process(set, "/Users/Yayo/Pictures/Games/Lander/Images", "/Users/Yayo/Documents/eclipseAndroid/Lander-P/lander-android/assets/data/", "atlasMap.txt");
+		// TexturePacker2.process(set, "/Users/Yayo/Pictures/Games/Lander/Images", "/Users/Yayo/Documents/eclipseAndroid/Lander-P/lander-android/assets/data/", "atlasMap.txt");
 
 		new LwjglApplication(new MainLander(), cfg);
 	}
