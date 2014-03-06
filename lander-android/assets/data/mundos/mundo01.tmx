@@ -5,118 +5,39 @@
   <property name="tamanoMapaY" value="40"/>
  </properties>
  <tileset firstgid="1" name="tiled" tilewidth="32" tileheight="32">
-  <image source="tiled.png" width="512" height="256"/>
+  <image source="tiled.png" width="512" height="512"/>
  </tileset>
  <layer name="Tile Layer 1" width="30" height="40">
   <data encoding="base64" compression="zlib">
-   eJztVjkOwCAMQz3o3vP/P22WLkgohdoBFQaLBSSMHWPvnFsE3ng9BVeBNbzHIBgL8F0FmyHfh+ckmAG8tfMhz11wAHhr51vVF6Uba35R75HKE+X3VJ4ov7P1je1n6xvbz5pPzQ+s+dT8wM4llL4oP1j3jNr6htW/xM5hVF6h3oPVJ1j5/PVfQudQLfqi8+otz9y8Ys0x27e5eYXqU6l5hepTXd/eN1rsG3/lewMbzEJR
+   eJztlzsLwzAMhE0L6d5Cs/eZrm36+v9/rLcIgoix5Eg1JB4OYaMhH9ad4yaEsIGaP9c91BaoXjwn6FyAt4eeBXjncr4raF2AdwvtHHkv0HVk/wAdFdzUx/tj3/OC3iP7d+ih4KY+3u91vtTXQbdB9T5f6vtA30Gt/pXlqrbS/Kd4U7mqrTT/NZ/zfCr1MfdtijflU6mPuW+l+cy5aK3NaSkv5TPnorU2p63meeo9nDuPU+9hb5/G7nFvn8bu8ZpXNvOay2v13yjltcoj7fvIKo9y30dLOd+l+rfyzoP3B89ySTk=
   </data>
  </layer>
  <layer name="Tile Layer 2" width="30" height="40">
   <data encoding="base64" compression="zlib">
-   eJzt11EKgDAMA9B4hB5l9//xaP6OItIatm6aQNAJ7rkPlRkAK2o2/p7sHHLlru4e7pofj3Iz7yjjMt+Gty4buXL/7Fb99607suc7rLcBZ7SR558duXL7tEQj7oiu7M6OXLlyv+Pe7R2f9pOsW9ELI8Ydrg==
+   eJy9VlmugzAMpEfgCNz/ku1HIz1Fs5ryLEUFSuyZ8RLO4ziuzzq/v/s6wbrE9bU9R77WdWK777Um1uzdcTeYka90L9NzYstH+i5a07gt3533xNq6QvU9sQYz66lp3LaP9j6exm3qCs2U/457R+dmbrA56OwF7qd1lcxJ9n6bo7ae0bky6X1Uyw1fVB9N3D3HSdw7NcnOXIUT5TTBfMfcd8C0B505nZ/ii/ilOfpFXNbDT8dV33lPxWXfpX/5ojl6x5DGaoawWYpwIx3Zc+bf+WJznt2jWZ5wRzzV7FG43LmkNHV7GEbFUeXH5YTtVctxc1hTjVxdsNy0Gqv5qOK4GlJcHbaEW6qFyrXqI/a/6jHHw+mX4GhqOZkNaf+52pxwY/lz/JQ2ra+07x0ehS3Ru9Gd8XD5aeMyn64f1/0bqs1IhQ==
   </data>
  </layer>
  <objectgroup name="fisicos" width="30" height="40">
-  <object type="pared" x="32" y="1248">
-   <polyline points="0,0 0,-320 672,-320 672,-384 0,-384 0,-1216 384,-1216 384,-928 736,-928 736,-992 544,-992 544,-1216 896,-1216 896,-704 320,-704 320,-608 896,-608 896,0 0,0"/>
+  <object type="pared" x="32" y="32">
+   <polyline points="0,0 0,736 672,736 672,352 896,352 896,0 480,0 480,512 288,512 288,0 0,0"/>
   </object>
-  <object type="inicio" x="576" y="256" width="160" height="32"/>
-  <object type="fin" x="96" y="1248" width="192" height="32"/>
+  <object type="inicio" x="64" y="768" width="160" height="32"/>
+  <object type="fin" x="768" y="384" width="160" height="32"/>
  </objectgroup>
  <objectgroup name="interaccion" width="30" height="40">
-  <object type="laser" x="364" y="643" width="7" height="221">
+  <object type="estrella" x="579" y="117"/>
+  <object type="estrella" x="175" y="119"/>
+  <object type="gas" x="624" y="429"/>
+  <object type="estrella" x="177" y="351"/>
+  <object type="help" x="163" y="633">
    <properties>
-    <property name="direccion" value="vertical"/>
-    <property name="tiempoApagado" value="03.00"/>
-    <property name="tiempoApagadoActual" value="03.00"/>
-    <property name="tiempoPrendido" value="03.00"/>
+    <property name="direccion" value="derecha"/>
    </properties>
   </object>
-  <object type="laser" x="395" y="643" width="7" height="221">
+  <object type="help" x="544" y="634">
    <properties>
-    <property name="direccion" value="vertical"/>
-    <property name="tiempoApagado" value="03.00"/>
-    <property name="tiempoApagadoActual" value="02.70"/>
-    <property name="tiempoPrendido" value="03.00"/>
+    <property name="direccion" value="derecha"/>
    </properties>
   </object>
-  <object type="laser" x="428" y="642" width="7" height="221">
-   <properties>
-    <property name="direccion" value="vertical"/>
-    <property name="tiempoApagado" value="03.00"/>
-    <property name="tiempoApagadoActual" value="02.40"/>
-    <property name="tiempoPrendido" value="03.00"/>
-   </properties>
-  </object>
-  <object type="laser" x="461" y="642" width="7" height="221">
-   <properties>
-    <property name="direccion" value="vertical"/>
-    <property name="tiempoApagado" value="03.00"/>
-    <property name="tiempoApagadoActual" value="02.10"/>
-    <property name="tiempoPrendido" value="03.00"/>
-   </properties>
-  </object>
-  <object type="laser" x="491" y="642" width="7" height="221">
-   <properties>
-    <property name="direccion" value="vertical"/>
-    <property name="tiempoApagado" value="03.00"/>
-    <property name="tiempoApagadoActual" value="01.80"/>
-    <property name="tiempoPrendido" value="03.00"/>
-   </properties>
-  </object>
-  <object type="laser" x="523" y="643" width="7" height="221">
-   <properties>
-    <property name="direccion" value="vertical"/>
-    <property name="tiempoApagado" value="03.00"/>
-    <property name="tiempoApagadoActual" value="01.50"/>
-    <property name="tiempoPrendido" value="03.00"/>
-   </properties>
-  </object>
-  <object type="laser" x="556" y="643" width="7" height="221">
-   <properties>
-    <property name="direccion" value="vertical"/>
-    <property name="tiempoApagado" value="03.00"/>
-    <property name="tiempoApagadoActual" value="01.20"/>
-    <property name="tiempoPrendido" value="03.00"/>
-   </properties>
-  </object>
-  <object type="laser" x="587" y="642" width="7" height="221">
-   <properties>
-    <property name="direccion" value="vertical"/>
-    <property name="tiempoApagado" value="03.00"/>
-    <property name="tiempoApagadoActual" value="00.90"/>
-    <property name="tiempoPrendido" value="03.00"/>
-   </properties>
-  </object>
-  <object type="laser" x="621" y="643" width="7" height="221">
-   <properties>
-    <property name="direccion" value="vertical"/>
-    <property name="tiempoApagado" value="03.00"/>
-    <property name="tiempoApagadoActual" value="00.60"/>
-    <property name="tiempoPrendido" value="03.00"/>
-   </properties>
-  </object>
-  <object type="laser" x="651" y="642" width="7" height="221">
-   <properties>
-    <property name="direccion" value="vertical"/>
-    <property name="tiempoApagado" value="03.00"/>
-    <property name="tiempoApagadoActual" value="00.30"/>
-    <property name="tiempoPrendido" value="03.00"/>
-   </properties>
-  </object>
-  <object type="laser" x="685" y="642" width="7" height="221">
-   <properties>
-    <property name="direccion" value="vertical"/>
-    <property name="tiempoApagado" value="03.00"/>
-    <property name="tiempoApagadoActual" value="00.00"/>
-    <property name="tiempoPrendido" value="03.00"/>
-   </properties>
-  </object>
-  <object type="estrella" x="135" y="141"/>
-  <object type="estrella" x="183" y="129"/>
-  <object type="estrella" x="240" y="135"/>
-  <object type="gas" x="257" y="731"/>
-  <object type="gas" x="784" y="748"/>
  </objectgroup>
 </map>

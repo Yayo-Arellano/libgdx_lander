@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="30" height="40" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="tamanoMapaX" value="30"/>
+  <property name="tamanoMapaY" value="40"/>
+ </properties>
+ <tileset firstgid="1" name="tiled" tilewidth="32" tileheight="32">
+  <image source="tiled.png" width="512" height="512"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="30" height="40">
+  <data encoding="base64" compression="zlib">
+   eJzVl80KAjEMhIs/69315wUU9O6Cvv+LOZdeCpI0ncxiYMilh34kTSdTKeUATeJ8ga4rZDXnv/BuoO0KvEdoFvJWzht0hx7QU8BbOV/QAr2hj7C+vZzWee/9ejmt8+x36e0H9rv09kPWPGLVtzez6ltDPa9qqOZVGyreNti8VmT9v1Zk/78qbqueWdxe3mx/lc2pqu8O2g/wRrlP0NnBq5pbvfM5yh3lbX3EqJ+O+ohRP832EVYfR/2G11f+6mOLl7UX9PKy9gIvb9Y+ZPFm7UPe+rL3XW992fvu6PvN5s3OXxOaRRE=
+  </data>
+ </layer>
+ <layer name="Tile Layer 2" width="30" height="40">
+  <data encoding="base64" compression="zlib">
+   eJztWEEKwCAM0yfsCf7/kzsJJaTaYrUwFxiTrRprq0ZbKeURTyNvLOO3h7TBbND2NDJ5WwJvj8FpZI1zz6/TyIpvZl7dFt+beK3rBq77p3ilTRTvqB25f0XyynGr8K8WPhaR/mr7N+OIWGekLrD2EfvKdMkMsr7FVtM3yO3xwdPXVaBOs/q9Cqb9NHjGxMKLMZrxRuQzy5UZouYRzglPnUherczqrvLOwGxW/PXElJ1/dvNG4z8ffZ/3Jh17W15Jf5me3M07ugNid0SavtJs2fcX204V+Q==
+  </data>
+ </layer>
+ <objectgroup name="fisicos" width="30" height="40">
+  <object type="pared" x="928" y="32">
+   <polyline points="0,0 0,1216 -896,1216 -896,832 -640,832 -640,896 -448,896 -448,768 -512,768 -512,608 -256,608 -256,544 -512,544 -512,384 -640,384 -640,448 -704,448 -704,512 -896,512 -896,0 0,0"/>
+  </object>
+  <object type="inicio" x="64" y="544" width="160" height="32"/>
+  <object type="fin" x="64" y="1248" width="160" height="32"/>
+ </objectgroup>
+ <objectgroup name="interaccion" width="30" height="40">
+  <object type="estrella" x="850" y="114"/>
+  <object type="estrella" x="130" y="934"/>
+  <object type="bomba" x="712" y="606">
+   <properties>
+    <property name="direccion" value="derecha"/>
+   </properties>
+  </object>
+  <object type="gas" x="454" y="679"/>
+  <object type="estrella" x="116" y="126"/>
+ </objectgroup>
+</map>

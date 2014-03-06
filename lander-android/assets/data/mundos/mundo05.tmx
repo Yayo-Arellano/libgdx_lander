@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="30" height="40" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="tamanoMapaX" value="30"/>
+  <property name="tamanoMapaY" value="40"/>
+ </properties>
+ <tileset firstgid="1" name="tiled" tilewidth="32" tileheight="32">
+  <image source="tiled.png" width="512" height="512"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="30" height="40">
+  <data encoding="base64" compression="zlib">
+   eJzNlrkOwzAMQ42ee889vdfe/f8fq4ZqceNIMqW0AggOWfRAm06TUmpIG8CnpInRzx9dAF+TVkZHWdlreBFW9n/hHZHGP+BdkJYdvHvSocWtY833Tnq0uHWs+UbxSvlG8fadr/Y+e/Nq77O0l5VX69JeVl6te/Hm0xdvPlbeI+mUcF4eLe+T9Eo4L4/Ey5xb0i59c9f6gDTs4GXOK+nWwl3rM9K8g7eUL8rJPZ1zS/minNzTObe0N8ov5VtylF+bb/T5lnhrzjfv5tHPFk7ezeM9snDmmSC8mvNZygTh1Z5P73y1/eOdr7Z/0P+NUr9ov9feX4kD5cx5Nfl5elR+3vlG9XM0Z21fRb9H0f4G1FtSxQ==
+  </data>
+ </layer>
+ <layer name="Tile Layer 2" width="30" height="40">
+  <data encoding="base64" compression="zlib">
+   eJzlmIEJxCAMRe0IjpDNb9S7wgnyNdFfa1OIEGxt9DUxqDGnlAQkg0hVo47Ad+zb0yvydCl8D644cSPZa8VVL8atOL6Ly/ifnSvLz15cxnesn614Zmy4Mr+WvT/57OJadjHcA9rwHfWtf82TXNw7/rXad7RezXLZviN7Z/2scYuw3BV7K0YzxmiNW7G3YjRjjOb35Bap/SadZ9STBT/vKtG4V/bOO4rnOSfa+SoSN1pceeZlb8sXdnOjxXO0+X2zn5lcYKZodz94b6R91+6YOrlD0/YF/vAnWQ==
+  </data>
+ </layer>
+ <objectgroup name="fisicos" width="30" height="40">
+  <object type="pared" x="928" y="32">
+   <polyline points="0,0 0,1216 -896,1216 -896,0 0,0"/>
+  </object>
+  <object type="pared" x="736" y="416">
+   <polyline points="0,0 0,64 64,64 64,192 -512,192 -512,-32 -544,-32 -544,-224 -160,-224 -160,0 0,0"/>
+  </object>
+  <object type="inicio" x="576" y="416" width="160" height="32"/>
+  <object type="fin" x="288" y="1248" width="160" height="32"/>
+ </objectgroup>
+ <objectgroup name="interaccion" width="30" height="40">
+  <object type="estrella" x="108" y="108"/>
+  <object type="estrella" x="473" y="109"/>
+  <object type="estrella" x="108" y="531"/>
+  <object type="gas" x="479" y="666"/>
+ </objectgroup>
+</map>

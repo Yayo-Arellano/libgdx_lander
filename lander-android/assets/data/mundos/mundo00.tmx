@@ -5,57 +5,55 @@
   <property name="tamanoMapaY" value="40"/>
  </properties>
  <tileset firstgid="1" name="tiled" tilewidth="32" tileheight="32">
-  <image source="tiled.png" width="512" height="256"/>
+  <image source="tiled.png" width="512" height="512"/>
  </tileset>
- <layer name="1" width="30" height="40">
+ <tileset firstgid="257" name="tiled" tilewidth="32" tileheight="32">
+  <image source="tiled.png" width="512" height="512"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="30" height="40" visible="0">
   <data encoding="base64" compression="zlib">
-   eJzNV10PgzAIbPb57Oa2//9PVxNJiGnLHTDnAzEqtpzAXZlKKdOf7FntXe3jvE4O/8Xu1W6B67LGqdp54Kffy75enDr+h/Hf9HsEr4VD4re+v1S7rvcIXguHlV/5fq72Wu9HeFtx9nCP8LL5bcXZw43Ucy+/rf7KyG/P37Jofkdr/7J/R/vu0b8WX0ncSF7Ff1kDqXvtv8UrcaPxSz8ida/9rf7N4udWPXt5KjO/6HXLP57+9dTxln88+ovqZoSvWvyM6mbkvIHqL6pH1nNWf1E9sp6z+oviYXiKOV9ZeBieYs5XTJ3u0b8eXmP5iuWjKF6t0RF9ZvHqfVE8zHx0JLy6P9n5J0N/58LPPxn1LHxq4WR4HOUrdv6xeDyzf7PyG9FXJr/Rec/LV9F572j83PqPDKdl2xdfSkNr
+   eJzt1rkOgzAQRVErEJY2ISG0QBbaLED+/8d4jTuM8S7QFFcjUXE0NiJhjKUo8TyvqAwwfTu34o3RMYC3QBfab3DvC3UBvCP6W/S26K7hPaDIwPtFPw3vCZ097Hev51m2N1de2d7oe0Vem94aNTPPReff1vu/0Wfmuej86/pM77Guz/QeZyhXmNzJ/7dE7gd6LswbqhQmd/L/LZG7R8PCVPWu3a9t79r9uvLKpiuvbJKXvOQl7168E/IoVvE=
   </data>
  </layer>
- <layer name="2" width="30" height="40">
+ <layer name="Tile Layer 2" width="30" height="40">
   <data encoding="base64" compression="zlib">
-   eJzt0sENACAIQ9E6khsxmqM5igxg1IMhgfx3g15KggTgl3aZs6l2DwAAwIsujc3O4pugEv+hecgsrgmQ0wJEUwMJ
+   eJztWG0KgDAIXUfoCLv/Jasfg/GYkvC2tzBBhiXay4+JtZRy3ly7s3YyMj4f6b6RH15N7TtWU8Os8KvCm8mvKp9VeZUNrzKf/z45nzLizVZH2eK7A94D3qMcJcueNV9as2wkJqMZFu1FbDF0o/XL0p2J1/Mbxcv0y7KF5NlV5ZUqvlG/zP88q45U9cuMrwovs09+IZ+Z9avok7g/Gt3B3h7I2ylZNtp5AZYjET0=
   </data>
  </layer>
- <objectgroup name="fisicos" width="30" height="40" visible="0">
+ <objectgroup name="fisicos" width="30" height="40">
   <object type="pared" x="32" y="32">
-   <polyline points="0,0 0,256 32,256 32,224 192,224 192,256 224,256 224,288 0,288 0,1216 256,1216 256,800 288,800 288,1216 896,1216 896,896 608,896 608,864 896,864 896,320 736,320 736,256 896,256 896,0 544,0 544,608 512,608 512,0 0,0"/>
+   <polyline points="0,0 0,704 352,704 352,1216 672,1216 672,704 896,704 896,0 0,0"/>
   </object>
-  <object type="inicio" x="64" y="256" width="160" height="32"/>
-  <object type="fin" x="768" y="288" width="160" height="32"/>
-  <object type="pared" x="288" y="960">
-   <polyline points="0,0 -64,0 -64,-96 0,-96 0,0"/>
-  </object>
+  <object type="inicio" x="96" y="736" width="160" height="32"/>
+  <object type="fin" x="736" y="736" width="160" height="32"/>
+  <object type="estrella" x="222" y="234"/>
+  <object type="estrella" x="453" y="228"/>
+  <object type="estrella" x="754" y="230"/>
  </objectgroup>
  <objectgroup name="interaccion" width="30" height="40">
-  <object type="estrella" x="350" y="122"/>
-  <object type="estrella" x="145" y="1225"/>
-  <object type="estrella" x="446" y="116"/>
-  <object type="bomba" x="421" y="420">
+  <object type="help" x="202" y="584">
+   <properties>
+    <property name="direccion" value="arriba"/>
+   </properties>
+  </object>
+  <object type="help" x="328" y="290">
    <properties>
     <property name="direccion" value="derecha"/>
    </properties>
   </object>
-  <object type="bomba" x="215" y="563">
+  <object type="help" x="593" y="292">
    <properties>
     <property name="direccion" value="derecha"/>
    </properties>
   </object>
-  <object type="gas" x="452" y="869"/>
-  <object type="laser" x="32" y="909" width="190" height="7">
+  <object type="help" x="805" y="616">
    <properties>
-    <property name="direccion" value="horizontal"/>
-    <property name="tiempoApagado" value="05.00"/>
-    <property name="tiempoApagadoActual" value="00.00"/>
-    <property name="tiempoPrendido" value="02.00"/>
+    <property name="direccion" value="abajo"/>
    </properties>
   </object>
-  <object type="laser" x="35" y="1068" width="251" height="8">
+  <object type="help" x="788" y="375">
    <properties>
-    <property name="direccion" value="horizontal"/>
-    <property name="tiempoApagado" value="05.00"/>
-    <property name="tiempoApagadoActual" value="03.00"/>
-    <property name="tiempoPrendido" value="02.00"/>
+    <property name="direccion" value="abajo"/>
    </properties>
   </object>
  </objectgroup>

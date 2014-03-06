@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="50" height="29" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="tamanoMapaX" value="50"/>
+  <property name="tamanoMapaY" value="29"/>
+ </properties>
+ <tileset firstgid="1" name="tiled" tilewidth="32" tileheight="32">
+  <image source="tiled.png" width="512" height="512"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="50" height="29">
+  <data encoding="base64" compression="zlib">
+   eJzV18kOwiAQBmDiUvXq7tXdq7vv/2L+l0kIhsIgM9Amf4YDaZCvQ21jjBkhjWClscRF914iK+FKY4mL7k2/Z4vsrHpETlat1cH1uCI3qz6Rl1VrdZD00HSQ9NB0cD26ci5RHSMT8+vRlXOJ6hrZmLweNJZwiV1HTgcJl9h1dOU9ruGh0S/uvufyGCDDyPk5XXzrTt3vObKInC9xjrnr/2efS75PQs8ZZ59rcEjtjx7SD8zTdEjtjykyC8zTdOB6kENb/5Rw4HqQQ1v/lHCI9TgjF6PvEDpXuR5v5GP0Hbh9G3LYIwfPPEkH7v+IkMMdeXjmlXDwPRddceD2R60OOb8/anRIeZ/X6MDxqNmB6hf/qDdg
+  </data>
+ </layer>
+ <layer name="2" width="50" height="29">
+  <data encoding="base64" compression="zlib">
+   eJztWEEOAyEIdJ/gE/z/J9tDTQhBVmSGbJtO4sVVGECEdbTWxnv0zxhidDXfA2uteQbY8jUGSa70LRsMGyT3iniw4iDl9sbTo3Uhof3PiIfM7V0+EQ7WWnkH7dxHp3oQkPysbytb9HiCHZ5OXRusez+SR1IOAjtnr+rezWDHH99gxw4q6zkT/3g8C79kB7MvmTqQsPiy48GQvarnDF0M/3j1FVl3pUw07ngy4hHtXRE9BzrPkT6J9v9ZO7x+Ois3yiGDynz29pzyQPfnEyfyMnag+Uf/czSX6D5WPmTO50l+MM5Rtm7qeFzq+2WsreiXNDxeU8bqbcT6R0fi7t3Yeyu2uL4AtwUVhQ==
+  </data>
+ </layer>
+ <objectgroup name="fisicos" width="50" height="29">
+  <object type="pared" x="32" y="896">
+   <polyline points="0,0 288,0 288,-32 352,-32 352,-96 416,-96 416,-160 480,-160 480,-224 576,-224 576,-256 608,-256 608,-320 640,-320 640,-352 704,-352 704,-384 736,-384 736,-416 768,-416 768,-384 736,-384 736,-352 704,-352 704,-320 640,-320 640,-256 608,-256 608,-224 576,-224 576,-192 512,-192 512,-128 448,-128 448,-64 384,-64 384,0 320,0 320,32 928,32 928,0 992,0 992,-64 1056,-64 1056,-128 1120,-128 1120,-192 1184,-192 1184,-256 1248,-256 1248,-288 1280,-288 1280,-320 1312,-320 1312,-352 1376,-352 1376,-416 1408,-416 1408,-320 1344,-320 1344,-288 1312,-288 1312,-256 1280,-256 1280,-224 1216,-224 1216,-160 1152,-160 1152,-96 1088,-96 1088,-32 1024,-32 1024,0 1536,0 1536,-768 1472,-768 1472,-736 1408,-736 1408,-672 1344,-672 1344,-608 1280,-608 1280,-576 1248,-576 1248,-640 1312,-704 1376,-736 1440,-800 1504,-864 1504,-896 832,-896 832,-832 704,-704 704,-640 704,-608 608,-608 608,-736 704,-736 768,-832 768,-864 0,-864 0,-704 320,-704 320,-608 0,-608 0,0"/>
+  </object>
+  <object x="1312" y="896" width="160" height="32"/>
+  <object type="interaccion" x="96" y="896" width="160" height="32"/>
+ </objectgroup>
+ <objectgroup name="interaccion" width="50" height="29" visible="0">
+  <object type="estrella" x="151" y="98"/>
+  <object type="estrella" x="1517" y="226"/>
+  <object type="estrella" x="496" y="876"/>
+  <object type="gas" x="449" y="408"/>
+  <object type="gas" x="1293" y="100"/>
+  <object type="bomba" x="1034" y="399">
+   <properties>
+    <property name="direccion" value="horizontal"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

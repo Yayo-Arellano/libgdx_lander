@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="40" height="50" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="tamanoMapaX" value="40"/>
+  <property name="tamanoMapaY" value="50"/>
+ </properties>
+ <tileset firstgid="1" name="tiled" tilewidth="32" tileheight="32">
+  <image source="tiled.png" width="512" height="512"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="40" height="50">
+  <data encoding="base64" compression="zlib">
+   eJzlmM1uAjEMhFe0wB0KvfdHgmsLErxtHrVzycXC8jhxvCs6kuXD7maVT5PYyWaapi1is9B8RLwvOLPzWCFeBnLSxmfnsUPsB3LSxrfm9YpYJ3D7QnwjToizg98b4pDA7YK4Im6Iu4PfqKxpKetXk+U/dp2ykt99ID4d77euU1byux/Er+P9Vv9UDlb2co/yX+VgZS/3KH5Smq9YfphPwRglit+D8R/6iuWHbwvmV7L4af7L2v+kJD/Nf737H1tvpVh+tb5qsvix9VaK5Vfrq6as+iH5yT5FU1b9kPxkn6Jp1PrV1NuHR/cfFg9vHx7Nz6q/3hzNz6q/3jyqH2b30/q89/zm5cnup/W59/w2+tzW67/R57Zs/2XzW0pmxc43+p6GFTvf6HsaVtG+Yv/HKttXvfx6fcb+j1W0z9j/sdL6YHlfNzc/675ubn41t3Lz+peVnH8rN69/WUXte17/sora97z+ZRVdP0b7L4pjtv+i+25WLJfovpvVXP0zq2fpn/8bvz9sI2Q3
+  </data>
+ </layer>
+ <layer name="Tile Layer 2" width="40" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztWQEKwzAIzJ7QJ+T/nxyDBYJok1NRG3oQxpZFjzOJ1V6ttes/Ovm8mLnVfBfsSLYlu30aVTF4VkV1fm98bRjnpSq0+nF3Cx3zfaGFdv8hPi37R6sfssai34gPCoSfRT9tfE/ilxFfZE3G+Y3S79T7JYpf9fNb/X5+gn7a/LHr16qfdn0EP61+iN8s/WgtefcfLbzqD86GJTaeNn6g/LzqBk9+9LneA0+ojwa/D5mj3zNAezpc32ce0Yh6ztQiKs9zfqW6mfbYEJue/FZA95Snfju20LvFU78dv6h+0fzQ3JvBr7J+2fG96/XPc4jNaJyUPzL61NXjW12/6vuvOr83vjZUOb9S7YPqx+Uj+ptUx6zeQ0vvsL+2QBnh
+  </data>
+ </layer>
+ <objectgroup name="fisicos" width="40" height="50">
+  <object type="pared" x="1248" y="1568">
+   <polyline points="0,0 0,-320 -320,-320 -320,-576 0,-576 0,-1536 -1216,-1536 -1216,-640 -896,-640 -896,0 0,0"/>
+  </object>
+  <object type="pared" x="704" y="864">
+   <polyline points="0,0 -160,0 -160,-96 -256,-96 -256,-192 -288,-192 -288,-640 96,-640 96,-96 64,-96 64,-64 32,-64 32,-32 0,-32 0,0"/>
+  </object>
+  <object type="inicio" x="64" y="928" width="160" height="32"/>
+  <object type="fin" x="1056" y="1568" width="160" height="32"/>
+ </objectgroup>
+ <objectgroup name="interaccion" width="40" height="50">
+  <object type="estrella" x="201" y="477"/>
+  <object type="estrella" x="642" y="114"/>
+  <object type="estrella" x="1172" y="120"/>
+  <object type="gas" x="1046" y="676"/>
+  <object type="bomba" x="1037" y="299">
+   <properties>
+    <property name="direccion" value="derecha"/>
+   </properties>
+  </object>
+  <object type="bomba" x="1040" y="428">
+   <properties>
+    <property name="direccion" value="izquierda"/>
+   </properties>
+  </object>
+  <object type="bomba" x="1041" y="559">
+   <properties>
+    <property name="direccion" value="derecha"/>
+   </properties>
+  </object>
+  <object type="bomba" x="660" y="1124">
+   <properties>
+    <property name="direccion" value="izquierda"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

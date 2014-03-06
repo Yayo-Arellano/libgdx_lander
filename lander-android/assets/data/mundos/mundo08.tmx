@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="40" height="50" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="tamanoMapaX" value="40"/>
+  <property name="tamanoMapaY" value="50"/>
+ </properties>
+ <tileset firstgid="1" name="tiled" tilewidth="32" tileheight="32">
+  <image source="tiled.png" width="512" height="512"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="40" height="50">
+  <data encoding="base64" compression="zlib">
+   eJzVmN1KA0EMhYda9d76c69Q7xXq+7+ZgbowBMLJ5JysGgihbHZgviYnM3sYY9yYH81vzQ8/v+/M74nIrrO9/2B+Mn80f5p+P5u/EJFdZ3tftV+/jur/UO3Xr6P6P1heq/UXGeKnjhG3yLr4vZq/TRHl783vw/xziij/v/E7m79P8a/xu5h/TTHLL9rP3vMj2me0n9+aH9k+y9aZav6s9lm2zlTzZ29+vi6j9VD9dfHzdRmtV60/VX5WP1U6v5qf1c+qXvn8yFT8VvXK53fzY2OVH4oq3aryQ7FrvrLPWX6oXtnniB/S9eh+xt7ffD+jvkLz0XNg72++n1f5qetLzU9dX1V+3bG7f1XnPFb/IstyOo/rPQZZlV9kWU6Xcb3HIMvyU51LWH7R+Vl1LmH5ofNzll+2D5FF84etv2wfIovmD6tf2TmLLFt/q/qVnbNZfqv1p5oD1fy95kA13+sUy9OfP9jvDV6nWJ7+/MF+b0DWzY3t+25ubN93n/+Qfqr4delnlZ9K97rqT6V76vpbnbvV+/CWt8pvde5W78Nb3jcP/WwL
+  </data>
+ </layer>
+ <layer name="Tile Layer 2" width="40" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztWNENhTAI7BuhI7j/ku+rSUOAIrVwGC8xak3hPKgFe2utT8c1nS8yzo1x15I9zhY9uOcedOWZ1yZnR/OjIYrfCf2870yBrt/IV+9cCQj5p3FAiG9lfuj5h6BfBL+xl3gQkX878Y3IP/T9o8L6QK5fMve33+J++IheH1qdK9WsHnjzb8WPq78j+Uk9AOW2q583vlwvQ68p/0h+d32gf/+Q9TsVXwT9KscXYf+tzO9bH2ug9+eV62eE/kPjgdBfajwQ1seYf2fcYx9Zvyfi+2TNK9lHxW7+ncYcC0s/Gg2p56T5lAWL78z4W3xn6mfhl6nfG+KLrt+3fmVY+XH/c7Rx+t9Mu+fmznb/2S4dAA==
+  </data>
+ </layer>
+</map>
