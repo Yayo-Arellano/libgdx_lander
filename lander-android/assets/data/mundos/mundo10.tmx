@@ -9,7 +9,7 @@
  </tileset>
  <layer name="Tile Layer 1" width="50" height="29">
   <data encoding="base64" compression="zlib">
-   eJzV18kOwiAQBmDiUvXq7tXdq7vv/2L+l0kIhsIgM9Amf4YDaZCvQ21jjBkhjWClscRF914iK+FKY4mL7k2/Z4vsrHpETlat1cH1uCI3qz6Rl1VrdZD00HSQ9NB0cD26ci5RHSMT8+vRlXOJ6hrZmLweNJZwiV1HTgcJl9h1dOU9ruGh0S/uvufyGCDDyPk5XXzrTt3vObKInC9xjrnr/2efS75PQs8ZZ59rcEjtjx7SD8zTdEjtjykyC8zTdOB6kENb/5Rw4HqQQ1v/lHCI9TgjF6PvEDpXuR5v5GP0Hbh9G3LYIwfPPEkH7v+IkMMdeXjmlXDwPRddceD2R60OOb8/anRIeZ/X6MDxqNmB6hf/qDdg
+   eJzV18kOwiAQBuCJS9Wru1d3r+6+/4v5XyYhGAqDDNAmf4YDqcjXodoQ0QhpFCuPNS6+9xJZKVcea1x8b/4+W2Rn1CNyMmqtDrbHFbkZ9Ym8jFqrg6aHpgM5PlfDI6eD7dGVc4nrGJnQr0dXziWua2RDaT14rOESuo6UDhouoevoyns8h0eOfrH3PZXHABkGzk/p4lp37H7PkUXgfI1zzF7/P/tc8n3ie84k+1yDQ2x/9JC+Z15Oh9j+mCIzz7ycDlIPdmjrnxIOUg92aOufEg6hHmfkQvkdfOeq1OONfCi/g7RvfQ575OCYp+kg/R3hc7gjD8e8Eg6u56IrDtL+qNUh5f+PGh1i3uc1Okg8anbg+gWOmDda
   </data>
  </layer>
  <layer name="2" width="50" height="29">
@@ -24,7 +24,7 @@
   <object x="1312" y="896" width="160" height="32"/>
   <object type="interaccion" x="96" y="896" width="160" height="32"/>
  </objectgroup>
- <objectgroup name="interaccion" width="50" height="29" visible="0">
+ <objectgroup name="interaccion" width="50" height="29">
   <object type="estrella" x="151" y="98"/>
   <object type="estrella" x="1517" y="226"/>
   <object type="estrella" x="496" y="876"/>

@@ -169,10 +169,10 @@ public class Assets {
 		mundos.put(5, "data/mundos/mundo05.tmx");
 		mundos.put(6, "data/mundos/mundo06.tmx");
 		mundos.put(7, "data/mundos/mundo07.tmx");
-		//mundos.put(8, "data/mundos/mundo08.tmx");
-		//mundos.put(9, "data/mundos/mundo09.tmx");
-		//mundos.put(10, "data/mundos/mundo10.tmx");
-		// mundos.put(11, "data/mundos/mundo11.tmx");
+		mundos.put(8, "data/mundos/mundo08.tmx");
+		mundos.put(9, "data/mundos/mundo09.tmx");
+		mundos.put(10, "data/mundos/mundo10.tmx");
+		mundos.put(11, "data/mundos/mundo11.tmx");
 		// mundos.put(12, "data/mundos/mundo12.tmx");
 
 		Settings.load(500);

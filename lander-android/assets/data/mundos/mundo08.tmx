@@ -14,7 +14,28 @@
  </layer>
  <layer name="Tile Layer 2" width="40" height="50">
   <data encoding="base64" compression="zlib">
-   eJztWNENhTAI7BuhI7j/ku+rSUOAIrVwGC8xak3hPKgFe2utT8c1nS8yzo1x15I9zhY9uOcedOWZ1yZnR/OjIYrfCf2870yBrt/IV+9cCQj5p3FAiG9lfuj5h6BfBL+xl3gQkX878Y3IP/T9o8L6QK5fMve33+J++IheH1qdK9WsHnjzb8WPq78j+Uk9AOW2q583vlwvQ68p/0h+d32gf/+Q9TsVXwT9KscXYf+tzO9bH2ug9+eV62eE/kPjgdBfajwQ1seYf2fcYx9Zvyfi+2TNK9lHxW7+ncYcC0s/Gg2p56T5lAWL78z4W3xn6mfhl6nfG+KLrt+3fmVY+XH/c7Rx+t9Mu+fmznb/2S4dAA==
+   eJztWNsNwzAIpCN4hIzQjTpaR01/LFkIsINjfFQ5KWqCZbjyiCGFiEpzHc3vweSSTLrX9Em6+CWte1CMNa9OSY9lx0IUvxX+8/5nDnT/1Xz17tWAkH8WB4T4ZuaHnn8I/ovgV88SDyLybya+EfmHfn5kqA/k/mXn+fbqPFcb0fVh9blaz+pBL//eRF8u/8k+PX5S/72Cn7UmceDcZv3nja80y/B7zj+S31Ub6O8/ZP+tii+C/zLHF+H8zczvqY8+0OfzzP0zwvxh8UCYLy0eCPVR91+Re/Qj+++O+N7Z82r6UTGbf6vRxmJkHo2GNnPyfNqFEds74z9ie6f/Rvjt9N8/xBfdf0/96hjlJ33PseT8u5n1LO1t9Z76vx5i
   </data>
  </layer>
+ <objectgroup name="fisicos" width="40" height="50" visible="0">
+  <object type="pared" x="32" y="1312">
+   <polyline points="0,0 256,0 256,256 1216,256 1216,-640 864,-640 864,-768 1216,-768 1216,-1280 672,-1280 672,-96 448,-96 448,-256 416,-256 416,-1280 0,-1280 0,0"/>
+  </object>
+  <object type="fin" x="64" y="1312" width="160" height="32">
+   <properties>
+    <property name="" value=""/>
+   </properties>
+  </object>
+  <object type="inicio" x="960" y="544" width="160" height="32"/>
+ </objectgroup>
+ <objectgroup name="interaccion" width="40" height="50" visible="0">
+  <object type="laser" x="705" y="586" width="192" height="11">
+   <properties>
+    <property name="direccion" value="horizontal"/>
+    <property name="tiempoApagado" value="03.00"/>
+    <property name="tiempoApagadoActual" value="00.00"/>
+    <property name="tiempoPrendido" value="03.00"/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>
